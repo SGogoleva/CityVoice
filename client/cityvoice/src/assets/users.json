@@ -1,0 +1,87 @@
+[
+  {
+    "id": "1",
+    "name": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "DOB": "1990-01-01",
+    "email": "john.doe@example.com",
+    "passwordHash": "5f4dcc3b5aa765d61d8327deb882cf99",
+    "city": {
+      "cityId": "100",
+      "cityName": "New York"
+    },
+    "projectId": ["proj1", "proj2"],
+    "messageId": ["msg1", "msg2"],
+    "earnedPoints": 120
+  },
+  {
+    "id": "2",
+    "name": {
+      "firstName": "Jane",
+      "lastName": "Smith"
+    },
+    "DOB": "1985-02-14",
+    "email": "jane.smith@example.com",
+    "passwordHash": "6cb75f652a9b52798eb6cf2201057c73",
+    "city": {
+      "cityId": "101",
+      "cityName": "Los Angeles"
+    },
+    "projectId": ["proj3"],
+    "messageId": ["msg3", "msg4"],
+    "earnedPoints": 95
+  },
+  {
+    "id": "3",
+    "name": {
+      "firstName": "Michael",
+      "lastName": "Johnson"
+    },
+    "DOB": "1979-07-21",
+    "email": "michael.johnson@example.com",
+    "passwordHash": "098f6bcd4621d373cade4e832627b4f6",
+    "city": {
+      "cityId": "102",
+      "cityName": "Chicago"
+    },
+    "projectId": ["proj4", "proj5"],
+    "messageId": ["msg5"],
+    "earnedPoints": 150
+  },
+  {
+    "id": "4",
+    "name": {
+      "firstName": "Emily",
+      "lastName": "Davis"
+    },
+    "DOB": "1992-11-30",
+    "email": "emily.davis@example.com",
+    "passwordHash": "5f4dcc3b5aa765d61d8327deb882cf99",
+    "city": {
+      "cityId": "103",
+      "cityName": "Houston"
+    },
+    "projectId": ["proj6"],
+    "messageId": ["msg6", "msg7"],
+    "earnedPoints": 85
+  },
+  {
+    "id": "5",
+    "name": {
+      "firstName": "David",
+      "lastName": "Wilson"
+    },
+    "DOB": "1988-05-12",
+    "email": "david.wilson@example.com",
+    "passwordHash": "6cb75f652a9b52798eb6cf2201057c73",
+    "city": {
+      "cityId": "104",
+      "cityName": "Phoenix"
+    },
+    "projectId": ["proj7", "proj8"],
+    "messageId": ["msg8"],
+    "earnedPoints": 110
+  }
+]

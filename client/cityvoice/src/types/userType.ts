@@ -1,4 +1,4 @@
-type Users = {
+export type Users = {
   id: string;
   name: {
     firstName: string;
@@ -16,6 +16,6 @@ type Users = {
   earnedPoints: number;
 };
 
-type loginUser = Pick<Users, "email" | "passwordHash">;
+export type loginUser = Pick<Users, "email" | "passwordHash">;
 
-type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints">;
+export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints">;
