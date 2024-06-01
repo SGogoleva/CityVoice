@@ -16,6 +16,15 @@ export type Users = {
   earnedPoints: number;
 };
 
-export type loginUser = Pick<Users, "email" | "passwordHash">;
+export type UserName = {
+  firstName: Pick<Users["name"], "firstName"> | null;
+};
 
-export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints">;
+
+export type loginUser = Pick<Users, "email" | "passwordHash"> & UserName;
+
+export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id"> & {
+  city: Omit<Users["city"], "cityId">}
+;
+
+export type registeredUser = Omit<Users, "projectId" | "messageId" | "earnedPoints">;
