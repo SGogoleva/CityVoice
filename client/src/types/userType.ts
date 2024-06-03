@@ -5,6 +5,7 @@ export type Users = {
     lastName: string;
   };
   DOB: string;
+  phone: string;
   email: string;
   passwordHash: string;
   city: {
