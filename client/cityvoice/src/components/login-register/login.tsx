@@ -1,9 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { login, logout } from "../../store/slices/auth.slice";
-import Input from "../single/input";
+import { logout } from "../../store/slices/auth.slice";
 import Button from "../single/button";
 import { RootState } from "../../store/store";
 import {loginUser} from "../../types/userType"

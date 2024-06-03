@@ -11,6 +11,7 @@ export type Users = {
     cityId: string;
     cityName: string;
   };
+  dateCreated: string;
   projectId: string[];
   messageId: string[];
   earnedPoints: number;
@@ -23,7 +24,7 @@ export type UserName = {
 
 export type loginUser = Pick<Users, "email" | "passwordHash"> & UserName;
 
-export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id"> & {
+export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id" | "dateCreated"> & {
   city: Omit<Users["city"], "cityId">}
 ;
 
