@@ -1,10 +1,9 @@
 import userRegisterSchema from "../schemas/userRegisterSchema";
 import { UsersModel } from "../models/models";
-import { hashPassword } from "../utils/bcrypt";
 import { registraionService } from "./reg.service";
 
 export const registerUser = async (req, res) => {
-  const { name, DOB, email, password, city } = req.body;
+  const { name, DOB, phone, email, password, city } = req.body;
   try {
     const result = await registraionService.register(email, password);
 
@@ -17,6 +16,7 @@ export const registerUser = async (req, res) => {
     const newUser = new UsersModel({
       name,
       DOB: new Date(DOB),
+      phone,
       email,
       result,
       city: {
@@ -33,7 +33,7 @@ export const registerUser = async (req, res) => {
         name: savedUser.name?.firstName,
       },
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error creating user:", error);
 
     res.status(501).json({ message: "Server error", error: error.message });

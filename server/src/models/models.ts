@@ -42,6 +42,10 @@ const projectsSchema = new mongoose.Schema({
   pollPrice: { type: Number, default: 0 },
 });
 
+const imageSchema = new mongoose.Schema({
+  image: {data: Buffer, type: String }
+})
+
 const messagesSchema = new mongoose.Schema({
   dateCreated: { type: Date, default: Date.now },
   messageTitle: String,
@@ -55,6 +59,7 @@ const messagesSchema = new mongoose.Schema({
     required: true,
     enum: [MessageStatus.sent, MessageStatus.read, MessageStatus.replied],
   },
+  attachments: { type: [imageSchema], default: []}
 });
 
 export const UsersModel = mongoose.model("Users", usersSchema);
