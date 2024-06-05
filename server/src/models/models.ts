@@ -15,8 +15,8 @@ const usersSchema = new mongoose.Schema({
     cityName: String,
   },
   dateCreated: { type: Date, default: Date.now },
-  projectId: { type: [String], default: [] },
-  messageId: { type: [String], default: [] },
+  projectId: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Projects' }],
+  messageId: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Messages' }],
   earnedPoints: { type: Number, default: 0 },
 });
 
@@ -92,6 +92,16 @@ const messagesSchema = new mongoose.Schema({
   },
 });
 
+const serviceSchema = new mongoose.Schema({
+  name: { type: String, required: true }
+})
+
+const authoritySchema = new mongoose.Schema({
+  authorityName: { type: String, required: true },
+  services: [serviceSchema]
+})
+
 export const UsersModel = mongoose.model("Users", usersSchema);
 export const ProjectsModel = mongoose.model("Projects", projectsSchema);
 export const MessagesModel = mongoose.model("Messages", messagesSchema);
+export const authoritiesSchema = mongoose.model("Authorities", authoritySchema);

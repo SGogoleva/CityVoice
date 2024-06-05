@@ -2,8 +2,8 @@
     "categories": [
         {
             "id": "34504a29-57e1-45d8-a2f1-37551c7a8b61",
-            "name": "Public Safety",
-            "subcategories": [
+            "authorityName": "Public Safety",
+            "services": [
                 {
                     "id": "0f4616be-aa8d-4b12-94a4-be134c3ba97e",
                     "name": "Crime Reporting"

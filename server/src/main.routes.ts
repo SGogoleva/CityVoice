@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import authRouter from './auth/auth.routes'
-import regUserRouter from './reg/reg.routes'
+import regUserRouter from './registration/reg.routes'
 import messageRouter from './messages/msg.routes'
 
 
