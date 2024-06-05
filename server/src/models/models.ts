@@ -22,6 +22,7 @@ const usersSchema = new mongoose.Schema({
 
 const answerSchema = new mongoose.Schema({
   optionText: { type: String, required: true },
+  voteCount: {type: Number, default: 0}
 });
 
 const questionSchema = new mongoose.Schema({
