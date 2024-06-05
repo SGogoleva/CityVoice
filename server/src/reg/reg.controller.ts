@@ -1,13 +1,14 @@
+import { Request, Response, NextFunction } from "express";
 import userRegisterSchema from "../schemas/userRegisterSchema";
 import { UsersModel } from "../models/models";
 import { registraionService } from "./reg.service";
 
-export const registerUser = async (req, res) => {
+export const registerUser = async (req: Request, res: Response) => {
   const { name, DOB, phone, email, password, city } = req.body;
   try {
-    const result = await registraionService.register(email, password);
+    const passwordHash = await registraionService.register(email, password);
 
-    if (!result) {
+    if (!passwordHash) {
       return res
         .status(400)
         .json({ message: "User with this email is already exists" });
@@ -18,7 +19,7 @@ export const registerUser = async (req, res) => {
       DOB: new Date(DOB),
       phone,
       email,
-      result,
+      passwordHash,
       city: {
         cityName: city.cityName,
       },
@@ -42,10 +43,14 @@ export const registerUser = async (req, res) => {
 
 // middleware to check if username and password are provided
 
-export const checkRegistrationInput = (req, res, next) => {
+export const checkRegistrationInput = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const userParsed = userRegisterSchema.safeParse(req.body);
   if (!userParsed.success) {
-    return res.status(400).json({ message: 'Invalid username or password' })
+    return res.status(400).json({ message: "Invalid username or password" });
   }
-  next()
-}
+  next();
+};

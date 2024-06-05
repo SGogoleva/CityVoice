@@ -1,0 +1,224 @@
+{
+    "categories": [
+        {
+            "id": "34504a29-57e1-45d8-a2f1-37551c7a8b61",
+            "name": "Public Safety",
+            "subcategories": [
+                {
+                    "id": "0f4616be-aa8d-4b12-94a4-be134c3ba97e",
+                    "name": "Crime Reporting"
+                },
+                {
+                    "id": "e03bb30d-b74f-48d0-9be1-2aab9a098ebf",
+                    "name": "Emergency Services"
+                },
+                {
+                    "id": "92c4abf9-6340-40cc-a8ae-2b4b13186816",
+                    "name": "Traffic Issues"
+                }
+            ]
+        },
+        {
+            "id": "f3eb96bd-0cae-4156-a552-a9024b2ec2a7",
+            "name": "Public Health",
+            "subcategories": [
+                {
+                    "id": "4cd1361b-33a7-4c0d-8477-1dd10956491d",
+                    "name": "Health Services"
+                },
+                {
+                    "id": "ab7cfaf0-b432-4bf7-b9c3-90ded52e53d8",
+                    "name": "Environmental Concerns"
+                },
+                {
+                    "id": "a804b470-8199-4979-a288-21bde472f6d2",
+                    "name": "Sanitation"
+                }
+            ]
+        },
+        {
+            "id": "12e59e55-c712-46b2-a1c2-6afb8a223fd7",
+            "name": "Infrastructure",
+            "subcategories": [
+                {
+                    "id": "14910249-ba81-4475-ad8d-a248d3334ef3",
+                    "name": "Road Maintenance"
+                },
+                {
+                    "id": "5b45d688-47df-4db1-b1ed-66bd00bdc039",
+                    "name": "Water Supply"
+                },
+                {
+                    "id": "037264bc-a2bb-4d5f-8312-62bd2b8e2cee",
+                    "name": "Electricity"
+                },
+                {
+                    "id": "f92710cc-9209-472f-9849-751dc44b454b",
+                    "name": "Public Transportation"
+                }
+            ]
+        },
+        {
+            "id": "b7906215-5512-4ef8-836f-25b00be6cd0f",
+            "name": "Community Services",
+            "subcategories": [
+                {
+                    "id": "3b49fe1a-d4ca-4d3a-aa30-f7701f0bb89f",
+                    "name": "Parks and Recreation"
+                },
+                {
+                    "id": "dae37336-8247-41ec-b81d-6334703a1bf9",
+                    "name": "Libraries"
+                },
+                {
+                    "id": "94160665-a0ee-4870-91ad-86bda1799bde",
+                    "name": "Community Centers"
+                }
+            ]
+        },
+        {
+            "id": "e6de76f4-fd3c-409e-848a-35aaf92995bc",
+            "name": "Housing and Development",
+            "subcategories": [
+                {
+                    "id": "323856cc-6562-4ac3-b791-146a8b1004d5",
+                    "name": "Zoning Issues"
+                },
+                {
+                    "id": "321ceb6e-9483-43b2-8ac2-9e2bf77f3f33",
+                    "name": "Building Permits"
+                },
+                {
+                    "id": "7cd0163d-a045-4be8-8aaa-cb188229740a",
+                    "name": "Housing Concerns"
+                }
+            ]
+        },
+        {
+            "id": "4cfa0afc-def0-4360-ace1-1afcf896e57b",
+            "name": "Education",
+            "subcategories": [
+                {
+                    "id": "695c34c5-5746-4b7b-8a6d-0463828031ef",
+                    "name": "Schools and Education Services"
+                },
+                {
+                    "id": "1d483cb2-3a10-4276-a130-85e57f44e61e",
+                    "name": "Adult Education"
+                },
+                {
+                    "id": "13083785-1bad-47e7-9cd4-e4f0e5bb6f65",
+                    "name": "Childcare Services"
+                }
+            ]
+        },
+        {
+            "id": "6858802e-125c-4b66-9430-4b514baba9ac",
+            "name": "Economic Development",
+            "subcategories": [
+                {
+                    "id": "5a089054-22ee-47ce-be7e-911bd8125b53",
+                    "name": "Business Support"
+                },
+                {
+                    "id": "a0aab768-d026-4cc4-aa01-6cda5cd31aa8",
+                    "name": "Employment Services"
+                },
+                {
+                    "id": "0787102d-605d-4865-8373-b108e6d81ebb",
+                    "name": "Market Regulations"
+                }
+            ]
+        },
+        {
+            "id": "ccacce82-dd58-40d0-9787-ac4f7bb444a9",
+            "name": "Social Services",
+            "subcategories": [
+                {
+                    "id": "18bda9d6-f6ac-4be2-93bf-a5e72d51a8d6",
+                    "name": "Welfare Services"
+                },
+                {
+                    "id": "b97ad2b6-019d-4148-99d6-73289f1464d5",
+                    "name": "Support for Vulnerable Populations"
+                },
+                {
+                    "id": "44904b9a-dd0c-4b0b-a07d-48e9baa59a71",
+                    "name": "Substance Abuse Support"
+                }
+            ]
+        },
+        {
+            "id": "74743e75-3c94-4a42-9139-be855ee6a77a",
+            "name": "Environmental Services",
+            "subcategories": [
+                {
+                    "id": "c742bfe4-1c63-4387-aa80-f73d07bd0b90",
+                    "name": "Waste Management"
+                },
+                {
+                    "id": "62e5525a-248b-4e1f-a289-b62eaa3f9a9f",
+                    "name": "Recycling Programs"
+                },
+                {
+                    "id": "72a6d511-8b4e-4b77-b951-e92f3af28e95",
+                    "name": "Conservation Efforts"
+                }
+            ]
+        },
+        {
+            "id": "e3fd974b-bce4-4d34-81c4-13eb2c6590f0",
+            "name": "Cultural and Recreational Activities",
+            "subcategories": [
+                {
+                    "id": "10349fbc-5336-463a-bc7f-3f9446bd2458",
+                    "name": "Local Events"
+                },
+                {
+                    "id": "73633a4d-093b-4cf4-acca-fdceb8316d26",
+                    "name": "Arts and Culture Programs"
+                },
+                {
+                    "id": "5539abc4-76a9-440f-bb1a-aa0bf834c57a",
+                    "name": "Sports and Recreation"
+                }
+            ]
+        },
+        {
+            "id": "b256bf36-3103-4ee6-9b2b-3cc0b2936d78",
+            "name": "Legal and Administrative Services",
+            "subcategories": [
+                {
+                    "id": "3083bb44-bb66-48c9-9f75-3980298e0aa4",
+                    "name": "Legal Assistance"
+                },
+                {
+                    "id": "75182e5a-9922-4384-b5a0-7e00f157576f",
+                    "name": "Public Records"
+                },
+                {
+                    "id": "0af4dd81-3e78-487e-9f5c-aff87b6d271b",
+                    "name": "Government Transparency"
+                }
+            ]
+        },
+        {
+            "id": "8bfecdbb-c1b3-40b9-a15c-adc453a11964",
+            "name": "Other",
+            "subcategories": [
+                {
+                    "id": "f6e8af2b-e6bd-47be-b218-259fb1e5c2e5",
+                    "name": "Suggestions and Feedback"
+                },
+                {
+                    "id": "3297f570-f588-4325-a337-88a76b82ee3d",
+                    "name": "General Inquiries"
+                },
+                {
+                    "id": "c801ee03-a893-405b-8722-88c31e8bc76e",
+                    "name": "Complaints and Grievances"
+                }
+            ]
+        }
+    ]
+}

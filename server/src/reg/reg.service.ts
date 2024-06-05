@@ -1,4 +1,3 @@
-import { any } from "zod";
 import { UsersModel } from "../models/models";
 import { hashPassword } from "../utils/bcrypt";
 

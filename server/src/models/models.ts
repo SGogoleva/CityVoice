@@ -11,7 +11,7 @@ const usersSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   passwordHash: { type: String, required: true },
   city: {
-    cityId: { type: String, default: '' },
+    cityId: { type: String, default: "" },
     cityName: String,
   },
   dateCreated: { type: Date, default: Date.now },
@@ -21,12 +21,12 @@ const usersSchema = new mongoose.Schema({
 });
 
 const answerSchema = new mongoose.Schema({
-  optionText: { type: String, required: true }
+  optionText: { type: String, required: true },
 });
 
 const questionSchema = new mongoose.Schema({
   questionText: String,
-  type: { type: String, enum: ['boolean', 'multiple_choice'], required: true },
+  type: { type: String, enum: ["boolean", "multiple_choice"], required: true },
   options: [answerSchema],
 });
 
@@ -43,23 +43,53 @@ const projectsSchema = new mongoose.Schema({
 });
 
 const imageSchema = new mongoose.Schema({
-  image: {data: Buffer, type: String }
-})
+  filename: {
+    type: String,
+    required: [true, "Filename is required"],
+  },
+  mimetype: {
+    type: String,
+    enum: ["image/png", "image/jpeg", "image/jpg"],
+    required: true,
+  },
+  size: {
+    type: Number,
+    required: true,
+    max: [5 * 1024 * 1024, "File size should not exceed 5MB"],
+  },
+});
 
 const messagesSchema = new mongoose.Schema({
   dateCreated: { type: Date, default: Date.now },
-  messageTitle: String,
-  messageBody: String,
+  messageTitle: {
+    type: String,
+    required: [true, "Title is required"],
+  },
+  messageBody: {
+    type: String,
+    required: [true, "Message is required"],
+  },
   authority: {
     authorityId: String,
     authorityName: String,
   },
+  messageTheme: String,
   status: {
     type: String,
     required: true,
     enum: [MessageStatus.sent, MessageStatus.read, MessageStatus.replied],
+    default: MessageStatus.sent,
   },
-  attachments: { type: [imageSchema], default: []}
+  images: {
+    type: [imageSchema],
+    default: [],
+    validate: {
+      validator: function (val: string) {
+        return val.length <= 3;
+      },
+      message: "You can upload a maximum of 3 images",
+    },
+  },
 });
 
 export const UsersModel = mongoose.model("Users", usersSchema);

@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
-export interface ControllerMethod<T = void> {
-  (req: Request, res: Response, next: NextFunction): T | Promise<T>;
+export interface controller {
+  req: Request,
+  res: Response,
+  next: NextFunction
 }
