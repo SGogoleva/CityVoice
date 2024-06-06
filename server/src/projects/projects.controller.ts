@@ -7,13 +7,6 @@ export const getProjectsPaginated = async (req: Request, res: Response) => {
     if (!page || !limit) {
       return res.status(400).json({ message: "Invalid page or limit" });
     }
-    // const pageNumber = parseInt(page as string, 10);
-    // const limitNumber = parseInt(limit as string, 10);
-    // if (pageNumber < 1 || limitNumber <= 0) {
-    //   return res
-    //     .status(400)
-    //     .json({ message: "Page must be more than 1, limit higher than 0" });
-    // }
     const projects = await projectService.getProjectsPaginated({
       page: +page,
       limit: +limit,
@@ -21,5 +14,31 @@ export const getProjectsPaginated = async (req: Request, res: Response) => {
     return res.status(201).json(projects);
   } catch (error) {
     return res.status(500).json({ message: "Internal server error", error });
+  }
+};
+
+export const getProjectById = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({ message: "Invalid projectId" });
+    }
+    const project = await projectService.getProjectById(id);
+    res.status(200).json(project);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getProjectVotes = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({ message: "Invalid projectId" });
+    }
+    const projectVotes = await projectService.getProjectVotes(id);
+    res.status(200).json(projectVotes);
+  } catch (error) {
+    console.log(error);
   }
 };

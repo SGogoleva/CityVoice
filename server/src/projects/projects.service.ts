@@ -23,4 +23,24 @@ export const projectService = {
       return [];
     }
   },
+  getProjectById: async (projectId: string) => {
+    try {
+      const project = await ProjectsModel.findById(projectId);
+      return project;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  },
+  getProjectVotes: async (projectId: string) => {
+    try {
+      const project = await projectService.getProjectById(projectId);
+      const projectVotes = project?.questionnaire;
+      return projectVotes;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  },
 };
+
