@@ -1,5 +1,6 @@
 import { ProjectsModel } from "../models/models";
 import { Pagination } from "../types/pagination";
+import { Project } from "../types/projects";
 
 export const projectService = {
   getProjectsPaginated: async ({ page, limit }: Pagination) => {
@@ -42,5 +43,39 @@ export const projectService = {
       return null;
     }
   },
-};
 
+  getProjectByCity: async (cityId: string) => {
+    try {
+      const projects = await ProjectsModel.find({ "city.cityId": cityId });
+      return projects;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  },
+
+  postVoteCounts: async ( {projectId, questionText, optionText}: Project ) => {
+    try {
+      const project = await projectService.getProjectById(projectId);
+      let questionFound = false;
+      let optionFound = false;
+  
+      project?.questionnaire.forEach(question => {
+        if (question.questionText === questionText) {
+          questionFound = true;
+          question.options.forEach(option => {
+            if (option.optionText === optionText) {
+              optionFound = true;
+              option.voteCount += 1;
+            }
+          });
+        }
+      });
+  return {project, questionFound: questionFound, optionFound: optionFound}
+    
+    } catch (error) {
+      console.error(error);
+      return {};
+    }
+  }
+};

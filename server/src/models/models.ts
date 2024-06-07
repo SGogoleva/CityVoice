@@ -36,6 +36,10 @@ const projectsSchema = new mongoose.Schema({
     authorityId: String,
     authorityName: String,
   },
+  city: {
+    cityId: { type: String, default: "" },
+    cityName: String,
+  },
   name: String,
   describtion: String,
   dateCreated: { type: Date, default: Date.now },
