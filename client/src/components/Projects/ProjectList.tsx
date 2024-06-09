@@ -11,8 +11,8 @@ type ProjectsListProps = {
     return (
       <Container>
       <div className="project-list">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
             <h2>{project.name}</h2>
             <p>{project.dateCreated}</p>
             <p>+{project.pollPrice} scores</p>
