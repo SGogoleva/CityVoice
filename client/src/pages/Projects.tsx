@@ -4,7 +4,7 @@ import { Project, projectPreview } from "../types/project";
 import ProjectsList from "../components/Projects/ProjectList";
 import InfiniteScroll from "../components/single/InfiniteScroll";
 
-const LIMIT = 5;
+const LIMIT = 6;
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
