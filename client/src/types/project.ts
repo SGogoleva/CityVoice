@@ -15,4 +15,4 @@ export type Project = {
   pollPrice: number;
 };
 
-export type projectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice">;
+export type ProjectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice">;
