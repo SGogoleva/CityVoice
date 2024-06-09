@@ -1,6 +1,7 @@
 import React from "react";
 import { projectPreview } from "../../types/project";
 import Container from "../Container/Container";
+import './ProjectList.css'
 
 type ProjectsListProps = {
     projects: projectPreview[];
@@ -8,15 +9,18 @@ type ProjectsListProps = {
   
   const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
     return (
-      <Container className="projects-list">
-        {projects.map((project, index) => (
-          <div key={index} data-project={JSON.stringify(project)} className="project-card">
+      <Container>
+      <div className="project-list">
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
             <h2>{project.name}</h2>
             <p>{project.dateCreated}</p>
-            <p>{project.description}</p>
-            <p>+{project.pollPrice} scores</p>  
+            <p>+{project.pollPrice} scores</p>
+            <div className="image-placeholder">Photo</div>
+            <div className="description">{project.description}</div>
           </div>
         ))}
+      </div>
       </Container>
     );
   };
