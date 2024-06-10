@@ -9,6 +9,6 @@ projectsRouter
     .get('/single/:id', getProjectById)
     .get('/single/:id/results', getProjectVotes)
     .get('/grouped/:cityId', getProjectByCity)
-    .post('/project/vote', authMiddleware, postVoteCounts)
+    .post('/project/vote', postVoteCounts)
 
 export default projectsRouter
