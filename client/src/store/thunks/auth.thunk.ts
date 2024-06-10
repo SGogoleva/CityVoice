@@ -1,12 +1,36 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { loginUser } from "../../types/userType"
+import { loggedUser, loginUser } from "../../types/userType"
 import { attemptLogin } from "../../http/index"
+import axios from 'axios';
 
-export const loginThunk = createAsyncThunk<
+export const loginThunk = createAsyncThunk
+<
+  loggedUser,
   loginUser,
-  { email: string, password: string },
-  { rejectValue: Error }>(
-    'auth/login',
-    async ({ email, password }) => {
-      return await attemptLogin(email, password)
-    })
+  { rejectValue: Error }>
+  (
+    'authentication/attemptLogin',
+    async ({ email, password }: loginUser) => {
+        return await attemptLogin({ email, password });
+    }
+  );
+
+// export const loginThunk = createAsyncThunk(
+//   'auth/loginUser',
+//   async ({ email, password }: { email: string; password: string }, { rejectWithValue }) => {
+//     try {
+//       const response = await axios.post('http://localhost:8080/api/v1/auth/login', { email, password });
+//       return response.data;
+//     } catch (err) {
+//       if (axios.isAxiosError(err)) {
+//         let errorMessage = 'An unknown error occurred';
+//         if (err.response) {
+//           errorMessage = err.response.data.message || 'Invalid login credentials';
+//         }
+//         return rejectWithValue(errorMessage);
+//       } else {
+//         return rejectWithValue('An unknown error occurred');
+//       }
+//     }
+//   }
+// );
