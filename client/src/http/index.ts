@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Pagination } from "../types/pagination";
-import { ProjectPreview } from "../types/project";
+import { Project, ProjectPreview } from "../types/project";
 import {
   loggedUser,
   loginUser,
@@ -40,5 +40,27 @@ export const attemptRegister = async (
   userData: registerUser
 ): Promise<registerUser> => {
   const response = await axiosInstance.post("/auth/register", userData);
+  return response.data;
+};
+
+export const getProjectData = async (projectId: string): Promise<Project> => {
+  const response = await axiosInstance.get(`/main/single/${projectId}`);
+  return response.data;
+};
+
+export const postVote = async ({
+  projectId,
+  questionText,
+  optionText,
+}: {
+  projectId: string;
+  questionText: string;
+  optionText: string;
+}) => {
+  const response = await axiosInstance.post("main/project/vote", {
+    projectId,
+    questionText,
+    optionText,
+  });
   return response.data;
 };

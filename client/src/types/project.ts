@@ -1,3 +1,16 @@
+interface Option {
+  _id: string;
+  optionText: string;
+  voteCount: number;
+}
+
+interface Question {
+  _id: string;
+  questionText: string;
+  type: "boolean" | "multiple_choice";
+  options: Option[];
+}
+
 export type Project = {
   id: string;
   authority: {
@@ -11,7 +24,7 @@ export type Project = {
   name: string;
   description: string;
   dateCreated: string;
-  questionnaire: string[];
+  questionnaire: Question[];
   pollPrice: number;
 };
 
