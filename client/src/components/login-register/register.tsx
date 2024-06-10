@@ -1,3 +1,95 @@
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useEffect, useState } from "react";
+import { registerUser } from "../../types/userType";
+import { registerUserThunk } from "../../store/thunks/reg.thunk";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type FormData = {
+  firstName: string;
+  lastName: string;
+  DOB: string;
+  phone: string;
+  email: string;
+  password: string;
+  cityId: string;
+  cityName: string;
+};
+
+const RegisterForm = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const user = useAppSelector((state) => state.reg.user);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  useEffect(() => {
+    if (user) {
+      navigate("login");
+    }
+  }, [user]);
+
+  const onSubmit: SubmitHandler<registerUser> = (data: {
+    name: { firstName: string; lastName: string };
+    DOB: string;
+    phone: string;
+    email: string;
+    password: string;
+    city: {
+      cityId: string;
+      cityName: string;
+    };
+  }) => {
+    dispatch(registerUserThunk(data));
+  };
+
+  console.log(errors);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        placeholder="First name"
+        {...register("firstName", { required: true, min: 3, maxLength: 80 })}
+      />
+      <input
+        type="text"
+        placeholder="Last name"
+        {...register("lastname", { required: true, min: 5, maxLength: 100 })}
+      />
+      <input type="text" placeholder="DOB" {...register("DOB", {})} />
+      <input
+        type="number"
+        placeholder="phone"
+        {...register("phone", {
+          required: true,
+          max: 10,
+          min: 10,
+          maxLength: 10,
+        })}
+      />
+      <input
+        type="email"
+        placeholder="email"
+        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+      />
+      <input
+        type="password"
+        placeholder="password"
+        {...register("password", {})}
+      />
+      <input type="text" placeholder="cityId" {...register("cityId", {})} />
+      <input type="text" placeholder="cityName" {...register("cityName", {})} />
+
+      <input type="submit" />
+    </form>
+  );
+};
+
+export default RegisterForm;
 // import { z } from 'zod';
 
 // // Define the schema as shown above

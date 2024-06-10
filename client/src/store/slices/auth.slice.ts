@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Users } from "../../types/userType";
+import { loggedUser, Users } from "../../types/userType";
 import { loginThunk } from "../thunks/auth.thunk";
 import { FetchStatusState } from "../../types/status";  
 import { UserName } from "../../types/userType";
@@ -24,9 +24,9 @@ const UsersAuthSlice = createSlice({
       .addCase(loginThunk.pending, (state) => {
         state.loading = true
       })
-      .addCase(loginThunk.fulfilled, (state, action) => {
+      .addCase(loginThunk.fulfilled, (state, action: PayloadAction<loggedUser>) => {
         state.loading = false
-        state.firstName = action.payload.firstName
+        state.firstName = action.payload.name.firstName
       })
       .addCase(loginThunk.rejected, (state, action) => {
         state.error = action.error.message || 'An error occurred'

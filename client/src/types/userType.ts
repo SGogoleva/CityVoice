@@ -7,7 +7,7 @@ export type Users = {
   DOB: string;
   phone: string;
   email: string;
-  passwordHash: string;
+  password: string;
   city: {
     cityId: string;
     cityName: string;
@@ -18,15 +18,14 @@ export type Users = {
   earnedPoints: number;
 };
 
-export type UserName = {
-  firstName: Pick<Users["name"], "firstName"> | null;
-};
+export interface UserName {
+  firstName: string | null;
+}
 
+export type loginUser = Pick<Users, "email" | "password">
 
-export type loginUser = Pick<Users, "email" | "passwordHash"> & UserName;
+export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id" | "dateCreated">
 
-export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id" | "dateCreated"> & {
-  city: Omit<Users["city"], "cityId">}
-;
+export type registeredUser = Omit<registerUser, "password">;
 
-export type registeredUser = Omit<Users, "projectId" | "messageId" | "earnedPoints">;
+export type loggedUser = Omit<Users, 'password'>

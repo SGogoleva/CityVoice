@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { registerUser } from "../../types/userType";
+import { registeredUser, registerUser } from "../../types/userType";
 import { registerUserThunk } from "../thunks/reg.thunk";
 import { FetchStatusState } from "../../types/status";
 
@@ -17,9 +17,9 @@ const UsersRegSlice = createSlice({
   name: "register",
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<registerUser>) => {
-      state.user = action.payload;
-    },
+    // setUser: (state, action: PayloadAction<registerUser>) => {
+    //   state.user = action.payload;
+    // },
   },
 
   extraReducers: (builder) => {
@@ -39,4 +39,4 @@ const UsersRegSlice = createSlice({
 });
 
 export default UsersRegSlice.reducer;
-export const { setUser } = UsersRegSlice.actions;
+// export const { setUser } = UsersRegSlice.actions;
