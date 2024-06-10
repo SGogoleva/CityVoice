@@ -18,7 +18,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:id" element={<SingleProject />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route
             path="personal"

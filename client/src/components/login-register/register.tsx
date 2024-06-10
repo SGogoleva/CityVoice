@@ -6,14 +6,14 @@ import { registerUserThunk } from "../../store/thunks/reg.thunk";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormData = {
-  firstName: string;
-  lastName: string;
+    firstName: string;
+    lastName: string;
   DOB: string;
   phone: string;
   email: string;
   password: string;
-  cityId: string;
-  cityName: string;
+    cityId: string;
+    cityName: string;
 };
 
 const RegisterForm = () => {
@@ -24,67 +24,77 @@ const RegisterForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
   useEffect(() => {
     if (user) {
-      navigate("login");
+      navigate("/login");
     }
   }, [user]);
 
-  const onSubmit: SubmitHandler<registerUser> = (data: {
-    name: { firstName: string; lastName: string };
-    DOB: string;
-    phone: string;
-    email: string;
-    password: string;
-    city: {
-      cityId: string;
-      cityName: string;
-    };
-  }) => {
-    dispatch(registerUserThunk(data));
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    const userData: registerUser = {
+        name: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+        },
+        DOB: data.DOB,
+        phone: data.phone,
+        email: data.email,
+        password: data.password,
+        city: {
+          cityId: data.cityId,
+          cityName: data.cityName,
+        },
+      };
+    dispatch(registerUserThunk(userData));
   };
 
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="First name"
-        {...register("firstName", { required: true, min: 3, maxLength: 80 })}
-      />
-      <input
-        type="text"
-        placeholder="Last name"
-        {...register("lastname", { required: true, min: 5, maxLength: 100 })}
-      />
-      <input type="text" placeholder="DOB" {...register("DOB", {})} />
-      <input
-        type="number"
-        placeholder="phone"
-        {...register("phone", {
-          required: true,
-          max: 10,
-          min: 10,
-          maxLength: 10,
-        })}
-      />
-      <input
-        type="email"
-        placeholder="email"
-        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        {...register("password", {})}
-      />
-      <input type="text" placeholder="cityId" {...register("cityId", {})} />
-      <input type="text" placeholder="cityName" {...register("cityName", {})} />
-
-      <input type="submit" />
+<form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>First Name</label>
+        <input type="text" {...register("firstName", { required: "First name is required", minLength: { value: 3, message: "Minimum length is 3" }, maxLength: { value: 80, message: "Maximum length is 80" } })} />
+        {errors.firstName && <p>{errors.firstName.message}</p>}
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input type="text" {...register("lastName", { required: "Last name is required", minLength: { value: 5, message: "Minimum length is 5" }, maxLength: { value: 100, message: "Maximum length is 100" } })} />
+        {errors.lastName && <p>{errors.lastName.message}</p>}
+      </div>
+      <div>
+        <label>Date of Birth</label>
+        <input type="date" {...register("DOB", { required: "Date of birth is required" })} />
+        {errors.DOB && <p>{errors.DOB.message}</p>}
+      </div>
+      <div>
+        <label>Phone</label>
+        <input type="text" {...register("phone", { required: "Phone number is required", pattern: { value: /^[0-9]{10}$/, message: "Phone number must be 10 digits" } })} />
+        {errors.phone && <p>{errors.phone.message}</p>}
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } })} />
+        {errors.email && <p>{errors.email.message}</p>}
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" {...register("password", { required: "Password is required", minLength: { value: 6, message: "Minimum length is 6" } })} />
+        {errors.password && <p>{errors.password.message}</p>}
+      </div>
+      <div>
+        <label>City ID</label>
+        <input type="text" {...register("cityId", { required: "City ID is required" })} />
+        {errors.cityId && <p>{errors.cityId.message}</p>}
+      </div>
+      <div>
+        <label>City Name</label>
+        <input type="text" {...register("cityName", { required: "City name is required" })} />
+        {errors.cityName && <p>{errors.cityName.message}</p>}
+      </div>
+      <button type="submit">Register</button>
     </form>
   );
 };
