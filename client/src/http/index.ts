@@ -7,6 +7,8 @@ import {
   registerUser,
   registeredUser,
 } from "../types/userType";
+import { message } from "../types/messages";
+import { City } from "../types/cities";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
 const axiosInstance = axios.create({
@@ -64,3 +66,25 @@ export const postVote = async ({
   });
   return response.data;
 };
+
+export const sendMessage = async ({
+  messageTitle,
+  messageBody,
+  messageTheme,
+  authority,
+  images,
+}: message) => {
+  const response = await axiosInstance.post("messages/sent", {
+    messageTitle,
+    messageBody,
+    messageTheme,
+    authority,
+    images,
+  });
+  return response.data;
+};
+
+export const getCities = async (): Promise<City[]> => {
+  const cities = await axiosInstance.get("/cities")
+  return cities.data
+}

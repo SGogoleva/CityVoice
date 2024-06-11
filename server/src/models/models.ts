@@ -106,7 +106,40 @@ const authoritySchema = new mongoose.Schema({
   services: [serviceSchema]
 })
 
+const geoPointSchema = new mongoose.Schema({
+  __type: {
+    type: String,
+    enum: ['GeoPoint'],
+    required: true
+  },
+  latitude: {
+    type: Number,
+    required: true
+  },
+  longitude: {
+    type: Number,
+    required: true
+  }
+});
+
+const citySchema = new mongoose.Schema({
+  location: {
+    type: geoPointSchema,
+    required: true
+  },
+  cityId: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  cityName: {
+    type: String,
+    required: true
+  }
+});
+
 export const UsersModel = mongoose.model("Users", usersSchema);
 export const ProjectsModel = mongoose.model("Projects", projectsSchema);
 export const MessagesModel = mongoose.model("Messages", messagesSchema);
 export const authoritiesSchema = mongoose.model("Authorities", authoritySchema);
+export const City = mongoose.model('City', citySchema);

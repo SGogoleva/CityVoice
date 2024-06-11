@@ -4,6 +4,7 @@ import regReducer from "./slices/reg.slice"
 import projectsReducer from "./slices/project.slice"
 import singleProjectReducer from "./slices/singleproject.slice"
 import voteReducer from "./slices/vote.slice"
+import messageReduser from "./slices/message.slice"
 
 const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
     reg: regReducer,
     projects: projectsReducer,
     singleProject: singleProjectReducer,
-    vote: voteReducer
+    vote: voteReducer,
+    message: messageReduser
   },
 });
 

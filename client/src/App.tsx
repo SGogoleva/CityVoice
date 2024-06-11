@@ -20,19 +20,12 @@ function App() {
           <Route path="projects/:id" element={<SingleProject />} />
           <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="/send-messasge" element={<SendMessage />} />
           <Route
             path="personal"
             element={
               <ProtectedRoute redirectPath="/login">
                 <Personal />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="projects/:id/send-message"
-            element={
-              <ProtectedRoute redirectPath="/login">
-                <SendMessage />
               </ProtectedRoute>
             }
           />

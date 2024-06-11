@@ -18,6 +18,9 @@ const Layout = () => {
               {firstName ? "Personal Page" : "Login / Register"}
             </Link>
           </li>
+          <li>
+            <Link to="/send-messasge">Send Message</Link>
+          </li>
         </ul>
       </nav>
       {firstName && (

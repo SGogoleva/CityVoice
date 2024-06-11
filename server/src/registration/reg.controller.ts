@@ -21,6 +21,7 @@ export const registerUser = async (req: Request, res: Response) => {
       email,
       passwordHash,
       city: {
+        cityId: city.cityId,
         cityName: city.cityName,
       },
     });

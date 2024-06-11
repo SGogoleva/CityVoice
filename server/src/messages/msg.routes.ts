@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { sendMessage, checkMessageInput } from "./msg.controller";
-import { authMiddleware } from "../auth/auth.middleware";
+import checkAuth from "../auth/auth.check";
 
 const messageRouter: Router = Router();
 
-messageRouter.post("/sent", authMiddleware, checkMessageInput, sendMessage);
+messageRouter.post("/sent", checkAuth, checkMessageInput, sendMessage);
 
 export default messageRouter;

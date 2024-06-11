@@ -16,9 +16,12 @@ const SingleProject = () => {
   const error = useAppSelector((state: RootState) => state.singleProject.error);
 
   const { projectId } = location.state as { projectId: string };
+  console.log(projectId)
   useEffect(() => {
     dispatch(singleProjectThunk(projectId));
   }, [projectId]);
+
+  console.log(projectId)
 
   const handleVote = async (projectId: string, questionText: string, optionText: string) => {
     dispatch(postVoteThunk({ projectId, questionText, optionText }));
@@ -37,7 +40,7 @@ const SingleProject = () => {
         <div key={question.questionText}>
           <h2>{question.questionText}</h2>
           {question.options.map((option) => (
-            <button key={option.optionText} onClick={() => handleVote(project.id, question.questionText, option.optionText)}>
+            <button key={option.optionText} onClick={() => handleVote(project._id, question.questionText, option.optionText)}>
               {option.optionText}
             </button>
           ))}
