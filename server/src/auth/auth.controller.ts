@@ -22,6 +22,10 @@ export const login = async (req: Request, res: Response) => {
   return res.status(200).json(result.user);
 };
 
+export const checkAuthToken = (req: Request, res: Response) => {
+  return res.status(200).json({ isAuthenticated: res.locals.isAuthenticated });
+}
+
 // middleware to check if username and password are provided
 
 export const checkLoginInput = (

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { loggedUser, loginUser } from "../../types/userType"
-import { attemptLogin } from "../../http/index"
+import { attemptLogin, isAuth } from "../../http/index"
 import axios from 'axios';
 
 export const loginThunk = createAsyncThunk
@@ -14,6 +14,13 @@ export const loginThunk = createAsyncThunk
         return await attemptLogin({ email, password });
     }
   );
+
+export const checkAuthThunk = createAsyncThunk(
+  'authentication/check-token',
+  async () => {
+    return await isAuth()
+  }
+)
 
 // export const loginThunk = createAsyncThunk(
 //   'auth/loginUser',
