@@ -22,3 +22,15 @@ const checkAuth = (req: Request, res: Response, next: NextFunction) => {
 }
 
 export default checkAuth
+
+export const checkSessionToken = (req: Request, res: Response, next: NextFunction) => {
+  const sessionToken = req.cookies['session-token'];
+
+  if (sessionToken) {
+    res.locals.isAuthenticated = true;
+  } else {
+    res.locals.isAuthenticated = false;
+  }
+
+  next();
+};

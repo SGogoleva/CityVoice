@@ -1,6 +1,10 @@
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Navigate } from "react-router";
 import { Outlet } from "react-router-dom";
+import { isAuth } from "../../http";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { checkAuthThunk } from "../../store/thunks/auth.thunk";
 
 type ProtectedRouteProps = {
   children: JSX.Element;
@@ -8,9 +12,18 @@ type ProtectedRouteProps = {
 };
 
 function ProtectedRoute({ children, redirectPath }: ProtectedRouteProps) {
-  const firstName = useAppSelector((state) => state.auth.firstName);
+  const dispatch = useAppDispatch();
+  const isAuthenticated = useAppSelector(
+    (state) => state.isAuth.isAuthenticated
+  );
 
-  if (!firstName) return <Navigate to={redirectPath} />;
+  useEffect(() => {
+    dispatch(checkAuthThunk());
+  }, []);
+
+  if (!isAuthenticated) {
+    <Navigate to={redirectPath} />;
+  }
 
   return children;
 }

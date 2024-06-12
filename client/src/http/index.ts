@@ -94,3 +94,8 @@ export const getAuthorities = async (): Promise<Authority[]> => {
   const authorities = await axiosInstance.get("/authorities")
   return authorities.data
 }
+
+export const isAuth = async () => {
+  const isAuth = await axiosInstance.get('/auth/isAuth')
+  return isAuth.data.isAuthenticated
+}
