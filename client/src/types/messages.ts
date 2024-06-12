@@ -5,7 +5,7 @@ interface Image {
   }
   
 export type message = {
-    messageTitle: string;
+    // messageTitle: string;
     messageBody: string;
     messageTheme: string;
     authority: {

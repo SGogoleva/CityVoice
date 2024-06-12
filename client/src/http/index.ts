@@ -9,6 +9,7 @@ import {
 } from "../types/userType";
 import { message } from "../types/messages";
 import { City } from "../types/cities";
+import { Authority } from "../types/authorities";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
 const axiosInstance = axios.create({
@@ -68,14 +69,14 @@ export const postVote = async ({
 };
 
 export const sendMessage = async ({
-  messageTitle,
+  // messageTitle,
   messageBody,
   messageTheme,
   authority,
   images,
 }: message) => {
   const response = await axiosInstance.post("messages/sent", {
-    messageTitle,
+    // messageTitle,
     messageBody,
     messageTheme,
     authority,
@@ -87,4 +88,9 @@ export const sendMessage = async ({
 export const getCities = async (): Promise<City[]> => {
   const cities = await axiosInstance.get("/cities")
   return cities.data
+}
+
+export const getAuthorities = async (): Promise<Authority[]> => {
+  const authorities = await axiosInstance.get("/authorities")
+  return authorities.data
 }

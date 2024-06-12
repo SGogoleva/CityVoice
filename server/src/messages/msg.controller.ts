@@ -9,10 +9,11 @@ export const sendMessage = async (req: AuthRequest, res: Response) => {
     req.body;
   try {
     const newMessage = new MessagesModel({
-      messageTitle,
+      // messageTitle,
       messageBody,
       authority: {
         authorityName: authority.authorityName,
+        authorityId: authority.authorityId,
       },
       messageTheme,
       images,

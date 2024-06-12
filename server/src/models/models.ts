@@ -66,10 +66,10 @@ const imageSchema = new mongoose.Schema({
 
 const messagesSchema = new mongoose.Schema({
   dateCreated: { type: Date, default: Date.now },
-  messageTitle: {
-    type: String,
-    required: [true, "Title is required"],
-  },
+  // messageTitle: {
+  //   type: String,
+  //   required: [true, "Title is required"],
+  // },
   messageBody: {
     type: String,
     required: [true, "Message is required"],

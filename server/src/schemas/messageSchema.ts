@@ -23,10 +23,10 @@ const imageSchema = z.object({
 });
 
 const messageSchema = z.object({
-  messageTitle: z
-    .string()
-    .min(5, { message: "Title is required" })
-    .max(50, { message: "Exceeded maximum characters allowed" }),
+  // messageTitle: z
+  //   .string()
+  //   .min(5, { message: "Title is required" })
+  //   .max(50, { message: "Exceeded maximum characters allowed" }),
   messageBody: z
     .string()
     .min(5, { message: "Message is required" })
