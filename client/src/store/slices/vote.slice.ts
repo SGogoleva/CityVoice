@@ -31,6 +31,7 @@ const votingSlice = createSlice({
       .addCase(postVoteThunk.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to post vote";
+        state.status = null
       });
   },
 });

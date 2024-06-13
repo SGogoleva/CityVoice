@@ -59,7 +59,9 @@ type Answers = Record<string, string | string[]>;
 const SingleProject = () => {
   const location = useLocation();
   const [answers, setAnswers] = useState<Answers>({});
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const dispatch = useAppDispatch();
+  const [voteSubmitted, setVoteSubmitted] = useState(false);
   const loading = useAppSelector(
     (state: RootState) => state.singleProject.loading
   );
@@ -77,6 +79,13 @@ const SingleProject = () => {
   }, [projectId]);
 
   console.log(projectId)
+
+  useEffect(() => {
+    const voted = localStorage.getItem(`voted-${projectId}`);
+    if (voted) {
+      setVoteSubmitted(true);
+    }
+  }, [projectId]);
 
   const handleOptionChange = (question: Question, option: Option) => {
     setAnswers((prevAnswers) => {
@@ -99,7 +108,7 @@ const SingleProject = () => {
     });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: /*React.FormEvent<HTMLFormElement>*/ React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     try {
       for (const [questionText, optionTexts] of Object.entries(answers)) {
@@ -117,43 +126,160 @@ const SingleProject = () => {
           );
         }
       }
-      alert("Votes submitted successfully!");
+      localStorage.setItem(`voted-${projectId}`, 'true');
+      setVoteSubmitted(true);
     } catch (error) {
       alert("Failed to submit votes");
     }
   };
 
+  const handleNext = () => {
+    if (currentQuestionIndex < (project?.questionnaire.length || 0) - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  if (loading) return <p>Loading project...</p>;
+  if (error) return <p>Error loading project: {error}</p>;
+
+  const currentQuestion = project?.questionnaire[currentQuestionIndex];
+
   return (
+    // <div>
+    //   <h1>{project?.name}</h1>
+    //   <p>{project?.description}</p>
+    //   <form onSubmit={handleSubmit}>
+    //     {project?.questionnaire.map((question) => (
+    //       <div key={question.questionText}>
+    //         <p>{question.questionText}</p>
+    //         {question.options.map((option) => (
+    //           <label key={option.optionText}>
+    //             <input
+    //               type={question.type === "boolean" ? "radio" : "checkbox"}
+    //               name={question.questionText}
+    //               value={option.optionText}
+    //               checked={
+    //                 question.type === "boolean"
+    //                   ? answers[question.questionText] === option.optionText
+    //                   : answers[question.questionText]?.includes(option.optionText)
+    //               }
+    //               onChange={() => handleOptionChange(question, option)}
+    //             />
+    //             {option.optionText}
+    //           </label>
+    //         ))}
+    //       </div>
+    //     ))}
+    //     <button type="submit">Submit</button>
+    //   </form>
+    //   {voteStatus === "loading" && <p>Submitting votes...</p>}
+    //   {voteStatus === "failed" && <p>Error: {voteError}</p>}
+    // </div>
+    // <div>
+    //   <h1>{project?.name}</h1>
+    //   <p>{project?.description}</p>
+    //   {currentQuestion && (
+    //     <div>
+    //       <div key={currentQuestion.questionText}>
+    //         <p>{currentQuestion.questionText}</p>
+    //         {currentQuestion.options.map((option) => (
+    //           <label key={option.optionText}>
+    //             <input
+    //               type={currentQuestion.type === "boolean" ? "radio" : "checkbox"}
+    //               name={currentQuestion.questionText}
+    //               value={option.optionText}
+    //               checked={
+    //                 currentQuestion.type === "boolean"
+    //                   ? answers[currentQuestion.questionText] === option.optionText
+    //                   : (answers[currentQuestion.questionText] as string[])?.includes(option.optionText)
+    //               }
+    //               onChange={() => handleOptionChange(currentQuestion, option)}
+    //             />
+    //             {option.optionText}
+    //           </label>
+    //         ))}
+    //       </div>
+    //       <div>
+    //         {currentQuestionIndex > 0 && (
+    //           <button type="button" onClick={handlePrev}>
+    //             Previous
+    //           </button>
+    //         )}
+    //         {currentQuestionIndex < (project?.questionnaire.length || 0) - 1 ? (
+    //           <button type="button" onClick={handleNext}>
+    //             Next
+    //           </button>
+    //         ) : (
+    //           <button type="button" onClick={handleSubmit}>
+    //             Submit
+    //           </button>
+    //         )}
+    //       </div>
+    //     </div>
+    //   )}
+    //   {voteStatus === "loading" && <p>Submitting votes...</p>}
+    //   {voteStatus === "failed" && <p>Error: {voteError}</p>}
+    // </div>
     <div>
-      <h1>{project?.name}</h1>
-      <p>{project?.description}</p>
-      <form onSubmit={handleSubmit}>
-        {project?.questionnaire.map((question) => (
-          <div key={question.questionText}>
-            <p>{question.questionText}</p>
-            {question.options.map((option) => (
+    <h1>{project?.name}</h1>
+    <p>{project?.description}</p>
+    {voteSubmitted ? (
+      <p>Thank you for your vote!</p>
+    ) : (
+      currentQuestion && (
+        <div>
+          <div key={currentQuestion.questionText}>
+            <p>{currentQuestion.questionText}</p>
+            {currentQuestion.options.map((option) => (
               <label key={option.optionText}>
                 <input
-                  type={question.type === "boolean" ? "radio" : "checkbox"}
-                  name={question.questionText}
+                  type={currentQuestion.type === "boolean" ? "radio" : "checkbox"}
+                  name={currentQuestion.questionText}
                   value={option.optionText}
                   checked={
-                    question.type === "boolean"
-                      ? answers[question.questionText] === option.optionText
-                      : answers[question.questionText]?.includes(option.optionText)
+                    currentQuestion.type === "boolean"
+                      ? answers[currentQuestion.questionText] === option.optionText
+                      : (answers[currentQuestion.questionText] as string[])?.includes(option.optionText)
                   }
-                  onChange={() => handleOptionChange(question, option)}
+                  onChange={() => handleOptionChange(currentQuestion, option)}
                 />
                 {option.optionText}
               </label>
             ))}
           </div>
-        ))}
-        <button type="submit">Submit</button>
-      </form>
-      {voteStatus === "loading" && <p>Submitting votes...</p>}
-      {voteStatus === "failed" && <p>Error: {voteError}</p>}
-    </div>
+          <div>
+            {currentQuestionIndex > 0 && (
+              <button type="button" onClick={handlePrev}>
+                Previous
+              </button>
+            )}
+            {currentQuestionIndex < (project?.questionnaire.length || 0) - 1 ? (
+              <button type="button" onClick={handleNext}>
+                Next
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={async (event) => {
+                  await handleSubmit(event);
+                }}
+              >
+                Submit
+              </button>
+            )}
+          </div>
+        </div>
+      )
+    )}
+    {voteStatus === "loading" && <p>Submitting votes...</p>}
+    {voteStatus === "failed" && <p style={{ color: 'red' }}>Failed to submit votes: {voteError}</p>}
+  </div>
   );
 };
 
