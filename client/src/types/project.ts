@@ -1,11 +1,11 @@
-interface Option {
-  _id: string;
+export interface Option {
+  // _id: string;
   optionText: string;
   voteCount: number;
 }
 
-interface Question {
-  _id: string;
+export interface Question {
+  // _id: string;
   questionText: string;
   type: "boolean" | "multiple_choice";
   options: Option[];
