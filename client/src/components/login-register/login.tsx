@@ -37,7 +37,11 @@ const LoginForm = () => {
     e.preventDefault();
     dispatch(loginThunk({ email, password }));
   };
-
+  useEffect(() => {
+    if (firstName) {
+      window.location.reload(); // Reload the page after successful login
+    }
+  }, [firstName]);
   return (
     <div>
       <form onSubmit={handleSubmit}>

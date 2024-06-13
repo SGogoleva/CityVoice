@@ -26,6 +26,11 @@ export const checkAuthToken = (req: Request, res: Response) => {
   return res.status(200).json({ isAuthenticated: res.locals.isAuthenticated });
 }
 
+export const logout = async (req: Request, res: Response) => {
+  res.clearCookie("session-token")
+  return res.status(200).json({ message: 'Logged out successfully' });
+} 
+
 // middleware to check if username and password are provided
 
 export const checkLoginInput = (

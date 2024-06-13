@@ -96,6 +96,11 @@ export const getAuthorities = async (): Promise<Authority[]> => {
 }
 
 export const isAuth = async () => {
-  const isAuth = await axiosInstance.get('/auth/isAuth')
+  const isAuth = await axiosInstance.get('/auth/isAuth', { withCredentials: true })
   return isAuth.data.isAuthenticated
+}
+
+export const performLogout = async () => {
+  await axiosInstance.post('/auth/logout', {}, { withCredentials: true })
+  return false
 }

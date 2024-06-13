@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loggedUser, Users } from "../../types/userType";
-import { loginThunk } from "../thunks/auth.thunk";
+import { loginThunk, logoutThunk } from "../thunks/auth.thunk";
 import { FetchStatusState } from "../../types/status";  
 import { UserName } from "../../types/userType";
 
@@ -32,6 +32,9 @@ const UsersAuthSlice = createSlice({
         state.error = action.error.message || 'An error occurred'
         state.loading = false
       })
+      .addCase(logoutThunk.fulfilled, (state) => {
+        state.firstName = null;
+      });
   }
 })  
 ;
