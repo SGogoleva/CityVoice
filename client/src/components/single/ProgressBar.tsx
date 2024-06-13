@@ -1,5 +1,6 @@
 import { Project, Question, Option } from "../../types/project";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { v4 as uuidv4 } from "uuid";
 
 interface ProgressBarProps {
   project: Project;
@@ -16,14 +17,14 @@ const VoteProgressBar: React.FC<ProgressBarProps> = ({ project }) => {
           0
         );
         return (
-          <div>
+          <div key={`${uuidv4()}-${question.questionText}`}>
             <p>{question.questionText}</p>
             {question.options.map((option: Option) => (
-              <div key={`${question.questionText}-${option.optionText}`}>
+              <div key={`${uuidv4()}-${option.optionText}`}>
                 <p>{option.optionText}</p>
                 <ProgressBar
-                //   completed={`${calculatePercentage(option.voteCount, sumVotes)}%`}
-                    completed={calculatePercentage(option.voteCount, sumVotes)}
+                  //   completed={`${calculatePercentage(option.voteCount, sumVotes)}%`}
+                  completed={calculatePercentage(option.voteCount, sumVotes)}
                   bgColor="#6f9381"
                   baseBgColor="#c1d0c8"
                   labelColor="#6f9381"
@@ -31,6 +32,8 @@ const VoteProgressBar: React.FC<ProgressBarProps> = ({ project }) => {
                   margin="50"
                   maxCompleted={100}
                   width="300px"
+                  height="25px"
+                  borderRadius="7px"
                 />
               </div>
             ))}
