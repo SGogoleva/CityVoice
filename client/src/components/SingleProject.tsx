@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useLocation } from "react-router-dom";
-import { RootState } from "../../store/store";
+import { RootState } from "../store/store";
 import { useEffect } from "react";
-import { postVoteThunk, singleProjectThunk } from "../../store/thunks/project.thunk";
+import { postVoteThunk, singleProjectThunk } from "../store/thunks/project.thunk";
 
 const SingleProject = () => {
   const location = useLocation();

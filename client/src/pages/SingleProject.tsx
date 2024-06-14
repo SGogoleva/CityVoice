@@ -1,11 +1,14 @@
-import SingleProject from "../components/Projects/SingleProject"
+import SingleProject from "../components/SingleProject";
 
 const SingleProjectPage = () => {
-    return (
+  return (
     <>
-    <h1>Single project Page</h1>
-    <SingleProject />
-    </>)
-}
+      <div className="container mt-4">
+        <h1>Single project Page</h1>
+        <SingleProject />
+      </div>
+    </>
+  );
+};
 
-export default SingleProjectPage
+export default SingleProjectPage;

@@ -1,35 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
-import { useAppSelector } from "../store/hooks";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Layout = () => {
-  const firstName = useAppSelector((state) => state.auth.firstName);
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Main</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to={firstName ? "/personal" : "/login"}>
-              {firstName ? "Personal Page" : "Login / Register"}
-            </Link>
-          </li>
-          <li>
-            <Link to="/send-messasge">Send Message</Link>
-          </li>
-        </ul>
-      </nav>
-      {firstName && (
-        <div>
-          <p>Welcome, {firstName}!</p>
-        </div>
-      )}
+    <>
+      <Header />
       <Outlet />
-    </div>
+      <Footer />
+    </>
   );
 };
 

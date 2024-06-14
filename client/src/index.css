@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .truncate-multiline {
+      @apply overflow-hidden text-ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      max-height: 3rem;
+      line-height: 1.5rem;
+    }
+  }
+  

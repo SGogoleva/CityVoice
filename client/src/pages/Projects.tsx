@@ -1,10 +1,12 @@
-import Projects from "../components/Projects/Projects";
+import Projects from "../components/Projects";
 
 const ProjectsPage = () => {
   return (
     <>
-      <h1>Projects Page</h1>
-      <Projects />
+      <div className="container mt-4">
+        <h1>Projects Page</h1>
+        <Projects />
+      </div>
     </>
   );
 };

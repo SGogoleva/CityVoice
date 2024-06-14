@@ -3,8 +3,10 @@ import LoginForm from "../components/login-register/login";
 const LoginPage = () => {
   return (
     <>
-      <h1>Login Page</h1>
-      <LoginForm />
+      <div className="container mt-4">
+        <h1>Login Page</h1>
+        <LoginForm />
+      </div>
     </>
   );
 };
