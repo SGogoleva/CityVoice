@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Layout from "./pages/Layout";
 import MainPage from "./pages/Main";
 import ProjectsPage from "./pages/Projects";
@@ -9,6 +8,7 @@ import Register from "./pages/Register";
 import Personal from "./pages/Personal";
 import ProtectedRoute from "./components/login-register/protectedRoute";
 import SendMessage from "./pages/SendMessage";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
           <Route path="projects/:id" element={<SingleProject />} />
           <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="/send-messasge" element={<SendMessage />} />
+          <Route path="/send-message" element={<SendMessage />} />
+          <Route path="*" element={<NoPage />} />
           <Route
             path="personal"
             element={

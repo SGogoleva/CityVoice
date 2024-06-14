@@ -1,5 +1,11 @@
 const MainPage = () => {
-    return <h1>Main Page</h1>
-}
+  return (
+    <>
+      <div className="container mt-4">
+        <h1>Main Page</h1>
+      </div>
+    </>
+  );
+};
 
-export default MainPage
+export default MainPage;

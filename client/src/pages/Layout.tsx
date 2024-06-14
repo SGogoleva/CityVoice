@@ -52,9 +52,17 @@ const Layout = () => {
           <p>Welcome, {firstName}!</p>
         </div>
       )}
+{/* import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const Layout = () => {
+  return (
+    <>
+      <Header />
       <Outlet />
-    </div>
+      <Footer />
+    </>
   );
-};
+}; */}
 
 export default Layout;
