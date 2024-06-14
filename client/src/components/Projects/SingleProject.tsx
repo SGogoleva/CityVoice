@@ -73,6 +73,7 @@ const SingleProject = () => {
   const error = useAppSelector((state: RootState) => state.singleProject.error);
   const voteStatus = useAppSelector((state) => state.vote.status);
   const voteError = useAppSelector((state) => state.vote.error);
+  const isAuthenticated = useAppSelector((state) => state.isAuth.isAuthenticated)
 
   const { projectId } = location.state as { projectId: string };
   console.log(projectId);
@@ -116,18 +117,23 @@ const SingleProject = () => {
 
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    if (!isAuthenticated) {
+      alert("You need to login!")
+      return
+    }
     if (
       project?.questionnaire.some((question) => !answers[question.questionText])
     ) {
       setValidationError("Please answer all questions before submitting.");
       return;
     }
+
     try {
       for (const [questionText, optionTexts] of Object.entries(answers)) {
         const optionTextArray = Array.isArray(optionTexts)
           ? optionTexts
           : [optionTexts];
-
+        
         for (const optionText of optionTextArray) {
           await dispatch(
             postVoteThunk({
