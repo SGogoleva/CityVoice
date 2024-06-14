@@ -33,7 +33,8 @@ const NavLinks = ({ mobile }: { mobile: boolean }) => {
       >
         Send Message
       </NavLink>
-      <div>
+      <div className="flex items-center cursor-pointer space-x-2">
+        
         {isAuthenticated ? (
           <>
             <NavLink

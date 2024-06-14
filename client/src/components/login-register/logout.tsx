@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { logoutThunk } from "../../store/thunks/auth.thunk";
+import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
 
 const LogoutButton = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +14,7 @@ const LogoutButton = () => {
       window.location.reload();
     }
   };
-  return <button onClick={handleLogout}>Logout</button>;
+  return <ArrowRightStartOnRectangleIcon onClick={handleLogout} className="h-6 w-6" title="Logout"/>;
 };
 
 export default LogoutButton;
