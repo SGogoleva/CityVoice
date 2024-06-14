@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { RootState } from "../store/store";
 import { useEffect, useState } from "react";
 import {
@@ -73,7 +73,9 @@ const SingleProject = () => {
   const error = useAppSelector((state: RootState) => state.singleProject.error);
   const voteStatus = useAppSelector((state) => state.vote.status);
   const voteError = useAppSelector((state) => state.vote.error);
-  const isAuthenticated = useAppSelector((state) => state.isAuth.isAuthenticated)
+  const isAuthenticated = useAppSelector(
+    (state) => state.isAuth.isAuthenticated
+  );
 
   const { projectId } = location.state as { projectId: string };
   console.log(projectId);
@@ -118,8 +120,8 @@ const SingleProject = () => {
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (!isAuthenticated) {
-      alert("You need to login!")
-      return
+      alert("You need to login!");
+      return;
     }
     if (
       project?.questionnaire.some((question) => !answers[question.questionText])
@@ -133,7 +135,7 @@ const SingleProject = () => {
         const optionTextArray = Array.isArray(optionTexts)
           ? optionTexts
           : [optionTexts];
-        
+
         for (const optionText of optionTextArray) {
           await dispatch(
             postVoteThunk({
@@ -169,73 +171,117 @@ const SingleProject = () => {
   const currentQuestion = project?.questionnaire[currentQuestionIndex];
 
   return (
-    <div>
-      <h1>{project?.name}</h1>
-      <p>{project?.description}</p>
-      {voteSubmitted ? (
-        <>
-          <p>Thank you for your vote!</p>
-          <VoteProgressBar project={project as Project} />
-        </>
-      ) : (
-        currentQuestion && (
-          <div>
-            <div key={currentQuestion.questionText}>
-              <p>{currentQuestion.questionText}</p>
-              {currentQuestion.options.map((option) => (
-                <label key={option.optionText}>
-                  <input
-                    type={
-                      currentQuestion.type === "boolean" ? "radio" : "checkbox"
-                    }
-                    name={currentQuestion.questionText}
-                    value={option.optionText}
-                    checked={
-                      currentQuestion.type === "boolean"
-                        ? answers[currentQuestion.questionText] ===
-                          option.optionText
-                        : (
-                            answers[currentQuestion.questionText] as string[]
-                          )?.includes(option.optionText)
-                    }
-                    onChange={() => handleOptionChange(currentQuestion, option)}
-                  />
-                  {option.optionText}
-                </label>
-              ))}
-            </div>
+    <div className="mx-auto mt-4 p-6 rounded-lg flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+      {/* Project Info */}
+      <div className="w-full md:w-3/5 flex flex-col items-center md:items-start">
+        <h1 className="text-xl font-bold text-gray-800 mb-4 text-center md:text-left">
+          {project?.name}
+        </h1>
+        <img
+          src="URL_TO_PROJECT_IMAGE"
+          className="w-full h-80 object-cover rounded-lg mb-6"
+        />
+        <p className="text-gray-600 text-center md:text-left">
+          {project?.description}
+        </p>
+        <Link
+          to="/projects"
+          className="bg-[#1F3E52] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
+        >
+          Back to all Projects
+        </Link>
+      </div>
+
+      {/* Voting */}
+      <div className="w-full md:w-2/5 mb-4">
+        {voteSubmitted ? (
+          <>
+            <p className="text-[#50B04C] mb-4">Thank you for your vote!</p>
+            <VoteProgressBar project={project as Project} />
+          </>
+        ) : (
+          currentQuestion && (
             <div>
+              <div key={currentQuestion.questionText} className="mb-4">
+                <p className="text-lg font-medium text-gray-800 mb-2">
+                  {currentQuestion.questionText}
+                </p>
+                {currentQuestion.options.map((option) => (
+                  <label key={option.optionText} className="block mb-2">
+                    <input
+                      type={
+                        currentQuestion.type === "boolean"
+                          ? "radio"
+                          : "checkbox"
+                      }
+                      name={currentQuestion.questionText}
+                      value={option.optionText}
+                      checked={
+                        currentQuestion.type === "boolean"
+                          ? answers[currentQuestion.questionText] ===
+                            option.optionText
+                          : (
+                              answers[currentQuestion.questionText] as string[]
+                            )?.includes(option.optionText)
+                      }
+                      onChange={() =>
+                        handleOptionChange(currentQuestion, option)
+                      }
+                      className="mr-2"
+                    />
+                    {option.optionText}
+                  </label>
+                ))}
+              </div>
+
               {validationError && (
-                <p style={{ color: "red" }}>{validationError}</p>
+                <p className="text-red-600 mb-4">{validationError}</p>
               )}
-              {currentQuestionIndex > 0 && (
-                <button type="button" onClick={handlePrev}>
-                  Previous
-                </button>
-              )}
-              {currentQuestionIndex <
-              (project?.questionnaire.length || 0) - 1 ? (
-                <button type="button" onClick={handleNext}>
-                  Next
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={async (event) => {
-                    await handleSubmit(event);
-                  }}
-                >
-                  Submit
-                </button>
-              )}
+
+              <div className="flex justify-between">
+                {currentQuestionIndex > 0 && (
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    className="bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300 w-32"
+                  >
+                    Previous
+                  </button>
+                )}
+
+                {currentQuestionIndex <
+                (project?.questionnaire.length || 0) - 1 ? (
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 w-32"
+                  >
+                    Next
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={async (event) => {
+                      await handleSubmit(event);
+                    }}
+                    className="bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 w-32"
+                  >
+                    Submit
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        )
-      )}
-      {voteStatus === "loading" && <p>Submitting votes...</p>}
-      {voteStatus === "failed" && (
-        <p style={{ color: "red" }}>Failed to submit votes: {voteError}</p>
-      )}
+          )
+        )}
+        {voteStatus === "loading" && (
+          <p className="text-gray-500 mt-4">Submitting votes...</p>
+        )}
+        {voteStatus === "failed" && (
+          <p className="text-red-600 mt-4">
+            Failed to submit votes: {voteError}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

@@ -73,7 +73,7 @@ const Message = () => {
     dispatch(sendMessageThunk(messageData));
   };
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+    <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-6">
         {/* <div>
         <label>Message Title</label>
@@ -92,7 +92,7 @@ const Message = () => {
             Authority
           </label>
           <select
-            {...register("authorityId", { required: true })}
+            {...register("authorityId", { required: "Please select an authority", })}
             onChange={handleAuthorityChange}
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           >
@@ -117,7 +117,7 @@ const Message = () => {
             Message Theme
           </label>
           <select
-            {...register("messageTheme", { required: true })}
+            {...register("messageTheme", { required: "Please select a theme", })}
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           >
             <option value="">Select a Theme</option>
@@ -143,13 +143,19 @@ const Message = () => {
           <textarea
             placeholder="Write your message here"
             {...register("messageBody", {
-              required: true,
-              minLength: 5,
-              maxLength: 250,
+              required: "Please describe your problem",
+              minLength: {
+                value: 5,
+                message: "Minimum length is 5 characters",
+              },
+              maxLength: {
+                value: 250,
+                message: "Maximum length is 250 characters",
+              },
             })}
             className="block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           />
-          {errors.messageBody && <p>{errors.messageBody.message}</p>}
+          {errors.messageBody && <p className="mt-1 text-sm text-red-600">{errors.messageBody.message}</p>}
         </div>
         <button className="mt-6 mb-6 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 disabled:bg-gray-300">
           Send Message
