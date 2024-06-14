@@ -1,13 +1,13 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useLocation } from "react-router-dom";
-import { RootState } from "../../store/store";
+import { RootState } from "../store/store";
 import { useEffect, useState } from "react";
 import {
   postVoteThunk,
   singleProjectThunk,
-} from "../../store/thunks/project.thunk";
-import { Option, Project, Question } from "../../types/project";
-import VoteProgressBar from "../single/ProgressBar";
+} from "../store/thunks/project.thunk";
+import { Option, Project, Question } from "../types/project";
+import VoteProgressBar from "./single/ProgressBar";
 
 // const SingleProject = () => {
 //   const location = useLocation();
