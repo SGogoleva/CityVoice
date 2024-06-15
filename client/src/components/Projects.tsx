@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 
+import { ClockIcon } from "@heroicons/react/24/outline";
+
 const Projects = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -88,11 +90,12 @@ const Projects = () => {
             onClick={() => handleProjectClick(project.name, project._id)}
           >
             <div className="relative h-64 mb-4 bg-gray-200">
-              <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-orange-500">
+              <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C]">
                 +{project.pollPrice} scores
               </div>
-              <div className="absolute top-2 left-2 text-sm px-2 py-1 rounded">
-                Vote before {formatDate(project.dateCreated)}
+              <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
+                <ClockIcon className="h-5 w-5" />
+                <p>before {formatDate(project.dateCreated)}</p>
               </div>
               <div className="image-placeholder flex items-center justify-center text-gray-500 h-full">
                 Photo

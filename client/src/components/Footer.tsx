@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-center md:gap-4">
           <h2 className="text-lg font-bold">CityVoice</h2>
           <span className="hidden md:block">|</span>
-          <p className="mt-2 md:mt-0">{new Date().getFullYear()} &copy; All rights reserved.</p>
+          <p className="mt-2 md:mt-0">{new Date().getFullYear()} &copy; All rights reserved</p>
         </div>
         <div className="flex items-center justify-center gap-4 mt-4 md:mt-0">
           <span className="text-white font-bold tracking-tight">
