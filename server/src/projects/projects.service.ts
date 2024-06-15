@@ -9,16 +9,19 @@ export const projectService = {
       if (sortBy && sortOrder) {
         sort[sortBy] = sortOrder === "asc" ? 1 : -1;
       }
-      const result = await ProjectsModel.find()
-        .skip((page - 1) * limit)
-        .limit(limit)
-        .sort(sortBy && sortOrder ? sort : {})
-        .exec();
+      const sortedProjects = await ProjectsModel.find().sort(sortBy && sortOrder ? sort : {}).exec();
+      const paginatedProjects = sortedProjects.slice((page - 1) * limit, page * limit);
+
+      // const result = await ProjectsModel.find()
+      //   .skip((page - 1) * limit)
+      //   .limit(limit)
+      //   .sort(sortBy && sortOrder ? sort : {})
+      //   .exec();
 
       const count = await ProjectsModel.countDocuments();
 
       return {
-        result,
+        result: paginatedProjects,
         currentLimit: limit,
         totalEntries: count,
         totalPages: Math.ceil(count / limit),

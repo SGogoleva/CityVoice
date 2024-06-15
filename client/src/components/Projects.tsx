@@ -30,20 +30,20 @@ const Projects = () => {
   const sortBy = useAppSelector((state: RootState) => state.projects.sortBy)
   const sortOrder = useAppSelector((state: RootState) => state.projects.sortOrder)
 
+  useEffect(() => {
+    dispatch(
+      previewProjectThunk({ limit: 9, page: currentPage, sortBy, sortOrder })
+    );
+  }, [/*projectLength, sortBy, sortOrder*/ currentPage, sortBy, sortOrder]);
   
   const handleSortOrderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const sortRule = event.target.value.split(',');
     dispatch(setSortOrder(sortRule[1]));
     dispatch(setSortBy(sortRule[0]))
-    dispatch(setPage(1));
-    dispatch(previewProjectThunk({ limit: 9, page: 1, sortBy: sortBy, sortOrder: sortOrder }))
+    // dispatch(setPage(1));
+    // dispatch(previewProjectThunk({ limit: 9, page: 1, sortBy: sortBy, sortOrder: sortOrder }))
     };
     
-    useEffect(() => {
-      dispatch(
-        previewProjectThunk({ limit: 9, page: currentPage })
-      );
-    }, [/*projectLength, sortBy, sortOrder*/ currentPage]);
 
     // const handleShowMore = () => {
     //   const nextPage = currentPage + 1;

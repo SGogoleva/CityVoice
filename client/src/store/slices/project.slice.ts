@@ -32,9 +32,13 @@ const projectsSlice = createSlice({
     },
     setSortBy(state, action) {
       state.sortBy = action.payload;
+      state.currentPage = 1;
+      state.projects = [];
     },
     setSortOrder(state, action) {
       state.sortOrder = action.payload;
+      state.currentPage = 1;
+      state.projects = [];
     },
   },
   extraReducers: (builder) => {
@@ -45,17 +49,25 @@ const projectsSlice = createSlice({
       .addCase(previewProjectThunk.fulfilled, (state, action) => {
         console.log({ P: action.payload });
         console.log({ L: state.projects.length });
-        const seen = new Set();
-        const arr = [...state.projects, ...action.payload.projects];
-        console.log({ arr });
-        const uniques = arr.filter((p) => {
-          const duplicate = seen.has(p._id);
-          seen.add(p._id);
-          return !duplicate;
-        });
-        console.log({ uniques });
+        // const seen = new Set();
+        // const arr = [...state.projects, ...action.payload.projects];
+        // console.log({ arr });
+        // const uniques = arr.filter((p) => {
+        //   const duplicate = seen.has(p._id);
+        //   seen.add(p._id);
+        //   return !duplicate;
+        // });
+        // console.log({ uniques });
         // state.projects = [...state.projects, ...action.payload.projects];
-        state.projects = uniques;
+        // state.projects = /*uniques;*/ [...state.projects, ...action.payload.projects]
+
+        if (state.currentPage === 1) {
+          state.projects = action.payload.projects;
+        } else {
+          state.projects = [...state.projects, ...action.payload.projects];
+        }
+
+        console.log(state.projects)
         state.totalPages = action.payload.totalPages;
         state.loading = false;
       })
