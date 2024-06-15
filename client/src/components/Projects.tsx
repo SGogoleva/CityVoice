@@ -1,11 +1,10 @@
 import { RootState, AppDispatch } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { previewProjectThunk } from "../store/thunks/project.thunk";
-import { setPage } from "../store/slices/project.slice";
-import { useEffect } from "react";
+import { setPage, setSortBy, setSortOrder } from "../store/slices/project.slice";
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { format } from 'date-fns';
-
+import { format } from "date-fns";
 
 const Projects = () => {
   const dispatch = useAppDispatch();
@@ -22,31 +21,65 @@ const Projects = () => {
   );
   const error = useAppSelector((state: RootState) => state.projects.error);
   const projectLength = useAppSelector((s) => s.projects.projects.length);
-  useEffect(() => {
-    if (projectLength === 0) {
-      dispatch(previewProjectThunk({ limit: 9, page: currentPage }));
-    }
-  }, [projectLength]);
-  const handleShowMore = () => {
-    const nextPage = currentPage + 1;
-    dispatch(setPage(nextPage));
-    dispatch(previewProjectThunk({ limit: 9, page: nextPage }));
-  };
+  // useEffect(() => {
+  //   if (projectLength === 0) {
+  //     dispatch(previewProjectThunk({ limit: 9, page: currentPage }));
+  //   }
+  // }, [projectLength]);
 
-  const handleProjectClick = (projectName: string, projectId: string) => {
-    const formattedName = projectName.toLowerCase().replace(/\s+/g, "-");
-    navigate(`/projects/${formattedName}`, {
+  const sortBy = useAppSelector((state: RootState) => state.projects.sortBy)
+  const sortOrder = useAppSelector((state: RootState) => state.projects.sortOrder)
+
+  useEffect(() => {
+    dispatch(
+      previewProjectThunk({ limit: 9, page: currentPage, sortBy, sortOrder })
+    );
+  }, [/*projectLength, sortBy, sortOrder*/ currentPage, sortBy, sortOrder]);
+  
+  const handleSortOrderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const sortRule = event.target.value.split(',');
+    dispatch(setSortOrder(sortRule[1]));
+    dispatch(setSortBy(sortRule[0]))
+    // dispatch(setPage(1));
+    // dispatch(previewProjectThunk({ limit: 9, page: 1, sortBy: sortBy, sortOrder: sortOrder }))
+    };
+    
+
+    // const handleShowMore = () => {
+    //   const nextPage = currentPage + 1;
+    //   dispatch(setPage(nextPage));
+    //   dispatch(previewProjectThunk({ limit: 9, page: nextPage }));
+    //   };
+
+      const handleShowMore = () => {
+        const nextPage = currentPage + 1;
+        dispatch(setPage(nextPage));
+        };
+      
+
+      const handleProjectClick = (projectName: string, projectId: string) => {
+        const formattedName = projectName.toLowerCase().replace(/\s+/g, "-");
+        navigate(`/projects/${formattedName}`, {
       state: { projectId },
     });
   };
 
   const formatDate = (dateString: string) => {
-    return format(new Date(dateString), 'dd.MM.yy');
+    return format(new Date(dateString), "dd.MM.yy");
   };
-  
 
   return (
     <>
+      <div className="sort-options">
+        <label htmlFor="sort">Sort by: </label>
+        <select id="sort" onChange={handleSortOrderChange}>
+          <option value="">None</option>
+          <option value="dateCreated,asc">Oldest</option>
+          <option value="dateCreated,desc">Newest</option>
+          <option value="pollPrice,asc">Price low to high</option>
+          <option value="pollPrice,desc">Price high to low</option>
+        </select>
+      </div>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 project-list">
         {projects?.map((project) => (
           <div

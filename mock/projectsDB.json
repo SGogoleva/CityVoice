@@ -1,0 +1,3570 @@
+[
+    {
+        "_id": {
+            "$oid": "e167d838-4f88-495b-9688-da9b09932986"
+        },
+        "authority": {
+            "authorityId": "1b645cea-fa66-4c99-95d6-2393dbb3bb51",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 11049562,
+            "cityName": "Kiryat Ono"
+        },
+        "name": "Project 67a463",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-10-19T20:38:20.607884",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 32
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 72
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 35
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 31
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 31
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 29
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "b816d152-2183-4391-a178-2a038062bc63"
+        },
+        "authority": {
+            "authorityId": "6f9f1e6f-5f02-4e43-b9c3-ffa377a28ec7",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 294502,
+            "cityName": "Kefar Tavor"
+        },
+        "name": "Project 724e45",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-10-09T05:38:02.761078",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 25
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 48
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 86
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 55
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 56
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 55
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 6
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 83
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "c52ee85d-faf7-4fbb-9c95-9d88bdf34f8d"
+        },
+        "authority": {
+            "authorityId": "eacac779-a257-438b-959b-431498a68001",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 295339,
+            "cityName": "Deir \u1e24ann\u0101"
+        },
+        "name": "Project dd69df",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2024-02-09T11:46:13.747485",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 4
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 98
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "No",
+                        "voteCount": 21
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 100
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 91
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 49
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 46
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "bd5440a2-6cc2-47b2-9033-f33f21f205c7"
+        },
+        "authority": {
+            "authorityId": "92c7683a-d2aa-446b-b730-7ef935c0b2e6",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 295740,
+            "cityName": "Afula"
+        },
+        "name": "Project e9db39",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-07-31T21:02:03.090634",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 38
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 89
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 23
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 36
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 2
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 0
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 82
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 47
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "300cd4af-2427-483a-a5f7-d35f456c2404"
+        },
+        "authority": {
+            "authorityId": "e2090c00-b6d0-4cd5-b413-24a8094afd95",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 294622,
+            "cityName": "Judeida Makr"
+        },
+        "name": "Project 35bef4",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-05-03T06:57:26.719045",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 97
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 26
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 63
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 82
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 52
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 77
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 52
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 87
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 56
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "d5b88049-2c9b-4193-947b-be3d58250390"
+        },
+        "authority": {
+            "authorityId": "aa8d6b0b-891b-417d-ba60-88fd29bcf4c9",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 294604,
+            "cityName": "Kafr Q\u0101sim"
+        },
+        "name": "Project 9afa22",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2024-05-28T16:35:45.960820",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 68
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 46
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 100
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 25
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 78
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 37
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 50
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 34
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "8794726c-0515-4b3c-8ea0-de17fa5e74c5"
+        },
+        "authority": {
+            "authorityId": "b8ec3713-f5f8-4c6b-a6fb-11587132023d",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 293992,
+            "cityName": "Ofaqim"
+        },
+        "name": "Project 873273",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2024-02-09T23:03:40.386344",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 56
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 91
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 38
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 96
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 86
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 15
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 28
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 74
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "bae1169f-fe55-4777-9d64-b8d4d9f9260c"
+        },
+        "authority": {
+            "authorityId": "d831ce16-2edb-448e-827f-99554d843b8a",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 8199390,
+            "cityName": "Giv'on HaHadasha"
+        },
+        "name": "Project 4c4293",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-10-31T22:34:00.603819",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 5
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 84
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 43
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 56
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 8
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 74
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 51
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "fa023e9a-fb46-40c0-8ab2-b0f545bc7074"
+        },
+        "authority": {
+            "authorityId": "306f3a7c-0307-4183-8bfd-80f81ae18a10",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 293942,
+            "cityName": "Pardesiyya"
+        },
+        "name": "Project 2b121e",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2024-01-02T14:47:10.143909",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 3
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 64
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 63
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 5
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 98
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 85
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 6
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 53
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 97
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "63d1a8c9-cad6-4efd-9a96-e04a2f2aedc9"
+        },
+        "authority": {
+            "authorityId": "827c52cb-feac-498e-86f3-e54797600b13",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 293310,
+            "cityName": "Timrat"
+        },
+        "name": "Project bb70a4",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-04-09T13:33:07.349977",
+        "questionnaire": [
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 27
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 5
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 87
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 80
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 63
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 28
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 59
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "64ded4c2-1a25-45e7-8454-732c328f529e"
+        },
+        "authority": {
+            "authorityId": "78608ff2-498c-4771-a863-d3c770274d6d",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 295064,
+            "cityName": "Gedera"
+        },
+        "name": "Project c407a9",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-11-04T11:10:26.668097",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 3
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 9
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 76
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 9
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 71
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 7
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 68
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 80
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 73
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "3855ab91-c769-4743-ab46-8a958211b18d"
+        },
+        "authority": {
+            "authorityId": "d871b270-a459-4644-a8aa-515375bd511a",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 293768,
+            "cityName": "Ramla"
+        },
+        "name": "Project 8c04b7",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-02-08T22:41:10.162067",
+        "questionnaire": [
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 50
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 83
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 82
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 0
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 38
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 67
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 56
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 92
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "7dac50f2-ed4e-4261-8de2-fe81f66d2a46"
+        },
+        "authority": {
+            "authorityId": "938d2599-6cb7-4f5a-891c-14d07aea2312",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 293721,
+            "cityName": "Rekhasim"
+        },
+        "name": "Project 393733",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2023-07-25T09:22:23.246772",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 55
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 95
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 29
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 58
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 34
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 52
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 58
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 53
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 22
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "63ed6cd1-4b90-483a-92f7-5a735835535a"
+        },
+        "authority": {
+            "authorityId": "dd7cf7af-d5f2-401d-90e3-7361388fe97d",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 386253,
+            "cityName": "Sallama"
+        },
+        "name": "Project a973c0",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-10-17T04:13:52.162434",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 72
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 48
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 3
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 22
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 64
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 49
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 29
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 58
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "f2077ea8-6576-4eef-ac08-b40435332375"
+        },
+        "authority": {
+            "authorityId": "2c64655a-dc1c-4889-b1e5-4ee50549121f",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 294421,
+            "cityName": "Lod"
+        },
+        "name": "Project f5f1ec",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2023-10-28T00:05:01.200087",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 33
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 82
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 23
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 65
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 12
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 20
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 6
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 58
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 52
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "8f720c22-5883-45cf-9fde-6ccf66b88142"
+        },
+        "authority": {
+            "authorityId": "ac0d83a7-34f9-473e-bb9a-7743dd43a997",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 8199422,
+            "cityName": "Revava"
+        },
+        "name": "Project 227b0e",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-06-22T16:19:11.145870",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 3
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 11
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 23
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 42
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 22
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 89
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "0686b40a-543e-4109-a503-c45dbd1febfa"
+        },
+        "authority": {
+            "authorityId": "674a8251-7d76-48a4-bc2c-fd01902977a3",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 293655,
+            "cityName": "Sakhn\u012bn"
+        },
+        "name": "Project c94ba2",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-01-01T21:22:39.355378",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 24
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 73
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 93
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 75
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 6
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 16
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 79
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 67
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 13
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "df7e5e48-c6c1-4996-a9db-c1ad0ca7416c"
+        },
+        "authority": {
+            "authorityId": "cdb32bee-8a84-4882-81ad-34ecf87ef51f",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 293845,
+            "cityName": "Qiryat Ata"
+        },
+        "name": "Project 611b41",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-09-08T23:00:53.323406",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 5
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 25
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 41
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 70
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 29
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 64
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 51
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "bc855fe2-b2d1-4eab-9e6a-3c4b2122be58"
+        },
+        "authority": {
+            "authorityId": "b2368f29-1619-40e4-89f9-d2032df50892",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 294545,
+            "cityName": "Kefar H\u0331abad"
+        },
+        "name": "Project 65dc00",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2024-03-06T09:44:45.667606",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "No",
+                        "voteCount": 72
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 28
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 34
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 73
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 27
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 87
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 80
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "e5cd9ffe-ed49-4960-8bf2-67a36eb64be4"
+        },
+        "authority": {
+            "authorityId": "de357230-20ab-4167-8516-d137068ec671",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 294093,
+            "cityName": "Ne\u1e96alim"
+        },
+        "name": "Project ae5a3e",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-09-18T17:37:02.737651",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 95
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 50
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 92
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 84
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 9
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 14
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "2789e0a6-3528-4c41-a831-36fe07abf12a"
+        },
+        "authority": {
+            "authorityId": "b9a6d26d-615d-4e71-b3be-a0b8bd1a1052",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 295291,
+            "cityName": "\u2018Eilabun"
+        },
+        "name": "Project 175e67",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2023-11-03T07:17:51.468724",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 8
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 16
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 47
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 3
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 60
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 67
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 100
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 57
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 51
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "ac8df423-c742-41b4-b1d8-48be2255d5e7"
+        },
+        "authority": {
+            "authorityId": "8d7220d3-0616-4e33-afb3-8fd12f912647",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 295127,
+            "cityName": "Tirah"
+        },
+        "name": "Project a9b320",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2024-03-17T03:37:51.513259",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 30
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 14
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 38
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 7
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 100
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 12
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 7
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 12
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 79
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "3af372d3-f807-459c-b277-abee5153a46d"
+        },
+        "authority": {
+            "authorityId": "6c8191db-8b99-40ee-8e17-5ead353e3ff5",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 295339,
+            "cityName": "Deir \u1e24ann\u0101"
+        },
+        "name": "Project 0a5a72",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2024-01-20T17:25:30.081227",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 45
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 84
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 43
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 5
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 41
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 57
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 90
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "0a07d218-fb18-4fa4-ad9a-851ca1be3dc9"
+        },
+        "authority": {
+            "authorityId": "5cf47ef4-1e93-4f3f-a7f1-87fc8a7b50b7",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 294577,
+            "cityName": "Karmi\u2019el"
+        },
+        "name": "Project 73f4fb",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-10-10T15:16:18.635638",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 56
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 19
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 49
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 26
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 81
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 92
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 59
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 28
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "93d88387-50b0-4bcc-ac97-88d67e77257b"
+        },
+        "authority": {
+            "authorityId": "21f32516-6ac7-46e4-b484-938326e10044",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 294604,
+            "cityName": "Kafr Q\u0101sim"
+        },
+        "name": "Project 0c1d18",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-07-29T04:06:23.251513",
+        "questionnaire": [
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 85
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 89
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 29
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 34
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 60
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 68
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 88
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 99
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 63
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "1721c8f4-ea7a-4aa7-8879-57c64d321525"
+        },
+        "authority": {
+            "authorityId": "b732f146-4e2c-469f-842f-0afc0e9c1950",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 294751,
+            "cityName": "H\u0331olon"
+        },
+        "name": "Project deccb9",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-10-12T03:05:28.386792",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 93
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 90
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 24
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 65
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 64
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 73
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "fa3c20b7-a10f-45a9-83c3-f003d6e6591d"
+        },
+        "authority": {
+            "authorityId": "303c22c7-3ab5-4422-8f7a-30d4dd95bf51",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 294303,
+            "cityName": "Mazkeret Batya"
+        },
+        "name": "Project 2f23a5",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-09-23T18:19:13.869120",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 97
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 86
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 76
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 52
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 73
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 41
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 14
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 71
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 11
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "8f318fd1-684a-4338-a1c6-f47190411a14"
+        },
+        "authority": {
+            "authorityId": "b197fee9-eb18-4b48-8fce-3fcb1c92f9ca",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 295435,
+            "cityName": "Bet She\u2019an"
+        },
+        "name": "Project b98aef",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-10-09T00:44:41.361764",
+        "questionnaire": [
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 64
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 58
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 40
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 55
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 79
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 83
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 70
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "096d8f8d-a7f7-41aa-a9ff-92ec9dcaf433"
+        },
+        "authority": {
+            "authorityId": "6ecbdb24-5996-4f47-bc73-a27800562444",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 294502,
+            "cityName": "Kefar Tavor"
+        },
+        "name": "Project 8985a2",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-10-03T07:47:12.759090",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 65
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 27
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 14
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 33
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 71
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 56
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 50
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 40
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 40
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "badfee9c-ab05-4a83-8f69-5f80b2d7ba53"
+        },
+        "authority": {
+            "authorityId": "db8f07ca-f6d7-4bfa-a15c-8275c383c270",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 282582,
+            "cityName": "Har Adar"
+        },
+        "name": "Project 366758",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2024-04-11T05:22:31.016945",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 24
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 64
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 93
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 41
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 27
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 83
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 26
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "6bafbcee-bcb5-442a-adc3-59cc63498dc3"
+        },
+        "authority": {
+            "authorityId": "169b506b-775d-4836-a96f-241a13c1b392",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 294071,
+            "cityName": "Netanya"
+        },
+        "name": "Project eb9bfc",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-08-30T06:35:13.286273",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 12
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 47
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 62
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 69
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 45
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 99
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 57
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 59
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "2ec6df2e-4a4e-4e14-b70f-eb8569f019d1"
+        },
+        "authority": {
+            "authorityId": "7d2a4b38-7385-4cfa-a763-ecbf28b0abab",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 294666,
+            "cityName": "\u1e24urfeish"
+        },
+        "name": "Project dc28a4",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2024-03-24T07:32:07.189213",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 73
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 24
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 68
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 90
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 74
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "7f59a89f-fb18-4108-9eee-0b9320f84626"
+        },
+        "authority": {
+            "authorityId": "424bb027-4e5e-431a-b588-5c5f18e1aa1f",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 293308,
+            "cityName": "Tirat Karmel"
+        },
+        "name": "Project 4ca733",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-05-11T13:41:45.697957",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 30
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 57
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 48
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 89
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 34
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "968afbdd-55e3-4928-8fbe-dfdd2ae19907"
+        },
+        "authority": {
+            "authorityId": "81feb96e-694b-45b0-9019-e755ad24af42",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 294098,
+            "cityName": "Nazareth"
+        },
+        "name": "Project c522da",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-07-13T10:40:35.784357",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 48
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 66
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 95
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 82
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 98
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 59
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 83
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 55
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "b1b90e63-f513-4564-bed8-53c627928267"
+        },
+        "authority": {
+            "authorityId": "2c3541b0-a1e4-4b82-99a6-09a02cd04a5b",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 8199422,
+            "cityName": "Revava"
+        },
+        "name": "Project b8d9e1",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-10-13T05:56:24.230021",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 36
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 98
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 92
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 93
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 38
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 75
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 94
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 71
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 39
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "f71d7c6a-8ec1-409d-b9fa-c98a0dec5043"
+        },
+        "authority": {
+            "authorityId": "284d7280-8097-4eb5-bb45-3b0d9b296bae",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 386042,
+            "cityName": "Shibli"
+        },
+        "name": "Project 8fac39",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-12-15T07:29:01.671590",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 26
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 89
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 21
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 56
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 7
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 79
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 90
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 48
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 98
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "50faf52f-3e01-4b55-b618-3cd49402a27f"
+        },
+        "authority": {
+            "authorityId": "5de2a391-2a88-46bc-822f-bc2f53e929a5",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 294604,
+            "cityName": "Kafr Q\u0101sim"
+        },
+        "name": "Project c34979",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-07-04T07:03:10.056691",
+        "questionnaire": [
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 41
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 55
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 23
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 79
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 37
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 81
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 97
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 50
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 39
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "dd026dc6-c982-46cf-8068-a54cd950203e"
+        },
+        "authority": {
+            "authorityId": "59ceb891-617c-4a23-aa23-b714613eb002",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 294801,
+            "cityName": "Haifa"
+        },
+        "name": "Project 361159",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-10-16T16:33:56.836389",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 98
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 76
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 96
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 7
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 57
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 22
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 6
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 76
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 100
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "7b37731e-169b-429a-a588-14061b1baf59"
+        },
+        "authority": {
+            "authorityId": "39a67ecd-5229-4b94-b8fc-deb0dfb42e4d",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 293773,
+            "cityName": "Ramat Yishay"
+        },
+        "name": "Project 8574db",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-02-08T13:39:24.989575",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 88
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 48
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 52
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 14
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 99
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 64
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 72
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "a8494aaf-7749-492c-ba15-2efb7e756d78"
+        },
+        "authority": {
+            "authorityId": "44fad4fc-1e48-4531-9135-6ec50dd0a8fe",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 295157,
+            "cityName": "Esh Sheikh Dann\u016bn"
+        },
+        "name": "Project 3e1980",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2024-03-18T13:05:04.531419",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 76
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 59
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 69
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 24
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 94
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "7a084cfd-2764-4cb3-ae34-0f4c7be74b33"
+        },
+        "authority": {
+            "authorityId": "e6aaaa7c-fbe0-4488-bc69-051affed2dc7",
+            "authorityName": "Animals"
+        },
+        "city": {
+            "cityId": 293842,
+            "cityName": "Qiryat Gat"
+        },
+        "name": "Project 09bf69",
+        "description": "An initiative to improve waste management and recycling processes.",
+        "dateCreated": "2024-01-26T06:45:05.050909",
+        "questionnaire": [
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 16
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 49
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 42
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 37
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 76
+                    }
+                ]
+            },
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 79
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 94
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 98
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "8a5c867b-04cc-4f86-8147-a7f3316e0995"
+        },
+        "authority": {
+            "authorityId": "d38b7777-8b3b-4c34-9755-d0591606eb58",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 295379,
+            "cityName": "Buqei\u2018a"
+        },
+        "name": "Project c32e99",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-06-21T16:16:33.491375",
+        "questionnaire": [
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 85
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 16
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 0
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 11
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 60
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 68
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 63
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 74
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "145917ac-5262-4a03-9835-2962c9aea063"
+        },
+        "authority": {
+            "authorityId": "bbb97a72-5c26-4b79-a7b7-2654851ec3e2",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 295424,
+            "cityName": "Bet Yi\u1e95\u1e96aq"
+        },
+        "name": "Project e98405",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2024-01-18T20:33:45.426633",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 44
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 9
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 94
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Waste management",
+                        "voteCount": 60
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 62
+                    },
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 68
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "b7d536d0-7c09-4dd6-a780-58a7293bab70"
+        },
+        "authority": {
+            "authorityId": "99b6aa01-6429-46b7-8fa8-56f434e460aa",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 293655,
+            "cityName": "Sakhn\u012bn"
+        },
+        "name": "Project 496454",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2024-04-16T01:01:03.898778",
+        "questionnaire": [
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Very satisfied",
+                        "voteCount": 69
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 41
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 68
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 93
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 20
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 97
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 30
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 53
+                    },
+                    {
+                        "optionText": "Very dissatisfied",
+                        "voteCount": 11
+                    },
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 62
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "75eb53cf-d430-49eb-9ecb-5e764ac1f439"
+        },
+        "authority": {
+            "authorityId": "580e016e-2263-4b1a-b688-668cefd87218",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 294502,
+            "cityName": "Kefar Tavor"
+        },
+        "name": "Project 5bfb91",
+        "description": "A project focused on improving local parks and recreation facilities.",
+        "dateCreated": "2023-07-15T05:37:47.449041",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 34
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 40
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 74
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 39
+                    },
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 7
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 6
+                    }
+                ]
+            },
+            {
+                "questionText": "Which areas should be improved?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Public parks",
+                        "voteCount": 53
+                    },
+                    {
+                        "optionText": "Road safety",
+                        "voteCount": 24
+                    },
+                    {
+                        "optionText": "Public transportation",
+                        "voteCount": 92
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "71169971-8093-48f8-ba64-f87c3c3bc371"
+        },
+        "authority": {
+            "authorityId": "581d4978-1d54-4e57-8b4e-2ed854346d1b",
+            "authorityName": "Parking"
+        },
+        "city": {
+            "cityId": 8199393,
+            "cityName": "Dolev"
+        },
+        "name": "Project afd95a",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2023-09-15T10:15:01.066681",
+        "questionnaire": [
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "No",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 12
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 63
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 25
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 30
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 79
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 9
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 1
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 90
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "aca29ed9-e615-4a2f-aea1-9131108e1630"
+        },
+        "authority": {
+            "authorityId": "2439b4de-5c6b-4811-88ab-825ada7a9d3b",
+            "authorityName": "Roads and sidewalks"
+        },
+        "city": {
+            "cityId": 8199394,
+            "cityName": "Ariel"
+        },
+        "name": "Project 8cf908",
+        "description": "An initiative to upgrade the city's public transportation system.",
+        "dateCreated": "2023-07-18T09:19:16.644692",
+        "questionnaire": [
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 18
+                    },
+                    {
+                        "optionText": "Safety",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 94
+                    }
+                ]
+            },
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 12
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 75
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 21
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 22
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 49
+                    },
+                    {
+                        "optionText": "No",
+                        "voteCount": 54
+                    },
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 16
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 93
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "33a5ecd3-9c21-4d58-8a70-3f73848f37be"
+        },
+        "authority": {
+            "authorityId": "c270629d-6e0d-4c0e-a76d-a66c8c63a5f5",
+            "authorityName": "Street lighting"
+        },
+        "city": {
+            "cityId": 293203,
+            "cityName": "Yero\u1e96am"
+        },
+        "name": "Project c289f1",
+        "description": "A project to increase the availability of affordable housing.",
+        "dateCreated": "2023-09-01T16:02:54.705799",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 13
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 35
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "No",
+                        "voteCount": 14
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 53
+                    }
+                ]
+            },
+            {
+                "questionText": "Do you support this initiative?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Not Sure",
+                        "voteCount": 50
+                    },
+                    {
+                        "optionText": "Maybe",
+                        "voteCount": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "58196c70-fbcc-421c-8d14-09488dc144bb"
+        },
+        "authority": {
+            "authorityId": "9e496f49-dd6a-48a6-b127-60eff37bbb21",
+            "authorityName": "Cleaning"
+        },
+        "city": {
+            "cityId": 295277,
+            "cityName": "Eilat"
+        },
+        "name": "Project b5b07a",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2024-06-06T21:20:41.804606",
+        "questionnaire": [
+            {
+                "questionText": "Which feature is most critical?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 35
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 90
+                    },
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 67
+                    }
+                ]
+            },
+            {
+                "questionText": "How satisfied are you with the current state?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Dissatisfied",
+                        "voteCount": 13
+                    },
+                    {
+                        "optionText": "Neutral",
+                        "voteCount": 17
+                    },
+                    {
+                        "optionText": "Satisfied",
+                        "voteCount": 28
+                    }
+                ]
+            },
+            {
+                "questionText": "What is the most important aspect of this project?",
+                "type": "multiple_choice",
+                "options": [
+                    {
+                        "optionText": "Efficiency",
+                        "voteCount": 81
+                    },
+                    {
+                        "optionText": "Sustainability",
+                        "voteCount": 10
+                    },
+                    {
+                        "optionText": "Cost",
+                        "voteCount": 36
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "c0d4c2a4-5afb-4371-b4e1-2114105472c4"
+        },
+        "authority": {
+            "authorityId": "75c533d1-44f4-4780-bed0-1fc86ad9d8c4",
+            "authorityName": "Gardens and landscape"
+        },
+        "city": {
+            "cityId": 295404,
+            "cityName": "B\u012br el Maks\u016br"
+        },
+        "name": "Project 90b606",
+        "description": "A program to enhance road safety and reduce traffic congestion.",
+        "dateCreated": "2024-04-16T09:29:30.360995",
+        "questionnaire": [
+            {
+                "questionText": "Should this project be prioritized?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 48
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 78
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 9
+                    },
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 37
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this initiative beneficial?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Strongly Disagree",
+                        "voteCount": 15
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 51
+                    },
+                    {
+                        "optionText": "Strongly Agree",
+                        "voteCount": 97
+                    },
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 98
+                    }
+                ]
+            },
+            {
+                "questionText": "Is this a necessary improvement?",
+                "type": "boolean",
+                "options": [
+                    {
+                        "optionText": "Disagree",
+                        "voteCount": 0
+                    },
+                    {
+                        "optionText": "Agree",
+                        "voteCount": 75
+                    },
+                    {
+                        "optionText": "Yes",
+                        "voteCount": 48
+                    }
+                ]
+            }
+        ]
+    }
+]

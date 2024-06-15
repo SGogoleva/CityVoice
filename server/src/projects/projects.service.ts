@@ -3,17 +3,25 @@ import { Pagination } from "../types/pagination";
 import { Project } from "../types/projects";
 
 export const projectService = {
-  getProjectsPaginated: async ({ page, limit }: Pagination) => {
+  getProjectsPaginated: async ({ page, limit, sortBy, sortOrder }: Pagination) => {
     try {
-      const result = await ProjectsModel.find()
-        .skip((page - 1) * limit)
-        .limit(limit)
-        .exec();
+      const sort: Record<string, 1 | -1> = {};
+      if (sortBy && sortOrder) {
+        sort[sortBy] = sortOrder === "asc" ? 1 : -1;
+      }
+      const sortedProjects = await ProjectsModel.find().sort(sortBy && sortOrder ? sort : {}).exec();
+      const paginatedProjects = sortedProjects.slice((page - 1) * limit, page * limit);
+
+      // const result = await ProjectsModel.find()
+      //   .skip((page - 1) * limit)
+      //   .limit(limit)
+      //   .sort(sortBy && sortOrder ? sort : {})
+      //   .exec();
 
       const count = await ProjectsModel.countDocuments();
 
       return {
-        result,
+        result: paginatedProjects,
         currentLimit: limit,
         totalEntries: count,
         totalPages: Math.ceil(count / limit),
