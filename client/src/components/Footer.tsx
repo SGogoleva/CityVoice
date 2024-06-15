@@ -12,10 +12,10 @@ const Footer = () => {
           <p className="mt-2 md:mt-0">{new Date().getFullYear()} &copy; All rights reserved</p>
         </div>
         <div className="flex items-center justify-center gap-4 mt-4 md:mt-0">
-          <span className="text-white font-bold tracking-tight">
+          <span className="text-white tracking-tight">
             <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
           </span>
-          <span className="text-white font-bold tracking-tight">
+          <span className="text-white tracking-tight">
             <a href="/terms-of-service" className="hover:underline">Terms of Service</a>
           </span>
         </div>

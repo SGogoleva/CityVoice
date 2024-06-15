@@ -1,8 +1,11 @@
-import React from "react";
-import { useAppSelector } from "../store/hooks";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import Projects from "../components/Projects";
 import Message from "../components/Message";
+import { RootState } from "../store/store";
+import { projects3Thunk } from "../store/thunks/project.thunk";
+import Projects3Preview from "../components/single/Projects3Preview";
 
 const MainPage = () => {
   return (
@@ -90,7 +93,7 @@ const MainPage = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Current Projects
         </h2>
-        <Projects limit={3} />
+        <Projects3Preview />
         <div className="text-center mt-6">
           <Link
             to="/projects"

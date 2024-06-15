@@ -89,7 +89,7 @@ const Projects = () => {
             onClick={() => handleProjectClick(project.name, project._id)}
           >
             <div className="relative h-64 mb-4 bg-gray-200">
-              <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C]">
+              <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">
                 +{project.pollPrice} scores
               </div>
               <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
