@@ -7,6 +7,7 @@ import voteReducer from "./slices/vote.slice"
 import messageReduser from "./slices/message.slice"
 import checkTokenReduser from "./slices/token.slice"
 
+
 const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -15,7 +16,7 @@ const store = configureStore({
     singleProject: singleProjectReducer,
     vote: voteReducer,
     message: messageReduser,
-    isAuth: checkTokenReduser
+    isAuth: checkTokenReduser,
   },
 });
 
