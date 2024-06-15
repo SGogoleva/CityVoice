@@ -3,13 +3,15 @@ import { projectService } from "./projects.service";
 
 export const getProjectsPaginated = async (req: Request, res: Response) => {
   try {
-    const { page, limit } = req.query;
+    const { page, limit, sortBy, sortOrder } = req.query;
     if (!page || !limit) {
       return res.status(400).json({ message: "Invalid page or limit" });
     }
     const projects = await projectService.getProjectsPaginated({
       page: +page,
       limit: +limit,
+      sortBy: sortBy as string,
+      sortOrder: sortOrder as "asc" | "desc"
     });
     return res.status(201).json(projects);
   } catch (error) {
