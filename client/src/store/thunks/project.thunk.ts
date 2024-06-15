@@ -8,8 +8,8 @@ export const previewProjectThunk = createAsyncThunk<
   { projects: ProjectPreview[]; totalPages: number },
   Pagination,
   { rejectValue: Error }
->("projects/fetchProjectsPaginated", async ({ limit, page }: Pagination) => {
-  return await getProjectsPaginated({ limit, page });
+>("projects/fetchProjectsPaginated", async ({ limit, page, sortBy, sortOrder }: Pagination) => {
+  return await getProjectsPaginated({ limit, page, sortBy, sortOrder });
 });
 
 export const singleProjectThunk = createAsyncThunk(

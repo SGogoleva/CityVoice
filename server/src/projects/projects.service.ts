@@ -3,11 +3,16 @@ import { Pagination } from "../types/pagination";
 import { Project } from "../types/projects";
 
 export const projectService = {
-  getProjectsPaginated: async ({ page, limit }: Pagination) => {
+  getProjectsPaginated: async ({ page, limit, sortBy, sortOrder }: Pagination) => {
     try {
+      const sort: Record<string, 1 | -1> = {};
+      if (sortBy && sortOrder) {
+        sort[sortBy] = sortOrder === "asc" ? 1 : -1;
+      }
       const result = await ProjectsModel.find()
         .skip((page - 1) * limit)
         .limit(limit)
+        .sort(sortBy && sortOrder ? sort : {})
         .exec();
 
       const count = await ProjectsModel.countDocuments();

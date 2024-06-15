@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { previewProjectThunk } from "../thunks/project.thunk";
 import { ProjectPreview } from "../../types/project";
+import { act } from "react";
 
 interface ProjectsState {
   projects: ProjectPreview[];
@@ -8,6 +9,8 @@ interface ProjectsState {
   error: string | null;
   currentPage: number;
   totalPages: number;
+  sortBy: string;
+  sortOrder: "asc" | "desc" | '';
 }
 
 const initialState: ProjectsState = {
@@ -16,6 +19,8 @@ const initialState: ProjectsState = {
   error: null,
   currentPage: 1,
   totalPages: 1,
+  sortBy: '',
+  sortOrder: '',
 };
 
 const projectsSlice = createSlice({
@@ -25,9 +30,12 @@ const projectsSlice = createSlice({
     setPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
     },
-    // appendProjects(state, action: PayloadAction<ProjectPreview[]>) {
-    //   state.projects = [...state.projects, ...action.payload];
-    // },
+    setSortBy(state, action) {
+      state.sortBy = action.payload;
+    },
+    setSortOrder(state, action) {
+      state.sortOrder = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -59,4 +67,4 @@ const projectsSlice = createSlice({
 });
 
 export default projectsSlice.reducer;
-export const { setPage } = projectsSlice.actions;
+export const { setPage, setSortBy, setSortOrder } = projectsSlice.actions;

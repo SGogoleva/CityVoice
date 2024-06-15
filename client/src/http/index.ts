@@ -23,8 +23,10 @@ const axiosInstance = axios.create({
 export const getProjectsPaginated = async ({
   page,
   limit,
+  sortBy,
+  sortOrder
 }: Pagination): Promise<{ projects: ProjectPreview[]; totalPages: number }> => {
-  const response = await axiosInstance.get(`main/?page=${page}&limit=${limit}`);
+  const response = await axiosInstance.get(`main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`);
   return {
     projects: response.data.result,
     totalPages: response.data.totalPages,
