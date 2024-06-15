@@ -196,7 +196,7 @@ const SingleProject = () => {
       <div className="w-full md:w-2/5 mb-4">
         {voteSubmitted ? (
           <>
-            <p className="text-[#50B04C] mb-4">Thank you for your vote!</p>
+            <p className="text-[#50B04C] mb-4 text-2xl font-bold">Thank you for your vote!</p>
             <VoteProgressBar project={project as Project} />
           </>
         ) : (
