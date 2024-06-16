@@ -1,33 +1,29 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { loggedUser, loginUser } from "../../types/userType"
-import { attemptLogin, isAuth, performLogout } from "../../http/index"
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { loggedUser, loginUser } from "../../types/userType";
+import { attemptLogin, isAuth, performLogout } from "../../http/index";
+import axios from "axios";
 
-export const loginThunk = createAsyncThunk
-<
+export const loginThunk = createAsyncThunk<
   loggedUser,
   loginUser,
-  { rejectValue: Error }>
-  (
-    'authentication/attemptLogin',
-    async ({ email, password }: loginUser) => {
-        return await attemptLogin({ email, password });
-    }
-  );
+  { rejectValue: Error }
+>("authentication/attemptLogin", async ({ email, password }: loginUser) => {
+  return await attemptLogin({ email, password });
+});
 
 export const checkAuthThunk = createAsyncThunk(
-  'authentication/check-token',
+  "authentication/check-token",
   async () => {
-    return await isAuth()
+    return await isAuth();
   }
-)
+);
 
 export const logoutThunk = createAsyncThunk(
   "authentication/logout",
   async () => {
     return await performLogout();
   }
-)
+);
 
 // export const loginThunk = createAsyncThunk(
 //   'auth/loginUser',

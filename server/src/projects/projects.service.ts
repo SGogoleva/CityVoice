@@ -3,29 +3,47 @@ import { Pagination } from "../types/pagination";
 import { Project } from "../types/projects";
 
 export const projectService = {
-  getProjectsPaginated: async ({ page, limit, sortBy, sortOrder }: Pagination) => {
+  getProjectsPaginated: async ({
+    page,
+    limit,
+    sortBy,
+    sortOrder,
+    cityId,
+  }: Pagination) => {
     try {
       const sort: Record<string, 1 | -1> = {};
       if (sortBy && sortOrder) {
         sort[sortBy] = sortOrder === "asc" ? 1 : -1;
       }
-      const sortedProjects = await ProjectsModel.find().sort(sortBy && sortOrder ? sort : {}).exec();
-      const paginatedProjects = sortedProjects.slice((page - 1) * limit, page * limit);
 
-      // const result = await ProjectsModel.find()
-      //   .skip((page - 1) * limit)
-      //   .limit(limit)
-      //   .sort(sortBy && sortOrder ? sort : {})
-      //   .exec();
+      const filter: Record<string, string> = {};
+      if (cityId) {
+        filter['city.cityId'] = String(cityId);
+      }
 
-      const count = await ProjectsModel.countDocuments();
+      // const sortedProjects = await ProjectsModel.find(filter).sort(sortBy && sortOrder ? sort : {}).exec();
+      // const paginatedProjects = sortedProjects.slice((page - 1) * limit, page * limit);
+
+      const result = await ProjectsModel.find(filter)
+        .sort(sortBy && sortOrder ? sort : {})
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .exec();
+
+      const count = await ProjectsModel.countDocuments(filter);
+
+      const city = await ProjectsModel.aggregate([
+        { $group: { _id: "$city.cityId", cityName: { $first: "$city.cityName" } } },
+        { $project: { _id: 0, cityId: "$_id", cityName: 1 } }
+      ]);
 
       return {
-        result: paginatedProjects,
+        result,
         currentLimit: limit,
         totalEntries: count,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
+        city
       };
     } catch (error) {
       console.error(error);
@@ -62,16 +80,16 @@ export const projectService = {
     }
   },
 
-  postVoteCounts: async ( {projectId, questionText, optionText}: Project ) => {
+  postVoteCounts: async ({ projectId, questionText, optionText }: Project) => {
     try {
       const project = await projectService.getProjectById(projectId);
       let questionFound = false;
       let optionFound = false;
-  
-      project?.questionnaire.forEach(question => {
+
+      project?.questionnaire.forEach((question) => {
         if (question.questionText === questionText) {
           questionFound = true;
-          question.options.forEach(option => {
+          question.options.forEach((option) => {
             if (option.optionText === optionText) {
               optionFound = true;
               option.voteCount += 1;
@@ -79,11 +97,14 @@ export const projectService = {
           });
         }
       });
-  return {project, questionFound: questionFound, optionFound: optionFound}
-    
+      return {
+        project,
+        questionFound: questionFound,
+        optionFound: optionFound,
+      };
     } catch (error) {
       console.error(error);
       return {};
     }
-  }
+  },
 };
