@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { RootState } from "../store/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getUserThunk } from "../store/thunks/user.thunk";
 
 const UserPreview = () => {
@@ -27,6 +27,7 @@ const UserPreview = () => {
                 <h3>Here you can review your acoount details an see your messages or how many points you've earned!</h3>
                 <p>Name: {user.name.firstName} {user.name.lastName}</p>
                 <p>Email: {user.email}</p>
+                <p>City: {user.city.cityName}</p>
                 <p>How many votes have you participated: {user.projectId.length}</p>
                 <p>Your earned points: {user.earnedPoints}</p>
             </div>
