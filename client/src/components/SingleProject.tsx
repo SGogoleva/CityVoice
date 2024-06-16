@@ -186,7 +186,7 @@ const SingleProject = () => {
         </p>
         <Link
           to="/projects"
-          className="bg-[#1F3E52] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
+          className="bg-[#50B04C] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
         >
           Back to all Projects
         </Link>
