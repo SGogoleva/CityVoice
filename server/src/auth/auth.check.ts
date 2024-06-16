@@ -26,10 +26,10 @@ export default checkAuth
 export const checkSessionToken = (req: Request, res: Response, next: NextFunction) => {
   const sessionToken = req.cookies['session-token'];
   const decodedToken = verifyToken(sessionToken)
-  const user = decodedToken
+
   if (sessionToken) {
     res.locals.isAuthenticated = true;
-    res.locals.user = user
+    res.locals.user = decodedToken
   } else {
     res.locals.isAuthenticated = false;
   }

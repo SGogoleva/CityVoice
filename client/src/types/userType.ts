@@ -29,3 +29,5 @@ export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints
 export type registeredUser = Omit<registerUser, "password">;
 
 export type loggedUser = Omit<Users, 'password'>
+
+export type authenticatedUser = Pick<Users, 'id' | "email">
