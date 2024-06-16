@@ -178,7 +178,7 @@ const SingleProject = () => {
           {project?.name}
         </h1>
         <img
-          src="URL_TO_PROJECT_IMAGE"
+          src={project?.imageUrl}
           className="w-full h-80 object-cover rounded-lg mb-6"
         />
         <p className="text-gray-600 text-center md:text-left">
@@ -196,7 +196,9 @@ const SingleProject = () => {
       <div className="w-full md:w-2/5 mb-4">
         {voteSubmitted ? (
           <>
-            <p className="text-[#50B04C] mb-4 text-2xl font-bold">Thank you for your vote!</p>
+            <p className="text-[#50B04C] mb-4 text-2xl font-bold">
+              Thank you for your vote!
+            </p>
             <VoteProgressBar project={project as Project} />
           </>
         ) : (

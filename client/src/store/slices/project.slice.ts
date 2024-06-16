@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { previewProjectThunk } from "../thunks/project.thunk";
 import { ProjectPreview } from "../../types/project";
-import { act } from "react";
 
 interface ProjectsState {
   projects: ProjectPreview[];
@@ -11,6 +10,8 @@ interface ProjectsState {
   totalPages: number;
   sortBy: string;
   sortOrder: "asc" | "desc" | '';
+  cities: ProjectPreview["city"][];
+  selectedCityId: string | null;
 }
 
 const initialState: ProjectsState = {
@@ -21,6 +22,8 @@ const initialState: ProjectsState = {
   totalPages: 1,
   sortBy: '',
   sortOrder: '',
+  cities: [],
+  selectedCityId: '',
 };
 
 const projectsSlice = createSlice({
@@ -37,6 +40,11 @@ const projectsSlice = createSlice({
     },
     setSortOrder(state, action) {
       state.sortOrder = action.payload;
+      state.currentPage = 1;
+      state.projects = [];
+    },
+    setSelectedCityId(state, action: PayloadAction<string | null>) {
+      state.selectedCityId = action.payload;
       state.currentPage = 1;
       state.projects = [];
     },
@@ -68,6 +76,7 @@ const projectsSlice = createSlice({
         }
 
         console.log(state.projects)
+        state.cities = action.payload.cities;
         state.totalPages = action.payload.totalPages;
         state.loading = false;
       })
@@ -79,4 +88,4 @@ const projectsSlice = createSlice({
 });
 
 export default projectsSlice.reducer;
-export const { setPage, setSortBy, setSortOrder } = projectsSlice.actions;
+export const { setPage, setSortBy, setSortOrder, setSelectedCityId } = projectsSlice.actions;

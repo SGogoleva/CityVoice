@@ -1,1442 +1,1922 @@
 [
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c950"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.05043,
       "longitude": 34.75224
     },
-    "cityId": 293253,
+    "cityId": "293253",
     "cityName": "Jaffa"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c951"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.1836,
       "longitude": 34.87386
     },
-    "cityId": 293807,
-    "cityName": "Ra'anana"
+    "cityId": "293807",
+    "cityName": "Raanana"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c952"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.8275,
       "longitude": 35.08583
     },
-    "cityId": 293844,
+    "cityId": "293844",
     "cityName": "Qiryat Bialik"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c953"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.78199,
       "longitude": 35.21961
     },
-    "cityId": 7498240,
+    "cityId": "7498240",
     "cityName": "West Jerusalem"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c954"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.88984,
       "longitude": 35.40703
     },
-    "cityId": 294387,
+    "cityId": "294387",
     "cityName": "Magh\u0101r"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c955"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.525,
       "longitude": 34.59693
     },
-    "cityId": 293619,
+    "cityId": "293619",
     "cityName": "Sederot"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c956"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.70444,
       "longitude": 35.1707
     },
-    "cityId": 293773,
+    "cityId": "293773",
     "cityName": "Ramat Yishay"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c957"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.68655,
       "longitude": 35.42118
     },
-    "cityId": 294502,
+    "cityId": "294502",
     "cityName": "Kefar Tavor"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c958"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.9941,
       "longitude": 35.14805
     },
-    "cityId": 295157,
+    "cityId": "295157",
     "cityName": "Esh Sheikh Dann\u016bn"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c959"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.3141,
       "longitude": 34.62025
     },
-    "cityId": 293992,
+    "cityId": "293992",
     "cityName": "Ofaqim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95a"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.60606,
       "longitude": 35.33408
     },
-    "cityId": 293449,
+    "cityId": "293449",
     "cityName": "S\u016blam"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95b"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.84966,
       "longitude": 35.06973
     },
-    "cityId": 293822,
+    "cityId": "293822",
     "cityName": "Qiryat Yam"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95c"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.08088,
       "longitude": 34.78057
     },
-    "cityId": 293397,
+    "cityId": "293397",
     "cityName": "Tel Aviv"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95d"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.05503,
       "longitude": 34.85789
     },
-    "cityId": 11049562,
+    "cityId": "11049562",
     "cityName": "Kiryat Ono"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95e"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.73898,
       "longitude": 35.15716
     },
-    "cityId": 295553,
+    "cityId": "295553",
     "cityName": "Basmat \u1e6cab\u2018\u016bn"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c95f"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.91764,
       "longitude": 35.03222
     },
-    "cityId": 8199383,
+    "cityId": "8199383",
     "cityName": "Lapid"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c960"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.7466,
       "longitude": 35.34242
     },
-    "cityId": 294610,
+    "cityId": "294610",
     "cityName": "Kafr Kann\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c961"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.28493,
       "longitude": 34.98106
     },
-    "cityId": 293896,
+    "cityId": "293896",
     "cityName": "Qalansuwa"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c962"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.69464,
       "longitude": 35.39252
     },
-    "cityId": 386042,
+    "cityId": "386042",
     "cityName": "Shibli"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c963"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.14613,
       "longitude": 34.8394
     },
-    "cityId": 293783,
+    "cityId": "293783",
     "cityName": "Ramat HaSharon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c964"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.14677,
       "longitude": 34.98622
     },
-    "cityId": 8199421,
+    "cityId": "8199421",
     "cityName": "Nirit"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c965"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.59812,
       "longitude": 34.95153
     },
-    "cityId": 295269,
+    "cityId": "295269",
     "cityName": "El Fureid\u012bs"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c966"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 29.55805,
       "longitude": 34.94821
     },
-    "cityId": 295277,
+    "cityId": "295277",
     "cityName": "Eilat"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c967"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.39547,
       "longitude": 34.75699
     },
-    "cityId": 8184212,
+    "cityId": "8184212",
     "cityName": "Rahat"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c968"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.77732,
       "longitude": 35.22069
     },
-    "cityId": 295404,
+    "cityId": "295404",
     "cityName": "B\u012br el Maks\u016br"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c969"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.96465,
       "longitude": 35.496
     },
-    "cityId": 293100,
+    "cityId": "293100",
     "cityName": "Safed"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96a"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.76904,
       "longitude": 35.21633
     },
-    "cityId": 281184,
+    "cityId": "281184",
     "cityName": "Jerusalem"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96b"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.92973,
       "longitude": 35.0215
     },
-    "cityId": 8199382,
+    "cityId": "8199382",
     "cityName": "Hashmonaim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96c"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.92923,
       "longitude": 34.86563
     },
-    "cityId": 293768,
+    "cityId": "293768",
     "cityName": "Ramla"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96d"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.01711,
       "longitude": 35.34835
     },
-    "cityId": 294666,
+    "cityId": "294666",
     "cityName": "\u1e24urfeish"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96e"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.01034,
       "longitude": 34.77918
     },
-    "cityId": 294751,
+    "cityId": "294751",
     "cityName": "H\u0331olon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c96f"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.92814,
       "longitude": 35.07647
     },
-    "cityId": 295721,
+    "cityId": "295721",
     "cityName": "Acre"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c970"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.70302,
       "longitude": 35.22359
     },
-    "cityId": 293310,
+    "cityId": "293310",
     "cityName": "Timrat"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c971"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.92933,
       "longitude": 34.79868
     },
-    "cityId": 294074,
+    "cityId": "294074",
     "cityName": "Ness Ziona"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c972"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.33291,
       "longitude": 34.85992
     },
-    "cityId": 294071,
+    "cityId": "294071",
     "cityName": "Netanya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c973"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.42305,
       "longitude": 34.58911
     },
-    "cityId": 294068,
+    "cityId": "294068",
     "cityName": "Netivot"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c974"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.86196,
       "longitude": 35.36365
     },
-    "cityId": 295339,
+    "cityId": "295339",
     "cityName": "Deir \u1e24ann\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c975"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.68889,
       "longitude": 34.94236
     },
-    "cityId": 295613,
+    "cityId": "295613",
     "cityName": "Atlit"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c976"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.85357,
       "longitude": 34.84646
     },
-    "cityId": 294303,
+    "cityId": "294303",
     "cityName": "Mazkeret Batya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c977"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.87808,
       "longitude": 34.73983
     },
-    "cityId": 293222,
+    "cityId": "293222",
     "cityName": "Yavn\u00e9"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c978"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.49728,
       "longitude": 35.49632
     },
-    "cityId": 295435,
+    "cityId": "295435",
     "cityName": "Bet She\u2019an"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c979"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.9467,
       "longitude": 34.8903
     },
-    "cityId": 294421,
+    "cityId": "294421",
     "cityName": "Lod"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97a"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.07817,
       "longitude": 34.84858
     },
-    "cityId": 294981,
+    "cityId": "294981",
     "cityName": "Giv'at Shmuel"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97b"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.02781,
       "longitude": 35.25658
     },
-    "cityId": 294205,
+    "cityId": "294205",
     "cityName": "Mi\u2018ily\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97c"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.69256,
       "longitude": 35.37123
     },
-    "cityId": 295370,
+    "cityId": "295370",
     "cityName": "Dabb\u016br\u012bya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97d"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.87581,
       "longitude": 35.12999
     },
-    "cityId": 8199387,
+    "cityId": "8199387",
     "cityName": "Beit Horon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97e"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.73072,
       "longitude": 34.99293
     },
-    "cityId": 295432,
+    "cityId": "295432",
     "cityName": "Bet Shemesh"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c97f"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.175,
       "longitude": 34.90694
     },
-    "cityId": 294514,
+    "cityId": "294514",
     "cityName": "Kfar Saba"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c980"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.32751,
       "longitude": 34.88878
     },
-    "cityId": 295424,
+    "cityId": "295424",
     "cityName": "Bet Yi\u1e95\u1e96aq"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c981"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.70619,
       "longitude": 35.50435
     },
-    "cityId": 293220,
+    "cityId": "293220",
     "cityName": "Yavne\u2019el"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c982"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.89421,
       "longitude": 34.81199
     },
-    "cityId": 293725,
+    "cityId": "293725",
     "cityName": "Re\u1e96ovot"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c983"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.96236,
       "longitude": 35.06553
     },
-    "cityId": 8199389,
+    "cityId": "8199389",
     "cityName": "Na'ale"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c984"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.44192,
       "longitude": 34.9039
     },
-    "cityId": 294946,
+    "cityId": "294946",
     "cityName": "Hadera"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c985"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.76021,
       "longitude": 34.97183
     },
-    "cityId": 293308,
+    "cityId": "293308",
     "cityName": "Tirat Karmel"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c986"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.89443,
       "longitude": 35.36931
     },
-    "cityId": 386253,
+    "cityId": "386253",
     "cityName": "Sallama"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c987"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.02379,
       "longitude": 34.75185
     },
-    "cityId": 295548,
+    "cityId": "295548",
     "cityName": "Bat Yam"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c988"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.64521,
       "longitude": 35.42147
     },
-    "cityId": 294607,
+    "cityId": "294607",
     "cityName": "Kafr Mi\u1e63r"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c989"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.0243,
       "longitude": 34.80632
     },
-    "cityId": 295584,
+    "cityId": "295584",
     "cityName": "Azor"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98a"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.15934,
       "longitude": 34.8932
     },
-    "cityId": 294760,
+    "cityId": "294760",
     "cityName": "Hod HaSharon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98b"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.79213,
       "longitude": 34.64966
     },
-    "cityId": 295629,
+    "cityId": "295629",
     "cityName": "Ashdod"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98c"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.87111,
       "longitude": 34.99081
     },
-    "cityId": 8199379,
+    "cityId": "8199379",
     "cityName": "Nof Ayalon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98d"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.02923,
       "longitude": 34.85788
     },
-    "cityId": 293962,
+    "cityId": "293962",
     "cityName": "Or Yehuda"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98e"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.67597,
       "longitude": 35.23986
     },
-    "cityId": 294210,
+    "cityId": "294210",
     "cityName": "Migdal Ha\u2018Emeq"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c98f"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.7615,
       "longitude": 35.11402
     },
-    "cityId": 294661,
+    "cityId": "294661",
     "cityName": "Ib\u1e6d\u012bn"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c990"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.93927,
       "longitude": 35.13539
     },
-    "cityId": 8199392,
+    "cityId": "8199392",
     "cityName": "Talmon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c991"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.02216,
       "longitude": 35.44694
     },
-    "cityId": 294627,
+    "cityId": "294627",
     "cityName": "J\u012bsh"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c992"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.69925,
       "longitude": 35.30483
     },
-    "cityId": 294098,
+    "cityId": "294098",
     "cityName": "Nazareth"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c993"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.72129,
       "longitude": 35.44122
     },
-    "cityId": 294611,
+    "cityId": "294611",
     "cityName": "Kafr Kamm\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c994"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.00191,
       "longitude": 34.82977
     },
-    "cityId": 295475,
+    "cityId": "295475",
     "cityName": "Bet Dagan"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c995"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.79212,
       "longitude": 35.32984
     },
-    "cityId": 293273,
+    "cityId": "293273",
     "cityName": "\u2018Uzeir"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c996"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.11926,
       "longitude": 35.12896
     },
-    "cityId": 8199422,
+    "cityId": "8199422",
     "cityName": "Revava"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c997"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.98793,
       "longitude": 34.8516
     },
-    "cityId": 294545,
+    "cityId": "294545",
     "cityName": "Kefar H\u0331abad"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c998"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.95451,
       "longitude": 35.1623
     },
-    "cityId": 294600,
+    "cityId": "294600",
     "cityName": "Kafir Yasif"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c999"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.01667,
       "longitude": 35.26667
     },
-    "cityId": 293420,
+    "cityId": "293420",
     "cityName": "maalot Tarsh\u012bh\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99a"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.29819,
       "longitude": 34.91313
     },
-    "cityId": 293014,
+    "cityId": "293014",
     "cityName": "\u1e94ur Moshe"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99b"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.08074,
       "longitude": 34.8338
     },
-    "cityId": 295514,
+    "cityId": "295514",
     "cityName": "Bnei Brak"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99c"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.69383,
       "longitude": 35.04686
     },
-    "cityId": 295365,
+    "cityId": "295365",
     "cityName": "Daliyat al Karmel"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99d"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.00892,
       "longitude": 35.09814
     },
-    "cityId": 294117,
+    "cityId": "294117",
     "cityName": "Nahariyya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99e"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.83693,
       "longitude": 35.40029
     },
-    "cityId": 295291,
+    "cityId": "295291",
     "cityName": "\u2018Eilabun"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c99f"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.93221,
       "longitude": 35.04416
     },
-    "cityId": 8199378,
+    "cityId": "8199378",
     "cityName": "Modiin Ilit"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a0"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.99385,
       "longitude": 35.27793
     },
-    "cityId": 386445,
+    "cityId": "386445",
     "cityName": "Kefar Weradim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a1"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.27918,
       "longitude": 35.5795
     },
-    "cityId": 294247,
+    "cityId": "294247",
     "cityName": "Metulla"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a2"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.86856,
       "longitude": 35.21171
     },
-    "cityId": 294615,
+    "cityId": "294615",
     "cityName": "K\u0101b\u016bl"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a3"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.1547,
       "longitude": 34.95372
     },
-    "cityId": 294634,
+    "cityId": "294634",
     "cityName": "Jalj\u016blya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a4"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.51725,
       "longitude": 35.15349
     },
-    "cityId": 293286,
+    "cityId": "293286",
     "cityName": "Umm el Fa\u1e25m"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a5"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.2341,
       "longitude": 34.95023
     },
-    "cityId": 295127,
+    "cityId": "295127",
     "cityName": "Tirah"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a6"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.18529,
       "longitude": 34.82082
     },
-    "cityId": 294508,
+    "cityId": "294508",
     "cityName": "Kefar Shemaryahu"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a7"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.60907,
       "longitude": 35.2892
     },
-    "cityId": 295740,
+    "cityId": "295740",
     "cityName": "Afula"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a8"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.68164,
       "longitude": 35.32365
     },
-    "cityId": 294658,
+    "cityId": "294658",
     "cityName": "Iks\u0101l"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9a9"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.26959,
       "longitude": 34.88759
     },
-    "cityId": 295122,
+    "cityId": "295122",
     "cityName": "Even Yehuda"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9aa"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.94266,
       "longitude": 35.34136
     },
-    "cityId": 293657,
+    "cityId": "293657",
     "cityName": "S\u0101j\u016br"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ab"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.91708,
       "longitude": 35.30501
     },
-    "cityId": 294577,
+    "cityId": "294577",
     "cityName": "Karmi\u2019el"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ac"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.81456,
       "longitude": 34.77998
     },
-    "cityId": 295064,
+    "cityId": "295064",
     "cityName": "Gedera"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ad"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.78333,
       "longitude": 34.75
     },
-    "cityId": 295515,
+    "cityId": "295515",
     "cityName": "Bnei Ayish"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ae"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.05971,
       "longitude": 34.8732
     },
-    "cityId": 295089,
+    "cityId": "295089",
     "cityName": "Ganei Tikva"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9af"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.07225,
       "longitude": 34.81253
     },
-    "cityId": 294999,
+    "cityId": "294999",
     "cityName": "Givatayim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b0"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.3147,
       "longitude": 34.89617
     },
-    "cityId": 294003,
+    "cityId": "294003",
     "cityName": "Nordiyya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b1"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.0284,
       "longitude": 34.8796
     },
-    "cityId": 10227184,
+    "cityId": "10227184",
     "cityName": "Yehud-Monosson"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b2"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.60998,
       "longitude": 34.76422
     },
-    "cityId": 293842,
+    "cityId": "293842",
     "cityName": "Qiryat Gat"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b3"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.97747,
       "longitude": 35.33345
     },
-    "cityId": 295379,
+    "cityId": "295379",
     "cityName": "Buqei\u2018a"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b4"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.24995,
       "longitude": 34.91737
     },
-    "cityId": 293354,
+    "cityId": "293354",
     "cityName": "Tel Mond"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b5"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 30.85154,
       "longitude": 34.7834
     },
-    "cityId": 6929924,
+    "cityId": "6929924",
     "cityName": "Midreshet Ben-Gurion"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b6"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.1065,
       "longitude": 35.18449
     },
-    "cityId": 8199394,
+    "cityId": "8199394",
     "cityName": "Ariel"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b7"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.25882,
       "longitude": 35.21282
     },
-    "cityId": 295657,
+    "cityId": "295657",
     "cityName": "Arad"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b8"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 30.98822,
       "longitude": 34.93176
     },
-    "cityId": 293203,
+    "cityId": "293203",
     "cityName": "Yero\u1e96am"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9b9"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.17409,
       "longitude": 34.8028
     },
-    "cityId": 8478264,
+    "cityId": "8478264",
     "cityName": "Herzliya Pituah"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ba"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.74907,
       "longitude": 35.09901
     },
-    "cityId": 293721,
+    "cityId": "293721",
     "cityName": "Rekhasim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9bb"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.93444,
       "longitude": 35.31679
     },
-    "cityId": 294114,
+    "cityId": "294114",
     "cityName": "Na\u1e25f"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9bc"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.91982,
       "longitude": 35.03669
     },
-    "cityId": 8199384,
+    "cityId": "8199384",
     "cityName": "Kfar NaOranim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9bd"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.09556,
       "longitude": 34.95664
     },
-    "cityId": 293690,
+    "cityId": "293690",
     "cityName": "Rosh Ha\u2018Ayin"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9be"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.97102,
       "longitude": 34.78939
     },
-    "cityId": 293703,
+    "cityId": "293703",
     "cityName": "Rishon Le\u1e94iyyon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9bf"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.99866,
       "longitude": 34.94559
     },
-    "cityId": 8428283,
+    "cityId": "8428283",
     "cityName": "Shoham"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c0"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.81841,
       "longitude": 34.9885
     },
-    "cityId": 294801,
+    "cityId": "294801",
     "cityName": "Haifa"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c1"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.81149,
       "longitude": 35.11323
     },
-    "cityId": 293845,
+    "cityId": "293845",
     "cityName": "Qiryat Ata"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c2"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.83155,
       "longitude": 35.24848
     },
-    "cityId": 294571,
+    "cityId": "294571",
     "cityName": "Kaukab Ab\u016b el H\u012bj\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c3"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.30577,
       "longitude": 34.90911
     },
-    "cityId": 293942,
+    "cityId": "293942",
     "cityName": "Pardesiyya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c4"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.20733,
       "longitude": 35.57212
     },
-    "cityId": 293825,
+    "cityId": "293825",
     "cityName": "Qiryat Shemona"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c5"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.71912,
       "longitude": 35.09708
     },
-    "cityId": 293020,
+    "cityId": "293020",
     "cityName": "\u1e94ur Hadassa"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c6"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.86422,
       "longitude": 35.29707
     },
-    "cityId": 293655,
+    "cityId": "293655",
     "cityName": "Sakhn\u012bn"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c7"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.81034,
       "longitude": 35.26009
     },
-    "cityId": 294608,
+    "cityId": "294608",
     "cityName": "Kafr Mand\u0101"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c8"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.25181,
       "longitude": 34.7913
     },
-    "cityId": 295530,
+    "cityId": "295530",
     "cityName": "Beersheba"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9c9"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.40793,
       "longitude": 34.92433
     },
-    "cityId": 295232,
+    "cityId": "295232",
     "cityName": "Elyakhin"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ca"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.11406,
       "longitude": 34.97624
     },
-    "cityId": 294604,
+    "cityId": "294604",
     "cityName": "Kafr Q\u0101sim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9cb"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.07079,
       "longitude": 35.03269
     },
-    "cityId": 295328,
+    "cityId": "295328",
     "cityName": "Dimona"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9cc"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.9282,
       "longitude": 35.15705
     },
-    "cityId": 294622,
+    "cityId": "294622",
     "cityName": "Judeida Makr"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9cd"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.03317,
       "longitude": 34.89091
     },
-    "cityId": 293207,
+    "cityId": "293207",
     "cityName": "Yehud"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ce"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.98338,
       "longitude": 35.09837
     },
-    "cityId": 295249,
+    "cityId": "295249",
     "cityName": "El Mazra\u2018a"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9cf"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.96464,
       "longitude": 35.38152
     },
-    "cityId": 295523,
+    "cityId": "295523",
     "cityName": "Beit Jann"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d0"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.96894,
       "longitude": 35.54258
     },
-    "cityId": 293688,
+    "cityId": "293688",
     "cityName": "Rosh Pinna"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d1"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.04966,
       "longitude": 34.8777
     },
-    "cityId": 293633,
+    "cityId": "293633",
     "cityName": "Savyon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d2"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.77802,
       "longitude": 35.30571
     },
-    "cityId": 386194,
+    "cityId": "386194",
     "cityName": "Rumat Heib"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d3"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.84876,
       "longitude": 35.03583
     },
-    "cityId": 8199385,
+    "cityId": "8199385",
     "cityName": "Mevo horon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d4"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.72339,
       "longitude": 35.31622
     },
-    "cityId": 295174,
+    "cityId": "295174",
     "cityName": "Er Reina"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d5"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.80592,
       "longitude": 35.1093
     },
-    "cityId": 295772,
+    "cityId": "295772",
     "cityName": "Ab\u016b Ghaush"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d6"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.16627,
       "longitude": 34.82536
     },
-    "cityId": 294778,
+    "cityId": "294778",
     "cityName": "Herzliya"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d7"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.63063,
       "longitude": 35.34885
     },
-    "cityId": 294089,
+    "cityId": "294089",
     "cityName": "Nein"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d8"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.19941,
       "longitude": 35.36253
     },
-    "cityId": 295224,
+    "cityId": "295224",
     "cityName": "\u2018En Boqeq"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9d9"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.08707,
       "longitude": 34.88747
     },
-    "cityId": 293918,
-    "cityName": "Peta\u1e96 Tiqwa"
+    "cityId": "293918",
+    "cityName": "Petakh Tiqwa"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9da"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.08607,
       "longitude": 35.11348
     },
-    "cityId": 294517,
+    "cityId": "294517",
     "cityName": "Kefar Rosh HaNiqra"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9db"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.78737,
       "longitude": 34.70659
     },
-    "cityId": 295080,
+    "cityId": "295080",
     "cityName": "Gan Yavne"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9dc"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.08227,
       "longitude": 34.81065
     },
-    "cityId": 293788,
+    "cityId": "293788",
     "cityName": "Ramat Gan"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9dd"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.06012,
       "longitude": 34.91069
     },
-    "cityId": 294093,
+    "cityId": "294093",
     "cityName": "Ne\u1e96alim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9de"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.04895,
       "longitude": 35.30893
     },
-    "cityId": 295104,
+    "cityId": "295104",
     "cityName": "Pasuta"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9df"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.83706,
       "longitude": 35.0776
     },
-    "cityId": 293831,
+    "cityId": "293831",
     "cityName": "Qiryat Mo\u1e95qin"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e0"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.80186,
       "longitude": 35.15072
     },
-    "cityId": 294245,
+    "cityId": "294245",
     "cityName": "Mevasseret \u1e94iyyon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e1"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 30.60944,
       "longitude": 34.80111
     },
-    "cityId": 294166,
+    "cityId": "294166",
     "cityName": "Mitzpe Ramon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e2"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.89385,
       "longitude": 35.01504
     },
-    "cityId": 282926,
+    "cityId": "282926",
     "cityName": "Modi\u2018in Makkabbim Re\u2018ut"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e3"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.80636,
       "longitude": 35.36486
     },
-    "cityId": 295380,
+    "cityId": "295380",
     "cityName": "Bu\u2018eina"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e4"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.76622,
       "longitude": 35.04425
     },
-    "cityId": 294078,
+    "cityId": "294078",
     "cityName": "Nesher"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e5"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.51888,
       "longitude": 34.90459
     },
-    "cityId": 7117228,
+    "cityId": "7117228",
     "cityName": "Cesarea"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e6"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.37284,
       "longitude": 34.81619
     },
-    "cityId": 6693244,
+    "cityId": "6693244",
     "cityName": "Lehavim"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e7"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.79221,
       "longitude": 35.53124
     },
-    "cityId": 293322,
+    "cityId": "293322",
     "cityName": "Tiberias"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e8"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 33.07216,
       "longitude": 35.14452
     },
-    "cityId": 293522,
+    "cityId": "293522",
     "cityName": "Shelomi"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9e9"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.92609,
       "longitude": 35.13393
     },
-    "cityId": 8199393,
+    "cityId": "8199393",
     "cityName": "Dolev"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ea"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.85301,
       "longitude": 35.1987
     },
-    "cityId": 293426,
+    "cityId": "293426",
     "cityName": "Tamra"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9eb"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.31669,
       "longitude": 34.93507
     },
-    "cityId": 294492,
+    "cityId": "294492",
     "cityName": "Kefar Yona"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ec"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.66926,
       "longitude": 34.57149
     },
-    "cityId": 295620,
+    "cityId": "295620",
     "cityName": "Ashkelon"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ed"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.82754,
       "longitude": 35.13093
     },
-    "cityId": 282582,
+    "cityId": "282582",
     "cityName": "Har Adar"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ee"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 32.26616,
       "longitude": 35.00893
     },
-    "cityId": 295130,
+    "cityId": "295130",
     "cityName": "E\u1e6d \u1e6caiyiba"
   },
   {
+    "_id": {
+      "$oid": "66685389b21a44805b25c9ef"
+    },
     "location": {
       "__type": "GeoPoint",
       "latitude": 31.84927,
       "longitude": 35.16106
     },
-    "cityId": 8199390,
+    "cityId": "8199390",
     "cityName": "Giv'on HaHadasha"
   }
 ]
