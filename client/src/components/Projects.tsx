@@ -1,11 +1,13 @@
 import { RootState, AppDispatch } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { previewProjectThunk } from "../store/thunks/project.thunk";
-import { setPage, setSortBy, setSortOrder } from "../store/slices/project.slice";
-import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { setPage } from "../store/slices/project.slice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { ClockIcon } from "@heroicons/react/24/outline";
+import CityFilter from "./single/ProjectsFilter";
+import SortProjects from "./single/ProjectsSort";
 
 const Projects = () => {
   const dispatch = useAppDispatch();
@@ -20,47 +22,34 @@ const Projects = () => {
   const totalPages = useAppSelector(
     (state: RootState) => state.projects.totalPages
   );
-  const error = useAppSelector((state: RootState) => state.projects.error);
-  const projectLength = useAppSelector((s) => s.projects.projects.length);
-  // useEffect(() => {
-  //   if (projectLength === 0) {
-  //     dispatch(previewProjectThunk({ limit: 9, page: currentPage }));
-  //   }
-  // }, [projectLength]);
-
-  const sortBy = useAppSelector((state: RootState) => state.projects.sortBy)
-  const sortOrder = useAppSelector((state: RootState) => state.projects.sortOrder)
+  const sortBy = useAppSelector((state: RootState) => state.projects.sortBy);
+  const sortOrder = useAppSelector(
+    (state: RootState) => state.projects.sortOrder
+  );
+  const cityId = useAppSelector(
+    (state: RootState) => state.projects.selectedCityId
+  );
 
   useEffect(() => {
     dispatch(
-      previewProjectThunk({ limit: 9, page: currentPage, sortBy, sortOrder })
+      previewProjectThunk({
+        limit: 9,
+        page: currentPage,
+        sortBy,
+        sortOrder,
+        cityId,
+      })
     );
-  }, [/*projectLength, sortBy, sortOrder*/ currentPage, sortBy, sortOrder]);
-  
-  const handleSortOrderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const sortRule = event.target.value.split(',');
-    dispatch(setSortOrder(sortRule[1]));
-    dispatch(setSortBy(sortRule[0]))
-    // dispatch(setPage(1));
-    // dispatch(previewProjectThunk({ limit: 9, page: 1, sortBy: sortBy, sortOrder: sortOrder }))
-    };
-    
+  }, [currentPage, sortBy, sortOrder, cityId]);
 
-    // const handleShowMore = () => {
-    //   const nextPage = currentPage + 1;
-    //   dispatch(setPage(nextPage));
-    //   dispatch(previewProjectThunk({ limit: 9, page: nextPage }));
-    //   };
+  const handleShowMore = () => {
+    const nextPage = currentPage + 1;
+    dispatch(setPage(nextPage));
+  };
 
-      const handleShowMore = () => {
-        const nextPage = currentPage + 1;
-        dispatch(setPage(nextPage));
-        };
-      
-
-      const handleProjectClick = (projectName: string, projectId: string) => {
-        const formattedName = projectName.toLowerCase().replace(/\s+/g, "-");
-        navigate(`/projects/${formattedName}`, {
+  const handleProjectClick = (projectName: string, projectId: string) => {
+    const formattedName = projectName.toLowerCase().replace(/\s+/g, "-");
+    navigate(`/projects/${formattedName}`, {
       state: { projectId },
     });
   };
@@ -71,16 +60,8 @@ const Projects = () => {
 
   return (
     <>
-      <div className="sort-options">
-        <label htmlFor="sort">Sort by: </label>
-        <select id="sort" onChange={handleSortOrderChange}>
-          <option value="">None</option>
-          <option value="dateCreated,asc">Oldest</option>
-          <option value="dateCreated,desc">Newest</option>
-          <option value="pollPrice,asc">Price low to high</option>
-          <option value="pollPrice,desc">Price high to low</option>
-        </select>
-      </div>
+      <SortProjects />
+      <CityFilter />
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 project-list">
         {projects?.map((project) => (
           <div
@@ -94,10 +75,14 @@ const Projects = () => {
               </div>
               <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
                 <ClockIcon className="h-5 w-5" />
-                <p>before {formatDate(project.dateCreated)}</p>
+                <p>Until {formatDate(project.dueDate)}</p>
               </div>
               <div className="image-placeholder flex items-center justify-center text-gray-500 h-full">
-                Photo
+                <img
+                  src={project.imageUrl}
+                  alt=""
+                  className="h-44 w-full object-contain"
+                />
               </div>
             </div>
             <h2 className="text-xl font-bold mb-2">{project.name}</h2>

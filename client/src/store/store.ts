@@ -6,6 +6,7 @@ import singleProjectReducer from "./slices/singleproject.slice"
 import voteReducer from "./slices/vote.slice"
 import messageReduser from "./slices/message.slice"
 import checkTokenReduser from "./slices/token.slice"
+import last3ProjectsReducer from "./slices/lastProjects.slice"
 
 
 const store = configureStore({
@@ -17,6 +18,7 @@ const store = configureStore({
     vote: voteReducer,
     message: messageReduser,
     isAuth: checkTokenReduser,
+    last3Projects: last3ProjectsReducer
   },
 });
 

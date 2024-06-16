@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
@@ -133,7 +134,7 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">CityVoice</span>
-            <img className="h-8 w-auto" src={Logo} alt="Logo" />
+            <NavLink to="/"><img className="h-8 w-auto" src={Logo} alt="Logo" /></NavLink>
           </a>
         </div>
         <Nav />

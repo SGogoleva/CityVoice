@@ -26,6 +26,8 @@ export type Project = {
   dateCreated: string;
   questionnaire: Question[];
   pollPrice: number;
+  dueDate: string,
+  imageUrl: string
 };
 
-export type ProjectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice">;
+export type ProjectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl" | "city">;

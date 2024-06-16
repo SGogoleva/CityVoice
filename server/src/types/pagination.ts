@@ -1,6 +1,7 @@
 export interface Pagination {
-    page: number
-    limit: number
-    sortBy?: string;
-    sortOrder?: "asc" | "desc";
-  }
+  page: number;
+  limit: number;
+  sortBy?: string;
+  sortOrder?: "asc" | "desc";
+  cityId?: string;
+}

@@ -24,11 +24,13 @@ export const getProjectsPaginated = async ({
   page,
   limit,
   sortBy,
-  sortOrder
-}: Pagination): Promise<{ projects: ProjectPreview[]; totalPages: number }> => {
-  const response = await axiosInstance.get(`main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`);
+  sortOrder,
+  cityId
+}: Pagination): Promise<{ projects: ProjectPreview[]; totalPages: number; cities: { cityId: string; cityName: string }[] }> => {
+  const response = await axiosInstance.get(`main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&cityId=${cityId}`);
   return {
     projects: response.data.result,
+    cities: response.data.city,
     totalPages: response.data.totalPages,
   };
 };
@@ -106,3 +108,11 @@ export const performLogout = async () => {
   await axiosInstance.post('/auth/logout', {}, { withCredentials: true })
   return false
 }
+
+export const get3LastProjects = async (): Promise<{ projects: ProjectPreview[]; totalPages: number }> => {
+  const response = await axiosInstance.get(`main/?page=1&limit=3&sortBy=dateCreated&sortOrder=descc`);
+  return {
+    projects: response.data.result,
+    totalPages: response.data.totalPages,
+  };
+};

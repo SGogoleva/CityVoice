@@ -45,6 +45,8 @@ const projectsSchema = new mongoose.Schema({
   dateCreated: { type: Date, default: Date.now },
   questionnaire: { type: [questionSchema], default: [] },
   pollPrice: { type: Number, default: 0 },
+  dueDate: String,
+  imageUrl: String
 });
 
 const imageSchema = new mongoose.Schema({

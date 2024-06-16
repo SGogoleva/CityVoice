@@ -25,6 +25,9 @@ const Message = () => {
   } = useForm<formMessage>();
   const [authorities, setAuthorities] = useState<Authority[]>([]);
   const [services, setServices] = useState<Service[]>([]);
+  const isAuthenticated = useAppSelector(
+    (state) => state.isAuth.isAuthenticated
+  );
 
   useEffect(() => {
     const fetchAuthorities = async () => {
@@ -54,6 +57,10 @@ const Message = () => {
   };
 
   const onSubmit: SubmitHandler<formMessage> = (data) => {
+    if (!isAuthenticated) {
+      alert("You need to login!");
+      return;
+    }
     const messageData: message = {
       // messageTitle: data.messageTitle,
       messageBody: data.messageBody,
