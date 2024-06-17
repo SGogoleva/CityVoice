@@ -60,8 +60,12 @@ const Projects = () => {
 
   return (
     <>
-      <SortProjects />
+    <div className="flex justify-between">
+
       <CityFilter />
+      <SortProjects />
+
+    </div>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 project-list">
         {projects?.map((project) => (
           <div
@@ -77,11 +81,11 @@ const Projects = () => {
                 <ClockIcon className="h-5 w-5" />
                 <p>Until {formatDate(project.dueDate)}</p>
               </div>
-              <div className="image-placeholder flex items-center justify-center text-gray-500 h-full">
+              <div className="image-placeholder flex items-end justify-center text-gray-500 h-full">
                 <img
                   src={project.imageUrl}
                   alt=""
-                  className="h-44 w-full object-contain"
+                  className="h-5/6 w-full object-cover"
                 />
               </div>
             </div>

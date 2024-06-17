@@ -1,8 +1,8 @@
 const PersonalPage = () => {
     return (
         <>
-          <div className="container mt-4 text-sm">
-            <h1>Personal Page</h1>
+          <div className="container mt-4 text-sm min-h-screen">
+            <h1 className="sr-only">Personal Page</h1>
           </div>
         </>
       );

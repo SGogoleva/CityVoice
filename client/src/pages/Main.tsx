@@ -10,41 +10,36 @@ import Projects3Preview from "../components/single/Projects3Preview";
 const MainPage = () => {
   return (
     <>
-      <div>
+      <div className="relative">
         <section
-          className="text-white bg-cover p-8 flex flex-col md:flex-row items-center justify-between relative"
+          className="text-white p-8 bg-cover bg-no-repeat bg-top bg-fixed flex flex-col md:flex-row items-center"
           style={{
             backgroundImage: "url('../../src/assets/citymain.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-            height: "400px",
           }}
         >
           <div className="absolute inset-0 bg-[#1F3E52] opacity-70"></div>
-          <div className="relative flex flex-col md:flex-row w-full items-center justify-between">
-            <div className="md:w-1/2 p-4 text-center md:text-left">
-              <h1 className="text-4xl font-bold mb-4">Welcome to CityVoice</h1>
-              <p className="text-lg mb-6">
-                Your voice matters! Engage in city life, vote on projects,
-                submit concerns, and earn rewards for your activity.
-              </p>
-              <Link
-                to="/login"
-                className="inline-block mt-6 mb-6 bg-[#50B04C] text-white py-2 px-4 rounded hover:bg-opacity-90"
-              >
-                Let's start!
-              </Link>
-            </div>
 
-            <div className="md:w-1/2 p-4 flex justify-center">
-              <img
-                src="../../src/assets/vote.webp"
-                alt="Additional content"
-                className="h-[440px] object-cover transform rotate-3"
-              />
-            </div>
+          <div className="relative z-10 md:w-1/2 m-4 p-4 text-center md:text-left">
+            <h2 className="text-4xl font-bold mb-6">Loyalty Program</h2>
+            <p className="text-lg mb-4">
+              Earn points for participating in city life and exchange them for
+              various city activities, such as free entry to cultural events or
+              discounts on services.
+            </p>
+            <Link
+              to="/login"
+              className="inline-block mt-6 mb-6 bg-[#50B04C] text-white py-2 px-4 rounded hover:bg-opacity-90"
+            >
+              Let's start!
+            </Link>
+          </div>
+
+          <div className="md:w-1/2 p-4 flex justify-center relative h-96">
+            <img
+              src="../../src/assets/vote.webp"
+              alt="City activity"
+              className="h-[140%] translate-y-[-13%] max-w-md rounded-lg transform rotate-3"
+            />
           </div>
         </section>
       </div>
