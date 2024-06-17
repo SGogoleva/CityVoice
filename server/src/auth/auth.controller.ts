@@ -23,7 +23,7 @@ export const login = async (req: Request, res: Response) => {
 };
 
 export const checkAuthToken = (req: Request, res: Response) => {
-  return res.status(200).json({ isAuthenticated: res.locals.isAuthenticated });
+  return res.status(200).json({ isAuthenticated: res.locals.isAuthenticated, user: res.locals.user });
 }
 
 export const logout = async (req: Request, res: Response) => {

@@ -1,10 +1,5 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { Link, useNavigate } from "react-router-dom";
-import Projects from "../components/Projects";
+import { Link } from "react-router-dom";
 import Message from "../components/Message";
-import { RootState } from "../store/store";
-import { projects3Thunk } from "../store/thunks/project.thunk";
 import Projects3Preview from "../components/single/Projects3Preview";
 
 const MainPage = () => {
@@ -52,7 +47,7 @@ const MainPage = () => {
               className="w-16 h-16 mx-auto mb-4"
               alt="Voting"
             />
-            <h3 className="text-xl font-semibold mb-2">Vote on Projects</h3>
+            <h3 className="text-xl font-semibold mb-2">Vote for Projects</h3>
             <p className="text-gray-600">
               Participate in votes and influence the development of your city.
             </p>
@@ -86,7 +81,7 @@ const MainPage = () => {
 
       <section className="p-8">
         <h2 className="text-2xl font-bold text-center mb-6">
-          Current Projects
+          Review Latest Projects
         </h2>
         <Projects3Preview />
         <div className="text-center mt-6">

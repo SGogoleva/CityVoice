@@ -1,3 +1,5 @@
+import UserPreview from "../components/UserPreview";
+
 const PersonalPage = () => {
     return (
         <>

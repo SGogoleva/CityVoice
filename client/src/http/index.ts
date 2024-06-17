@@ -25,9 +25,15 @@ export const getProjectsPaginated = async ({
   limit,
   sortBy,
   sortOrder,
-  cityId
-}: Pagination): Promise<{ projects: ProjectPreview[]; totalPages: number; cities: { cityId: string; cityName: string }[] }> => {
-  const response = await axiosInstance.get(`main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&cityId=${cityId}`);
+  cityId,
+}: Pagination): Promise<{
+  projects: ProjectPreview[];
+  totalPages: number;
+  cities: { cityId: string; cityName: string }[];
+}> => {
+  const response = await axiosInstance.get(
+    `main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&cityId=${cityId}`
+  );
   return {
     projects: response.data.result,
     cities: response.data.city,
@@ -90,29 +96,44 @@ export const sendMessage = async ({
 };
 
 export const getCities = async (): Promise<City[]> => {
-  const cities = await axiosInstance.get("/cities")
-  return cities.data
-}
+  const cities = await axiosInstance.get("/cities");
+  return cities.data;
+};
 
 export const getAuthorities = async (): Promise<Authority[]> => {
-  const authorities = await axiosInstance.get("/authorities")
-  return authorities.data
-}
+  const authorities = await axiosInstance.get("/authorities");
+  return authorities.data;
+};
 
 export const isAuth = async () => {
-  const isAuth = await axiosInstance.get('/auth/isAuth', { withCredentials: true })
-  return isAuth.data.isAuthenticated
-}
+  const isAuth = await axiosInstance.get("/auth/isAuth", {
+    withCredentials: true,
+  });
+  return {
+    isAuthenticated: isAuth.data.isAuthenticated,
+    user: isAuth.data.user,
+  };
+};
 
 export const performLogout = async () => {
-  await axiosInstance.post('/auth/logout', {}, { withCredentials: true })
-  return false
-}
+  await axiosInstance.post("/auth/logout", {}, { withCredentials: true });
+  return false;
+};
 
-export const get3LastProjects = async (): Promise<{ projects: ProjectPreview[]; totalPages: number }> => {
-  const response = await axiosInstance.get(`main/?page=1&limit=3&sortBy=dateCreated&sortOrder=descc`);
+export const get3LastProjects = async (): Promise<{
+  projects: ProjectPreview[];
+  totalPages: number;
+}> => {
+  const response = await axiosInstance.get(
+    `main/?page=1&limit=3&sortBy=dateCreated&sortOrder=descc`
+  );
   return {
     projects: response.data.result,
     totalPages: response.data.totalPages,
   };
+};
+
+export const getUserById = async (id: string): Promise<loggedUser> => {
+  const response = await axiosInstance.get(`users/singleUser/${id}`);
+  return response.data;
 };
