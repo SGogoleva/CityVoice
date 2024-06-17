@@ -36,11 +36,12 @@ const LoginForm = () => {
   //   dispatch(loginThunk({ email, password }));
   // };
 
-  useEffect(() => {
-    if (firstName) {
-      window.location.reload(); // Reload the page after successful login
-    }
-  }, [firstName]);
+  // useEffect(() => {
+  //   if (firstName) {
+  //     window.location.reload(); // Reload the page after successful login
+  //   }
+  // }, [firstName]);
+  
   return (
     // <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg">
     //   <form onSubmit={handleSubmit} className="mt-4 space-y-6">
