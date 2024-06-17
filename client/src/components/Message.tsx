@@ -22,6 +22,7 @@ const Message = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<formMessage>();
   const [authorities, setAuthorities] = useState<Authority[]>([]);
@@ -86,6 +87,7 @@ const Message = () => {
     try {
       await dispatch(sendMessageThunk(messageData)).unwrap();
       setIsMessageSent(true);
+      reset();
     } catch (error) {
       console.error("Failed to send message", error);
     }

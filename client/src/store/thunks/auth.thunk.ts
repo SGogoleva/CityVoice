@@ -7,8 +7,18 @@ export const loginThunk = createAsyncThunk<
   loggedUser,
   loginUser,
   { rejectValue: Error }
->("authentication/attemptLogin", async ({ email, password }: loginUser) => {
-  return await attemptLogin({ email, password });
+>("authentication/attemptLogin", async ({ email, password }: loginUser, { rejectWithValue }) => {
+  try {
+    const response = await attemptLogin({ email, password });
+    return response
+  } catch (error: any) {
+    if (error.response && error.response.data && error.response.data.message) {
+      return rejectWithValue(new Error(error.response.data.message));
+    } else {
+      return rejectWithValue(new Error('An unknown error occurred.'));
+    }
+  }
+   
 });
 
 export const checkAuthThunk = createAsyncThunk(

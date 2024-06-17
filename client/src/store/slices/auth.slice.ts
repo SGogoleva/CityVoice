@@ -23,6 +23,7 @@ const UsersAuthSlice = createSlice({
     builder
       .addCase(loginThunk.pending, (state) => {
         state.loading = true
+        state.error = null;
       })
       .addCase(loginThunk.fulfilled, (state, action: PayloadAction<loggedUser>) => {
         state.loading = false
