@@ -1,7 +1,7 @@
-import React from 'react';
+
 
 const Footer = () => {
-  const hoverEffect = 'hover:opacity-80 transition-opacity duration-300';
+
 
   return (
     <footer className='w-full px-6 py-6 text-sm text-white bg-[#1F3E52]'>

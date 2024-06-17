@@ -1,4 +1,4 @@
-import { RootState, AppDispatch } from "../store/store";
+import { RootState } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { previewProjectThunk } from "../store/thunks/project.thunk";
 import { setPage } from "../store/slices/project.slice";

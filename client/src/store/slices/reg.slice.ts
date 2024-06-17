@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { registeredUser, registerUser } from "../../types/userType";
+import { createSlice } from "@reduxjs/toolkit";
+import { registerUser } from "../../types/userType";
 import { registerUserThunk } from "../thunks/reg.thunk";
 import { FetchStatusState } from "../../types/status";
 

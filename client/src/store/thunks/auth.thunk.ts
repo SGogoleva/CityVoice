@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { loggedUser, loginUser } from "../../types/userType";
 import { attemptLogin, isAuth, performLogout } from "../../http/index";
-import axios from "axios";
+
 
 export const loginThunk = createAsyncThunk<
   loggedUser,

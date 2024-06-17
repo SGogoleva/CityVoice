@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Project, ProjectPreview } from "../../types/project";
+import { ProjectPreview } from "../../types/project";
 import { Pagination } from "../../types/pagination";
 import { get3LastProjects, getProjectsPaginated, postVote } from "../../http";
 import { getProjectData } from "../../http";

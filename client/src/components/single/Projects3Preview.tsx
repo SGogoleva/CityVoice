@@ -1,7 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useEffect } from "react";
 import { get3LastProjectsThunk } from "../../store/thunks/project.thunk";
-import { ClockIcon } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 

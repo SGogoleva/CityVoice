@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { logoutThunk } from "../../store/thunks/auth.thunk";
 import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { sendMessageThunk } from "../thunks/message.thunk";
 import { message } from "../../types/messages";
 import { FetchStatusState } from "../../types/status";

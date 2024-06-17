@@ -5,12 +5,10 @@ import {
   loggedUser,
   loginUser,
   registerUser,
-  registeredUser,
 } from "../types/userType";
 import { message } from "../types/messages";
 import { City } from "../types/cities";
 import { Authority } from "../types/authorities";
-import { error } from "console";
 const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
 const axiosInstance = axios.create({
