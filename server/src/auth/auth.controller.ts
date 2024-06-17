@@ -18,7 +18,7 @@ export const login = async (req: Request, res: Response) => {
       .clearCookie("session-token")
       .json({ message: "Invalid username or password" });
 
-  res.cookie("session-token", result.token, { httpOnly: true });
+  res.cookie("session-token", result.token, { httpOnly: true, secure: true });
   return res.status(200).json(result.user);
 };
 
