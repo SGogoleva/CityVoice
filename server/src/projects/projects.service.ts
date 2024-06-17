@@ -33,8 +33,27 @@ export const projectService = {
       const count = await ProjectsModel.countDocuments(filter);
 
       const city = await ProjectsModel.aggregate([
+        // { $group: { _id: "$city.cityId", cityName: { $first: "$city.cityName" } } },
+        // { $project: { _id: 0, cityId: "$_id", cityName: 1 } }
         { $group: { _id: "$city.cityId", cityName: { $first: "$city.cityName" } } },
-        { $project: { _id: 0, cityId: "$_id", cityName: 1 } }
+        { 
+          $lookup: {
+            from: "cities", // The name of the City collection
+            localField: "_id", // Field from the Projects collection to match
+            foreignField: "cityId", // Field from the City collection to match
+            as: "cityDetails"
+          }
+        },
+        { $unwind: "$cityDetails" }, // Unwind the array from $lookup
+        { 
+          $project: {
+            _id: 0,
+            cityId: "$_id",
+            cityName: 1,
+            latitude: "$cityDetails.latitude",
+            longitude: "$cityDetails.longitude"
+          }
+        }
       ]);
 
       return {

@@ -108,10 +108,34 @@ const authoritySchema = new mongoose.Schema({
   services: [serviceSchema]
 })
 
-const geoPointSchema = new mongoose.Schema({
-  __type: {
+// const geoPointSchema = new mongoose.Schema({
+//   __type: {
+//     type: String,
+//     enum: ['GeoPoint'],
+//     required: true
+//   },
+//   latitude: {
+//     type: Number,
+//     required: true
+//   },
+//   longitude: {
+//     type: Number,
+//     required: true
+//   }
+// });
+
+const citySchema = new mongoose.Schema({
+  // location: {
+  //   type: geoPointSchema,
+  //   required: true
+  // },
+  cityId: {
     type: String,
-    enum: ['GeoPoint'],
+    required: true,
+    unique: true
+  },
+  cityName: {
+    type: String,
     required: true
   },
   latitude: {
@@ -120,22 +144,6 @@ const geoPointSchema = new mongoose.Schema({
   },
   longitude: {
     type: Number,
-    required: true
-  }
-});
-
-const citySchema = new mongoose.Schema({
-  location: {
-    type: geoPointSchema,
-    required: true
-  },
-  cityId: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  cityName: {
-    type: String,
     required: true
   }
 });

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { previewProjectThunk } from "../thunks/project.thunk";
 import { ProjectPreview } from "../../types/project";
+import { City } from "../../types/cities";
 
 interface ProjectsState {
   projects: ProjectPreview[];
@@ -10,7 +11,7 @@ interface ProjectsState {
   totalPages: number;
   sortBy: string;
   sortOrder: "asc" | "desc" | '';
-  cities: ProjectPreview["city"][];
+  cities: City[];
   selectedCityId: string | null;
 }
 

@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import CityFilter from "./single/ProjectsFilter";
 import SortProjects from "./single/ProjectsSort";
+import ProjectMap from "./single/Map";
 
 const Projects = () => {
   const dispatch = useAppDispatch();
@@ -29,6 +30,7 @@ const Projects = () => {
   const cityId = useAppSelector(
     (state: RootState) => state.projects.selectedCityId
   );
+  
 
   useEffect(() => {
     dispatch(
@@ -60,12 +62,14 @@ const Projects = () => {
 
   return (
     <>
-    <div className="flex justify-between">
+    {/* <div className="flex justify-between">
 
       <CityFilter />
+      
       <SortProjects />
 
-    </div>
+    </div> */}
+    
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 project-list">
         {projects?.map((project) => (
           <div
