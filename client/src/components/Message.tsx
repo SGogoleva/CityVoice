@@ -60,8 +60,9 @@ const Message = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const openDialog = () => setIsDialogOpen(true);
   const closeDialog = () => setIsDialogOpen(false);
+  const [isMessageSent, setIsMessageSent] = useState(false);
 
-  const onSubmit: SubmitHandler<formMessage> = (data) => {
+  const onSubmit: SubmitHandler<formMessage> = async (data) => {
     if (!isAuthenticated) {
       openDialog();
       return;
@@ -82,105 +83,127 @@ const Message = () => {
         })) || [],
     };
 
-    dispatch(sendMessageThunk(messageData));
+    try {
+      await dispatch(sendMessageThunk(messageData)).unwrap();
+      setIsMessageSent(true);
+    } catch (error) {
+      console.error("Failed to send message", error);
+    }
   };
+
   return (
     <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg">
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-6">
-        {/* <div>
-        <label>Message Title</label>
-        <input
-        type="text"
-        placeholder="Message Title"
-        {...register("messageTitle", { required: true, minLength: 5, maxLength: 80 })}
-        />
-        {errors.messageTitle && <p>{errors.messageTitle.message}</p>}
-        </div> */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="authority"
-            className="mb-1 text-sm font-semibold text-gray-700"
+      {isMessageSent ? (
+        <div className="flex flex-col justify-center items-center text-[#50B04C] h-80">
+          <h2 className="text-xl font-semibold">Thank you for your message!</h2>
+          <button
+            className="mt-4 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90"
+            onClick={() => setIsMessageSent(false)}
           >
-            Authority
-          </label>
-          <select
-            {...register("authorityId", {
-              required: "Please select an authority",
-            })}
-            onChange={handleAuthorityChange}
-            className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
-          >
-            <option value="">Select an Authority</option>
-            {authorities.map((authority) => (
-              <option key={authority._id} value={authority._id}>
-                {authority.authorityName}
-              </option>
-            ))}
-          </select>
-          {errors.authorityId && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.authorityId.message}
-            </p>
-          )}
+            Send Another Message
+          </button>
         </div>
-        <div className="flex flex-col">
-          <label
-            htmlFor="messageTheme"
-            className="mb-1 text-sm font-semibold text-gray-700"
-          >
-            Message Theme
-          </label>
-          <select
-            {...register("messageTheme", { required: "Please select a theme" })}
-            className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
-          >
-            <option value="">Select a Theme</option>
-            {services.map((service) => (
-              <option key={service._id} value={service.name}>
-                {service.name}
-              </option>
-            ))}
-          </select>
-          {errors.messageTheme && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.messageTheme.message}
-            </p>
-          )}
-        </div>
-        <div className="flex flex-col">
-          <label
-            htmlFor="messageBody"
-            className="mb-1 text-sm font-semibold text-gray-700"
-          >
-            Describe your problem
-          </label>
-          <textarea
-            placeholder="Write your message here"
-            {...register("messageBody", {
-              required: "Please describe your problem",
-              minLength: {
-                value: 5,
-                message: "Minimum length is 5 characters",
-              },
-              maxLength: {
-                value: 250,
-                message: "Maximum length is 250 characters",
-              },
-            })}
-            className="block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-6">
+          {/* <div>
+          <label>Message Title</label>
+          <input
+          type="text"
+          placeholder="Message Title"
+          {...register("messageTitle", { required: true, minLength: 5, maxLength: 80 })}
           />
-          {errors.messageBody && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.messageBody.message}
-            </p>
-          )}
-        </div>
-        <button className="mt-6 mb-6 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 disabled:bg-gray-300">
-          Send Message
-        </button>
-      </form>
+          {errors.messageTitle && <p>{errors.messageTitle.message}</p>}
+          </div> */}
+          <div className="flex flex-col">
+            <label
+              htmlFor="authority"
+              className="mb-1 text-sm font-semibold text-gray-700"
+            >
+              Authority
+            </label>
+            <select
+              {...register("authorityId", {
+                required: "Please select an authority",
+              })}
+              onChange={handleAuthorityChange}
+              className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+            >
+              <option value="">Select an Authority</option>
+              {authorities.map((authority) => (
+                <option key={authority._id} value={authority._id}>
+                  {authority.authorityName}
+                </option>
+              ))}
+            </select>
+            {errors.authorityId && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.authorityId.message}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="messageTheme"
+              className="mb-1 text-sm font-semibold text-gray-700"
+            >
+              Message Theme
+            </label>
+            <select
+              {...register("messageTheme", {
+                required: "Please select a theme",
+              })}
+              className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+            >
+              <option value="">Select a Theme</option>
+              {services.map((service) => (
+                <option key={service._id} value={service.name}>
+                  {service.name}
+                </option>
+              ))}
+            </select>
+            {errors.messageTheme && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.messageTheme.message}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="messageBody"
+              className="mb-1 text-sm font-semibold text-gray-700"
+            >
+              Describe your problem
+            </label>
+            <textarea
+              placeholder="Write your message here"
+              {...register("messageBody", {
+                required: "Please describe your problem",
+                minLength: {
+                  value: 5,
+                  message: "Minimum length is 5 characters",
+                },
+                maxLength: {
+                  value: 250,
+                  message: "Maximum length is 250 characters",
+                },
+              })}
+              className="block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+            />
+            {errors.messageBody && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.messageBody.message}
+              </p>
+            )}
+          </div>
+          <button className="mt-6 mb-6 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 disabled:bg-gray-300">
+            Send Message
+          </button>
+        </form>
+      )}
+
       <LoginDialog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );
 };
+
 export default Message;
