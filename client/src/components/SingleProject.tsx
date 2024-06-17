@@ -8,6 +8,7 @@ import {
 } from "../store/thunks/project.thunk";
 import { Option, Project, Question } from "../types/project";
 import VoteProgressBar from "./single/ProgressBar";
+import LoginDialog from "../components/single/LoginDialog";
 
 // const SingleProject = () => {
 //   const location = useLocation();
@@ -76,6 +77,9 @@ const SingleProject = () => {
   const isAuthenticated = useAppSelector(
     (state) => state.isAuth.isAuthenticated
   );
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const openDialog = () => setIsDialogOpen(true);
+  const closeDialog = () => setIsDialogOpen(false);
 
   const { projectId } = location.state as { projectId: string };
   console.log(projectId);
@@ -120,7 +124,7 @@ const SingleProject = () => {
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (!isAuthenticated) {
-      alert("You need to login!");
+      openDialog();
       return;
     }
     if (
@@ -186,7 +190,7 @@ const SingleProject = () => {
         </p>
         <Link
           to="/projects"
-          className="bg-[#1F3E52] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
+          className="bg-[#50B04C] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
         >
           Back to all Projects
         </Link>
@@ -284,6 +288,7 @@ const SingleProject = () => {
           </p>
         )}
       </div>
+      <LoginDialog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );
 };

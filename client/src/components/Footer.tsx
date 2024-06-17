@@ -4,7 +4,7 @@ const Footer = () => {
   const hoverEffect = 'hover:opacity-80 transition-opacity duration-300';
 
   return (
-    <footer className='w-full px-6 py-6 mt-4 text-sm text-white bg-[#1F3E52]'>
+    <footer className='w-full px-6 py-6 text-sm text-white bg-[#1F3E52]'>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col md:flex-row md:items-center md:gap-4">
           <h2 className="text-lg font-bold">CityVoice</h2>

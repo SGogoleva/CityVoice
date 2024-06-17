@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useEffect } from "react";
 import { get3LastProjectsThunk } from "../../store/thunks/project.thunk";
-import { ClockIcon } from "@heroicons/react/16/solid";
+import { ClockIcon } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
@@ -44,7 +44,11 @@ const Projects3Preview = () => {
                 <p>Until {formatDate(project.dueDate)}</p>
               </div>
               <div className="image-placeholder flex items-end justify-center text-gray-500 h-full">
-                <img src={project.imageUrl} alt="" className="h-4/5 w-full object-cover"/>
+                <img
+                  src={project.imageUrl}
+                  alt=""
+                  className="h-5/6 w-full object-cover"
+                />
               </div>
             </div>
             <h2 className="text-xl font-bold mb-2">{project.name}</h2>

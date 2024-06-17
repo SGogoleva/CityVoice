@@ -30,12 +30,13 @@ const CityFilter = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="cityFilter">Filter by City:</label>
+    <div className="filter items-center">
+      <label htmlFor="cityFilter" className="mb-1 mr-4 text-sm font-semibold text-gray-700">Filter by City:</label>
       <select
         id="cityFilter"
         onChange={handleFilterChange}
         value={cityId || ""}
+        className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
       >
         <option value="">All Cities</option>
         {cities.map((city) => (

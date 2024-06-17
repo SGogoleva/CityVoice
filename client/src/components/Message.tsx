@@ -5,6 +5,7 @@ import { message } from "../types/messages";
 import { Authority, Service } from "../types/authorities";
 import { useEffect, useState } from "react";
 import { getAuthorities } from "../http";
+import LoginDialog from "../components/single/LoginDialog";
 
 interface formMessage {
   // messageTitle: string;
@@ -56,9 +57,13 @@ const Message = () => {
     }
   };
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const openDialog = () => setIsDialogOpen(true);
+  const closeDialog = () => setIsDialogOpen(false);
+
   const onSubmit: SubmitHandler<formMessage> = (data) => {
     if (!isAuthenticated) {
-      alert("You need to login!");
+      openDialog();
       return;
     }
     const messageData: message = {
@@ -99,7 +104,9 @@ const Message = () => {
             Authority
           </label>
           <select
-            {...register("authorityId", { required: "Please select an authority", })}
+            {...register("authorityId", {
+              required: "Please select an authority",
+            })}
             onChange={handleAuthorityChange}
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           >
@@ -124,7 +131,7 @@ const Message = () => {
             Message Theme
           </label>
           <select
-            {...register("messageTheme", { required: "Please select a theme", })}
+            {...register("messageTheme", { required: "Please select a theme" })}
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           >
             <option value="">Select a Theme</option>
@@ -162,12 +169,17 @@ const Message = () => {
             })}
             className="block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           />
-          {errors.messageBody && <p className="mt-1 text-sm text-red-600">{errors.messageBody.message}</p>}
+          {errors.messageBody && (
+            <p className="mt-1 text-sm text-red-600">
+              {errors.messageBody.message}
+            </p>
+          )}
         </div>
         <button className="mt-6 mb-6 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 disabled:bg-gray-300">
           Send Message
         </button>
       </form>
+      <LoginDialog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );
 };
