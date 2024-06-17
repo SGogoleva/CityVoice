@@ -9,6 +9,20 @@ import { ProjectPreview } from "../../types/project";
 import { City } from "../../types/cities";
 import { useNavigate } from "react-router-dom";
 
+
+// Import the icons using ES6 import statements
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+import L from "leaflet";
+
+// Fix leaflet's default icon issue with Webpack
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl,
+});
+
 interface ProjectMapProps {
   projects: ProjectPreview[];
   cities: City[];

@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import Message from "../components/Message";
 import Projects3Preview from "../components/single/Projects3Preview";
 import { useNavigate } from 'react-router-dom';
+import citymainImg from "../assets/citymain.webp"
+import forumImg from "../assets/forum.png"
+import giftImg from "../assets/gift.webp"
+import surveysImg from "../assets/surveys.png"
+import trolleyImg from "../assets/trolley.png"
+import voteImg from "../assets/vote.webp"
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -15,7 +21,7 @@ const MainPage = () => {
         <section
           className="text-white p-8 bg-cover bg-no-repeat bg-top bg-fixed flex flex-col md:flex-row items-center"
           style={{
-            backgroundImage: "url('../../src/assets/citymain.webp')",
+            backgroundImage: `url('${citymainImg}')`,
           }}
         >
           <div className="absolute inset-0 bg-[#1F3E52] opacity-70"></div>
@@ -37,7 +43,7 @@ const MainPage = () => {
 
           <div className="md:w-1/2 p-4 flex justify-center relative h-96">
             <img
-              src="../../src/assets/vote.webp"
+              src={voteImg}
               alt="City activity"
               className="h-[140%] translate-y-[-13%] max-w-md rounded-lg transform rotate-3"
             />
@@ -49,7 +55,7 @@ const MainPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="p-4 hover:scale-110">
             <img
-              src="../../src/assets/surveys.png"
+              src={surveysImg}
               className="w-16 h-16 mx-auto mb-4"
               alt="Voting"
             />
@@ -60,7 +66,7 @@ const MainPage = () => {
           </div>
           <div className="p-4 hover:scale-110">
             <img
-              src="../../src/assets/forum.png"
+              src={forumImg}
               className="w-16 h-16 mx-auto mb-4"
               alt="Submissions"
             />
@@ -72,7 +78,7 @@ const MainPage = () => {
           </div>
           <div className="p-4 hover:scale-110">
             <img
-              src="../../src/assets/trolley.png"
+              src={trolleyImg}
               className="w-16 h-16 mx-auto mb-4"
               alt="Rewards"
             />
@@ -103,7 +109,7 @@ const MainPage = () => {
       <section className="p-8 bg-gray-100 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 p-4 flex justify-center">
           <img
-            src="../../src/assets/gift.webp"
+            src={giftImg}
             alt="City activity"
             className="w-full h-auto max-w-md object-cover rounded-lg"
           />
