@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { loggedUser, Users } from "../../types/userType";
+import { loggedUser } from "../../types/userType";
 import { loginThunk, logoutThunk } from "../thunks/auth.thunk";
 import { FetchStatusState } from "../../types/status";  
 import { UserName } from "../../types/userType";

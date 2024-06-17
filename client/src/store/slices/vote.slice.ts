@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { postVote } from "../../http";
 import { postVoteThunk } from "../thunks/project.thunk";
 
 interface VotingState {

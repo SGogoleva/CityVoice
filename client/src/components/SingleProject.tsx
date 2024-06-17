@@ -143,7 +143,7 @@ const SingleProject = () => {
         for (const optionText of optionTextArray) {
           await dispatch(
             postVoteThunk({
-              projectId: project?._id,
+              projectId: project?._id!,
               questionText,
               optionText,
             })

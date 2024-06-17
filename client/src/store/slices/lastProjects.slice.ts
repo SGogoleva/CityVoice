@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { ProjectPreview } from "../../types/project";
 import { get3LastProjectsThunk } from "../thunks/project.thunk";
 

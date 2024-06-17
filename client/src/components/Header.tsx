@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";

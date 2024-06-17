@@ -12,7 +12,7 @@ export interface Question {
 }
 
 export type Project = {
-  id: string;
+  _id: string;
   authority: {
     authorityId: string;
     authorityName: string;
@@ -30,4 +30,4 @@ export type Project = {
   imageUrl: string
 };
 
-export type ProjectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl" | "city">;
+export type ProjectPreview = Pick<Project, "_id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl" | "city">;
