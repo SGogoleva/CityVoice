@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
 import Projects3Preview from "../components/single/Projects3Preview";
-import { useNavigate } from 'react-router-dom';
-import citymainImg from "../assets/citymain.webp"
-import forumImg from "../assets/forum.png"
-import giftImg from "../assets/gift.webp"
-import surveysImg from "../assets/surveys.png"
-import trolleyImg from "../assets/trolley.png"
-import voteImg from "../assets/vote.webp"
+import { useNavigate } from "react-router-dom";
+import citymainImg from "../assets/citymain.webp";
+import forumImg from "../assets/forum.png";
+import giftImg from "../assets/gift.webp";
+import surveysImg from "../assets/surveys.png";
+import trolleyImg from "../assets/trolley.png";
+import voteImg from "../assets/vote.webp";
 
 const MainPage = () => {
   const navigate = useNavigate();
 
   const handleLearnMoreClick = () => {
-    navigate('*');
+    navigate("*");
   };
   return (
     <>
@@ -27,11 +27,10 @@ const MainPage = () => {
           <div className="absolute inset-0 bg-[#1F3E52] opacity-70"></div>
 
           <div className="relative z-10 md:w-1/2 m-4 p-4 text-center md:text-left">
-            <h2 className="text-4xl font-bold mb-6">Loyalty Program</h2>
+            <h2 className="text-4xl font-bold mb-6">Welcome to CityVoice</h2>
             <p className="text-lg mb-4">
-              Earn points for participating in city life and exchange them for
-              various city activities, such as free entry to cultural events or
-              discounts on services.
+              Your voice matters! Engage in city life, vote on projects, submit
+              concerns, and earn rewards for your activity.
             </p>
             <Link
               to="/login"
@@ -121,7 +120,10 @@ const MainPage = () => {
             various city activities, such as free entry to cultural events or
             discounts on services.
           </p>
-          <button className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600" onClick={handleLearnMoreClick}>
+          <button
+            className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600"
+            onClick={handleLearnMoreClick}
+          >
             Learn More
           </button>
         </div>
