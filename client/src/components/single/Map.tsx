@@ -39,6 +39,7 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ projects, cities }) => {
       center={[32.05043, 34.75224]}
       zoom={8}
       style={{ height: "500px", width: "100%" }}
+      className="mt-8"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
