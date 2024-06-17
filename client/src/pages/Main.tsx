@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
 import Projects3Preview from "../components/single/Projects3Preview";
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate('*');
+  };
   return (
     <>
       <div className="relative">
@@ -109,7 +115,7 @@ const MainPage = () => {
             various city activities, such as free entry to cultural events or
             discounts on services.
           </p>
-          <button className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">
+          <button className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600" onClick={handleLearnMoreClick}>
             Learn More
           </button>
         </div>

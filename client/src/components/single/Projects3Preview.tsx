@@ -40,8 +40,8 @@ const Projects3Preview = () => {
                 +{project.pollPrice} scores
               </div>
               <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
-                <ClockIcon className="h-5 w-5" />
-                <p>Until {formatDate(project.dueDate)}</p>
+                {/* <ClockIcon className="h-5 w-5" /> */}
+                <p>Vote until {formatDate(project.dueDate)}</p>
               </div>
               <div className="image-placeholder flex items-end justify-center text-gray-500 h-full">
                 <img
