@@ -4,6 +4,7 @@ import cors from 'cors'
 import express, { Express } from 'express'
 import { initMongodb } from '../src/providers/mongodb'
 import mainRouter from './main.routes'
+import env from './config';
 
 initMongodb().catch((err) => {
   console.error(err)
@@ -12,7 +13,7 @@ initMongodb().catch((err) => {
 const app: Express = express()
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: env.CLIENT_URL,
   credentials: true
 };
 
