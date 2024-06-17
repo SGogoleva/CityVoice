@@ -1,4 +1,4 @@
-
+import citymainImg from "../assets/citymain.webp"
 
 const NoPage = () => {
   return (
@@ -6,7 +6,7 @@ const NoPage = () => {
   <div
     className="relative bg-cover bg-no-repeat bg-top bg-fixed flex items-center justify-center min-h-screen"
     style={{
-      backgroundImage: "url('../../src/assets/citymain.webp')",
+      backgroundImage: `url('${citymainImg}')`,
     }}
   >
     <div className="absolute inset-0 bg-[#1F3E52] opacity-70 z-0"></div>
