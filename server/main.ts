@@ -1,4 +1,4 @@
-import env from './config/index';
+import env from './src/config';
 import app from './src/index';
 
 app.listen(env.PORT, () => {
