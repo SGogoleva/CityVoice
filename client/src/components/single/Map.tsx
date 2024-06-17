@@ -62,9 +62,9 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ projects, cities }) => {
                     <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">
                       +{project.pollPrice} scores
                     </div>
-                    <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
-                      <ClockIcon className="h-5 w-5" />
-                      <p>Until {formatDate(project.dueDate)}</p>
+                    <div className="absolute top-0 left-2 flex space-x-1 px-1 py-0">
+                      {/* <ClockIcon className="h-5 w-5" /> */}
+                      <p>Vote until {formatDate(project.dueDate)}</p>
                     </div>
                     <div className="image-placeholder flex items-end justify-center text-gray-500 h-full">
                       <img

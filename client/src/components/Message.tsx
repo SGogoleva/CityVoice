@@ -94,7 +94,7 @@ const Message = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg">
+    <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg bg-gray-300">
       {isMessageSent ? (
         <div className="flex flex-col justify-center items-center text-[#50B04C] h-80">
           <h2 className="text-xl font-semibold">Thank you for your message!</h2>

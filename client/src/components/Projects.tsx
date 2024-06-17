@@ -6,9 +6,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import CityFilter from "./single/ProjectsFilter";
-import SortProjects from "./single/ProjectsSort";
-import ProjectMap from "./single/Map";
 
 const Projects = () => {
   const dispatch = useAppDispatch();
