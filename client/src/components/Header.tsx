@@ -13,9 +13,9 @@ const NavLinks = ({ mobile }: { mobile: boolean }) => {
   const linkClass = "text-sm font-semibold leading-6 text-gray-900";
   const mobileLinkClass =
     "block w-full px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50";
-  // const isAuthenticated = useAppSelector(
-  //   (state) => state.isAuth.isAuthenticated
-  // );
+  const isAuthenticated = useAppSelector(
+    (state) => state.isAuth.isAuthenticated
+  );
   useEffect(() => {
     dispatch(checkAuthThunk());
   }, [dispatch]);
@@ -35,7 +35,7 @@ const NavLinks = ({ mobile }: { mobile: boolean }) => {
       </NavLink>
       <div className="flex items-center cursor-pointer space-x-2">
         
-        {firstName ? (
+        {isAuthenticated ? (
           <>
             <NavLink
               className={mobile ? mobileLinkClass : linkClass}
