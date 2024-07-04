@@ -31,3 +31,14 @@ export type Project = {
 };
 
 export type ProjectPreview = Pick<Project, "_id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl" | "city">;
+
+interface Vote {
+  questionText: string;
+  optionText: string[];
+}
+
+export interface ProjectVotes {
+  projectId: string;
+  votes: Vote[];
+  userId: string;
+}

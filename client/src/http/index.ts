@@ -1,11 +1,7 @@
 import axios from "axios";
 import { Pagination } from "../types/pagination";
-import { Project, ProjectPreview } from "../types/project";
-import {
-  loggedUser,
-  loginUser,
-  registerUser,
-} from "../types/userType";
+import { Project, ProjectPreview, ProjectVotes } from "../types/project";
+import { loggedUser, loginUser, registerUser } from "../types/userType";
 import { message } from "../types/messages";
 import { City } from "../types/cities";
 import { Authority } from "../types/authorities";
@@ -60,19 +56,11 @@ export const getProjectData = async (projectId: string): Promise<Project> => {
   return response.data;
 };
 
-export const postVote = async ({
-  projectId,
-  questionText,
-  optionText,
-}: {
-  projectId: string;
-  questionText: string;
-  optionText: string;
-}) => {
+export const postVote = async ({ projectId, votes, userId }: ProjectVotes) => {
   const response = await axiosInstance.post("main/project/vote", {
     projectId,
-    questionText,
-    optionText,
+    votes,
+    userId,
   });
   return response.data;
 };

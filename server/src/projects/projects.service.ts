@@ -1,6 +1,7 @@
 import { ProjectsModel } from "../models/models";
 import { Pagination } from "../types/pagination";
-import { Project } from "../types/projects";
+import { Project, ProjectVotes } from "../types/projects";
+import { userService } from "../users/users.service";
 
 export const projectService = {
   getProjectsPaginated: async ({
@@ -18,7 +19,7 @@ export const projectService = {
 
       const filter: Record<string, string> = {};
       if (cityId) {
-        filter['city.cityId'] = String(cityId);
+        filter["city.cityId"] = String(cityId);
       }
 
       // const sortedProjects = await ProjectsModel.find(filter).sort(sortBy && sortOrder ? sort : {}).exec();
@@ -35,25 +36,30 @@ export const projectService = {
       const city = await ProjectsModel.aggregate([
         // { $group: { _id: "$city.cityId", cityName: { $first: "$city.cityName" } } },
         // { $project: { _id: 0, cityId: "$_id", cityName: 1 } }
-        { $group: { _id: "$city.cityId", cityName: { $first: "$city.cityName" } } },
-        { 
+        {
+          $group: {
+            _id: "$city.cityId",
+            cityName: { $first: "$city.cityName" },
+          },
+        },
+        {
           $lookup: {
             from: "cities", // The name of the City collection
             localField: "_id", // Field from the Projects collection to match
             foreignField: "cityId", // Field from the City collection to match
-            as: "cityDetails"
-          }
+            as: "cityDetails",
+          },
         },
         { $unwind: "$cityDetails" }, // Unwind the array from $lookup
-        { 
+        {
           $project: {
             _id: 0,
             cityId: "$_id",
             cityName: 1,
             latitude: "$cityDetails.latitude",
-            longitude: "$cityDetails.longitude"
-          }
-        }
+            longitude: "$cityDetails.longitude",
+          },
+        },
       ]);
 
       return {
@@ -62,14 +68,14 @@ export const projectService = {
         totalEntries: count,
         totalPages: Math.ceil(count / limit),
         currentPage: page,
-        city
+        city,
       };
     } catch (error) {
       console.error(error);
       return [];
     }
   },
-  getProjectById: async (projectId: string) => {
+  getProjectById: async (projectId: Project["projectId"]) => {
     try {
       const project = await ProjectsModel.findById(projectId);
       return project;
@@ -78,7 +84,7 @@ export const projectService = {
       return null;
     }
   },
-  getProjectVotes: async (projectId: string) => {
+  getProjectVotes: async (projectId: Project["projectId"]) => {
     try {
       const project = await projectService.getProjectById(projectId);
       const projectVotes = project?.questionnaire;
@@ -99,31 +105,76 @@ export const projectService = {
     }
   },
 
-  postVoteCounts: async ({ projectId, questionText, optionText }: Project) => {
+  // postVoteCounts: async ({ projectId, questionText, optionText, userId }: Project) => {
+  //   try {
+  //     const project = await projectService.getProjectById(projectId);
+  //     let questionFound = false;
+  //     let optionFound = false;
+
+  //     project?.questionnaire.forEach((question) => {
+  //       if (question.questionText === questionText) {
+  //         questionFound = true;
+  //         question.options.forEach((option) => {
+  //           if (option.optionText === optionText) {
+  //             optionFound = true;
+  //             option.voteCount += 1;
+  //           }
+  //         });
+  //       }
+  //     });
+
+  //     if (questionFound && optionFound) {
+  //       const pollPrice = project?.pollPrice ?? 0
+  //       await userService.updateVoteResults({userId, pollPrice, projectId});
+  //     }
+
+  //     return {
+  //       project,
+  //       questionFound: questionFound,
+  //       optionFound: optionFound,
+  //     };
+  //   } catch (error) {
+  //     console.error(error);
+  //     return {};
+  //   }
+  // },
+  updateVoteCounts: async ({ projectId, votes, userId }: ProjectVotes) => {
     try {
       const project = await projectService.getProjectById(projectId);
-      let questionFound = false;
-      let optionFound = false;
-
-      project?.questionnaire.forEach((question) => {
-        if (question.questionText === questionText) {
-          questionFound = true;
-          question.options.forEach((option) => {
-            if (option.optionText === optionText) {
-              optionFound = true;
-              option.voteCount += 1;
-            }
-          });
+      if (!project) {
+        throw new Error("Project not found");
+      }
+      votes.forEach((vote) => {
+        const { questionText, optionText } = vote;
+        const question = project.questionnaire.find(
+          (question) => question.questionText === questionText
+        );
+        if (!question) {
+          throw new Error(
+            `Question "${questionText}" not found in the project's questionnaire`
+          );
         }
+        optionText.forEach((optionVar) => {
+          const option = question.options.find(
+            (op) => op.optionText === optionVar
+          );
+          if (!option) {
+            throw new Error(
+              `Question "${optionVar}" not found in the project's questionnaire options`
+            );
+          }
+          option.voteCount += 1;
+        });
       });
+      const pollPrice = project?.pollPrice ?? 0;
+      await userService.updateVoteResults({ userId, pollPrice, projectId });
       return {
-        project,
-        questionFound: questionFound,
-        optionFound: optionFound,
+        project: project,
+        message: "Vote processed sucessfully",
       };
     } catch (error) {
-      console.error(error);
-      return {};
+      console.error("Error in postVoteCounts:", error);
+      throw error;
     }
   },
 };

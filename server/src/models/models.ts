@@ -1,28 +1,48 @@
 import mongoose from "mongoose";
 import { MessageStatus } from "../types/messages";
 
-const usersSchema = new mongoose.Schema({
-  name: {
-    firstName: String,
-    lastName: String,
+const usersSchema = new mongoose.Schema(
+  {
+    name: {
+      firstName: String,
+      lastName: String,
+    },
+    DOB: Date,
+    phone: { type: String, unique: true, required: true },
+    email: { type: String, unique: true, required: true },
+    passwordHash: { type: String, required: true },
+    city: {
+      cityId: { type: String, default: "" },
+      cityName: String,
+    },
+    dateCreated: { type: Date, default: Date.now },
+    projectId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Projects" }],
+    messageId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Messages" }],
+    earnedPoints: { type: Number, default: 0 },
   },
-  DOB: Date,
-  phone: { type: String, unique: true, required: true },
-  email: { type: String, unique: true, required: true },
-  passwordHash: { type: String, required: true },
-  city: {
-    cityId: { type: String, default: "" },
-    cityName: String,
-  },
-  dateCreated: { type: Date, default: Date.now },
-  projectId: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Projects' }],
-  messageId: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Messages' }],
-  earnedPoints: { type: Number, default: 0 },
-});
+  {
+    toObject: {
+      virtuals: true, // Include virtuals
+      versionKey: false, // Exclude __v field
+      transform: function (doc, ret) {
+        ret.id = ret._id; // Rename _id to id
+        delete ret._id; // Remove _id
+      },
+    },
+    toJSON: {
+      virtuals: true, // Include virtuals
+      versionKey: false, // Exclude __v fields
+      transform: function (doc, ret) {
+        ret.id = ret._id; // Rename _id to id
+        delete ret._id; // Remove _id
+      },
+    },
+  }
+);
 
 const answerSchema = new mongoose.Schema({
   optionText: { type: String, required: true },
-  voteCount: {type: Number, default: 0}
+  voteCount: { type: Number, default: 0 },
 });
 
 const questionSchema = new mongoose.Schema({
@@ -46,7 +66,7 @@ const projectsSchema = new mongoose.Schema({
   questionnaire: { type: [questionSchema], default: [] },
   pollPrice: { type: Number, default: 0 },
   dueDate: String,
-  imageUrl: String
+  imageUrl: String,
 });
 
 const imageSchema = new mongoose.Schema({
@@ -100,13 +120,13 @@ const messagesSchema = new mongoose.Schema({
 });
 
 const serviceSchema = new mongoose.Schema({
-  name: { type: String, required: true }
-})
+  name: { type: String, required: true },
+});
 
 const authoritySchema = new mongoose.Schema({
   authorityName: { type: String, required: true },
-  services: [serviceSchema]
-})
+  services: [serviceSchema],
+});
 
 // const geoPointSchema = new mongoose.Schema({
 //   __type: {
@@ -132,24 +152,24 @@ const citySchema = new mongoose.Schema({
   cityId: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   cityName: {
     type: String,
-    required: true
+    required: true,
   },
   latitude: {
     type: Number,
-    required: true
+    required: true,
   },
   longitude: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
 export const UsersModel = mongoose.model("Users", usersSchema);
 export const ProjectsModel = mongoose.model("Projects", projectsSchema);
 export const MessagesModel = mongoose.model("Messages", messagesSchema);
 export const authoritiesSchema = mongoose.model("Authorities", authoritySchema);
-export const City = mongoose.model('City', citySchema);
+export const City = mongoose.model("City", citySchema);
