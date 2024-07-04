@@ -1,10 +1,16 @@
 import { Request, Response, NextFunction } from "express";
 import { userService } from "./users.service";
+import mongoose from "mongoose";
 
 export const getUserById = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const user = await userService.getUserById(id);
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid user ID format" });
+    }
+
+    const objectId = new mongoose.Types.ObjectId(id);
+    const user = await userService.getUserById(objectId);
     if (!user) {
       res.status(404).json({ message: "User not found" });
     } else {
