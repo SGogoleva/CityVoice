@@ -1,15 +1,13 @@
 import { MessagesModel } from "../models/models";
 import messageSchema from "../schemas/messageSchema";
 import { Request, Response, NextFunction } from "express";
-import {AuthRequest} from "../types/authRequest"
-
+import { AuthRequest } from "../types/authRequest";
+import { userService } from "../users/users.service";
 
 export const sendMessage = async (req: AuthRequest, res: Response) => {
-  const { messageTitle, messageBody, authority, messageTheme, images } =
-    req.body;
+  const { messageBody, authority, messageTheme, images, userId } = req.body;
   try {
     const newMessage = new MessagesModel({
-      // messageTitle,
       messageBody,
       authority: {
         authorityName: authority.authorityName,
@@ -19,11 +17,8 @@ export const sendMessage = async (req: AuthRequest, res: Response) => {
       images,
     });
     const saveMessage = await newMessage.save();
-
-    if (req.user) {
-      req.user.messageId.push(saveMessage._id);
-      await req.user.save();
-    }
+    const messageId = saveMessage._id;
+    await userService.updateMessageSent({ messageId, userId });
 
     return res.status(201).json({
       message: "Message sent successfully",
