@@ -13,7 +13,7 @@ initMongodb().catch((err) => {
 const app: Express = express()
 
 const corsOptions = {
-  origin: env.CLIENT_URL,
+  origin: process.env.CLIENT_URL,
   credentials: true
 };
 

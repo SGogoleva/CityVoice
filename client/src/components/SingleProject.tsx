@@ -9,6 +9,7 @@ import {
 import { Option, Project, Question } from "../types/project";
 import VoteProgressBar from "./single/ProgressBar";
 import LoginDialog from "../components/single/LoginDialog";
+import Button from "./single/button";
 
 // const SingleProject = () => {
 //   const location = useLocation();
@@ -85,7 +86,7 @@ const SingleProject = () => {
   console.log(projectId);
   useEffect(() => {
     dispatch(singleProjectThunk(projectId));
-  }, [projectId]);
+  }, [dispatch, projectId]);
 
   console.log(projectId);
 
@@ -143,7 +144,7 @@ const SingleProject = () => {
         for (const optionText of optionTextArray) {
           await dispatch(
             postVoteThunk({
-              projectId: project?._id!,
+              projectId: project!._id!,
               questionText,
               optionText,
             })
@@ -190,7 +191,7 @@ const SingleProject = () => {
         </p>
         <Link
           to="/projects"
-          className="bg-[#50B04C] text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
+          className="bg-orange-500 text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
         >
           Back to all Projects
         </Link>
@@ -246,34 +247,38 @@ const SingleProject = () => {
 
               <div className="flex justify-between">
                 {currentQuestionIndex > 0 && (
-                  <button
+                  <Button
                     type="button"
                     onClick={handlePrev}
-                    className="bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300 w-32"
+                    variant="dim"
+                    size="medium"
+                    className="w-32"
                   >
                     Previous
-                  </button>
+                  </Button>
                 )}
 
                 {currentQuestionIndex <
                 (project?.questionnaire.length || 0) - 1 ? (
-                  <button
+                  <Button
                     type="button"
                     onClick={handleNext}
-                    className="bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 w-32"
+                    variant="primary"
+                    size="medium"
+                    className="w-32"
                   >
                     Next
-                  </button>
+                  </Button>
                 ) : (
-                  <button
+                  <Button
                     type="button"
-                    onClick={async (event) => {
-                      await handleSubmit(event);
-                    }}
-                    className="bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 w-32"
+                    onClick={async (event) => await handleSubmit(event)}
+                    variant="secondary"
+                    size="medium"
+                    className="w-32"
                   >
                     Submit
-                  </button>
+                  </Button>
                 )}
               </div>
             </div>

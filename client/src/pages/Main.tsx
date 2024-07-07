@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
-import Projects3Preview from "../components/single/Projects3Preview";
 import { useNavigate } from "react-router-dom";
 import citymainImg from "../assets/citymain.webp";
 import forumImg from "../assets/forum.png";
@@ -8,6 +7,8 @@ import giftImg from "../assets/gift.webp";
 import surveysImg from "../assets/surveys.png";
 import trolleyImg from "../assets/trolley.png";
 import voteImg from "../assets/vote.webp";
+import Button from "../components/single/button";
+import Projects from "../components/Projects";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ const MainPage = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Review Latest Projects
         </h2>
-        <Projects3Preview />
+      <Projects limit={3} showPagination={false} />
         <div className="text-center mt-6">
           <Link
             to="/projects"
@@ -120,12 +121,13 @@ const MainPage = () => {
             various city activities, such as free entry to cultural events or
             discounts on services.
           </p>
-          <button
-            className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600"
+          <Button
+            type="button"
+            variant="bright"
             onClick={handleLearnMoreClick}
           >
             Learn More
-          </button>
+          </Button>
         </div>
       </section>
 

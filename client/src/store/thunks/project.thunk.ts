@@ -3,10 +3,11 @@ import { ProjectPreview } from "../../types/project";
 import { Pagination } from "../../types/pagination";
 import { get3LastProjects, getProjectsPaginated, postVote } from "../../http";
 import { getProjectData } from "../../http";
+import { City } from "../../types/cities";
 
 export const previewProjectThunk = createAsyncThunk<
   {
-    cities: any;
+    cities: City[];
     projects: ProjectPreview[];
     totalPages: number;
   },

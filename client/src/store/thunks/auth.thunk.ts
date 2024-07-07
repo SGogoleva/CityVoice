@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { loggedUser, loginUser } from "../../types/userType";
 import { attemptLogin, isAuth, performLogout } from "../../http/index";
+import { CustomError } from "../../types/error";
 
 
 export const loginThunk = createAsyncThunk<
@@ -11,9 +12,10 @@ export const loginThunk = createAsyncThunk<
   try {
     const response = await attemptLogin({ email, password });
     return response
-  } catch (error: any) {
-    if (error.response && error.response.data && error.response.data.message) {
-      return rejectWithValue(new Error(error.response.data.message));
+  } catch (error: unknown) {
+    const typedError = error as CustomError;
+    if (typedError.response && typedError.response.data && typedError.response.data.message) {
+      return rejectWithValue(new Error(typedError.response.data.message));
     } else {
       return rejectWithValue(new Error('An unknown error occurred.'));
     }
