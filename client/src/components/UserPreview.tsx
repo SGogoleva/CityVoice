@@ -17,7 +17,7 @@ const UserPreview = () => {
     if (userId?.id) {
       dispatch(getUserThunk(userId.id));
     }
-  }, [isAuthenticated]);
+  }, [dispatch, isAuthenticated, userId?.id]);
 
   if (!isAuthenticated) {
     return <div>Please log in to see the user information.</div>;
@@ -27,10 +27,10 @@ const UserPreview = () => {
     <div className="relative bg-white rounded-lg shadow-lg max-w-4xl w-full z-10 p-16">
       {user && (
         <div className="space-y-4">
-          <h1 className="text-2xl font-bold text-left text-gray-800 text-center">
+          <h1 className="text-2xl font-bold text-left text-gray-800">
             Welcome, {user.name.firstName}, to your personal space!
           </h1>
-          <h3 className="text-lg text-center text-gray-600 text-center">
+          <h3 className="text-lg text-center text-gray-600">
             Here you can review your account details and see your messages or
             how many points you've earned!
           </h3>

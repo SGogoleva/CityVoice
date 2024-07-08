@@ -1,7 +1,8 @@
-import React from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../single/button";
 
 interface LoginDialogProps {
   isOpen: boolean;
@@ -13,7 +14,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose }) => {
 
   const handleLoginClick = () => {
     onClose();
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -56,20 +57,20 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className="mt-4 flex justify-end space-x-2">
-                  <button
+                  <Button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
+                    variant="dim"
                     onClick={onClose}
                   >
                     Cancel
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-[#50B04C] px-4 py-2 text-sm font-medium text-white hover:bg-opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    variant="secondary"
                     onClick={handleLoginClick}
                   >
                     Go to Login
-                  </button>
+                  </Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

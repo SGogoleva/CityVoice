@@ -24,7 +24,7 @@ export const getProjectsPaginated = async ({
 }: Pagination): Promise<{
   projects: ProjectPreview[];
   totalPages: number;
-  cities: { cityId: string; cityName: string }[];
+  cities: City[];
 }> => {
   const response = await axiosInstance.get(
     `main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&cityId=${cityId}`
@@ -89,6 +89,7 @@ export const getCities = async (): Promise<City[]> => {
 
 export const getAuthorities = async (): Promise<Authority[]> => {
   const authorities = await axiosInstance.get("/authorities");
+  console.log(authorities.data)
   return authorities.data;
 };
 

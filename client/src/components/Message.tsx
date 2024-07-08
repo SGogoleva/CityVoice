@@ -6,6 +6,7 @@ import { Authority, Service } from "../types/authorities";
 import { useEffect, useState } from "react";
 import { getAuthorities } from "../http";
 import LoginDialog from "../components/single/LoginDialog";
+import Button from "./single/button";
 
 interface formMessage {
   // messageTitle: string;
@@ -94,19 +95,20 @@ const Message = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 shadow-md rounded-lg bg-gray-300">
+    <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-white shadow-md rounded-lg">
       {isMessageSent ? (
         <div className="flex flex-col justify-center items-center text-[#50B04C] h-80">
           <h2 className="text-xl font-semibold">Thank you for your message!</h2>
-          <button
-            className="mt-4 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90"
+          <Button
+            className="mt-4"
+            variant="primary"
             onClick={() => setIsMessageSent(false)}
           >
             Send Another Message
-          </button>
+          </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* <div>
           <label>Message Title</label>
           <input
@@ -197,9 +199,13 @@ const Message = () => {
               </p>
             )}
           </div>
-          <button className="mt-6 mb-6 bg-[#1F3E52] text-white py-2 px-4 rounded hover:bg-opacity-90 disabled:bg-gray-300">
+          <Button
+            type="submit"
+            variant="primary"
+            className="mt-4"
+          >
             Send Message
-          </button>
+          </Button>
         </form>
       )}
 
