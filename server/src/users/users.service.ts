@@ -1,7 +1,7 @@
 import { Db } from "mongodb";
 import { UsersModel } from "../models/models";
 import { UserMessages } from "../types/messages";
-import { UpdateUserVotes } from "../types/users";
+import { UpdateUserVotes, UpdatedUserInfo } from "../types/users";
 
 export const userService = {
   getUserById: async (id: UpdateUserVotes["userId"]) => {
@@ -47,11 +47,10 @@ export const userService = {
         { $addToSet: { messageId: messageId } }
       );
       return updatedUserMessage;
-      // user.messageId.push(messageId)
-      // await user.save()
     } catch (error) {
       console.error("Error updating messages:", error);
       throw error;
     }
   },
+  updateUser: async ({userId, updatedFields}: UpdatedUserInfo) => {}
 };

@@ -17,7 +17,8 @@ export async function verifyPassword(
   hash: string
 ): Promise<boolean> {
   try {
-    return await bcrypt.compare(password, hash);
+    const result = await bcrypt.compare(password, hash);
+    return result
   } catch (error) {
     throw new Error("Error verifying password");
   }

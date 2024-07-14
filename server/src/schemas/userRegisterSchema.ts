@@ -1,23 +1,43 @@
+import moment from "moment";
 import { z } from "zod";
+import SCHEMAS_CONSTANTS from "./const";
 
 const userRegisterSchema = z.object({
-  name: z.object({
-    firstName: z.string().min(3, { message: "First name is required" }),
-    lastName: z.string().min(3, { message: "Last name is required" }),
-  }),
-  DOB: z.string({ required_error: "Date of Birth is required" }),
+  firstName: z.string().min(3, { message: "First name is required" }),
+  lastName: z.string().min(3, { message: "Last name is required" }),
+  DOB: z
+    .string()
+    .min(1, { message: "Date of Birth is required" })
+    .refine(
+      (dob) => {
+        const birthDate = moment(dob, "YYYY-MM-DD");
+        const minDate = moment().subtract(SCHEMAS_CONSTANTS.MIN_AGE, "years");
+        return birthDate.isBefore(minDate);
+      },
+      {
+        message: `User must be at least ${SCHEMAS_CONSTANTS.MIN_AGE} years old`,
+      }
+    ),
   phone: z
     .string()
     .length(10, { message: "Phone number must be exactly 10 digits long" })
-    .regex(/^0\d{9}$/, {
-      message: "Phone number must start with 0 and contain only digits",
-    })
-    .transform((phoneNumber) => `+972${phoneNumber.slice(1)}`),
+    .regex(SCHEMAS_CONSTANTS.PHONE_REGEX, {
+      message: "Phone number must start with 05 and contain only digits",
+    }),
+  numberID: z
+    .number()
+    .int()
+    .gte(100000000, { message: "ID number must be 9 digits" })
+    .lte(999990000, { message: "ID number must be 9 digits" }),
   email: z.string().email({ message: "Invalid email address" }),
-  password: z.string().min(5, { message: "Password is required" }),
-  city: z.object({
-    cityName: z.string().min(3, { message: "City Name is required" }),
-  }),
+  password: z
+    .string()
+    .min(5, { message: "Password must be at least 5 characters long" })
+    .regex(SCHEMAS_CONSTANTS.PASSORD_REGEX, {
+      message:
+        "Password must include at least one digit and one special character",
+    }),
+  city: z.string().min(1, { message: "City is required" }),
 });
 
 export default userRegisterSchema;

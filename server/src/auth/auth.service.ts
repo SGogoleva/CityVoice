@@ -1,29 +1,30 @@
 import { generateToken } from "../utils/jwt";
 import { verifyPassword } from "../utils/bcrypt";
 import { UsersModel } from "../models/models";
+import { UserLogin } from "../types/users";
 
 export const authService = {
-  login: async (email: string, password: string) => {
-    const user = await UsersModel.findOne({ email });
+  login: async ({ numberID, password }: UserLogin) => {
+    const user = await UsersModel.findOne({ numberID });
 
     if (!user) {
-      return null;
+      throw new Error("User not found");
     }
 
     const isPasswordValid = await verifyPassword(password, user.passwordHash);
 
     if (!isPasswordValid) {
-      return null;
+      throw new Error("Invalid password");
     }
 
-    const { email: userEmail, _id } = user;
-    const token = generateToken({ id: _id.toString(), email: userEmail });
+    const token = generateToken({ id: user.id, username: user.numberID });
 
-    (user as any).passwordHash = undefined;
+    const userToObject = user.toObject();
+    const { passwordHash, ...userToReturn } = userToObject;
 
     return {
       token,
-      user,
+      user: userToReturn,
     };
   },
 };
