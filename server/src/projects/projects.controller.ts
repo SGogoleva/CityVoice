@@ -6,7 +6,7 @@ export const getProjectsPaginated = async (req: Request, res: Response) => {
   try {
     const { page, limit, sortBy, sortOrder, cityId } = req.query;
     if (!page || !limit) {
-      return res.status(400).json({ message: "Invalid page or limit" });
+      return res.status(400).json({ message: "Invalid projects page or limit" });
     }
     const projects = await projectService.getProjectsPaginated({
       page: +page,
