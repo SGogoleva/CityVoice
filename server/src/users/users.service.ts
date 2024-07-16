@@ -3,6 +3,7 @@ import { UsersModel } from "../models/models";
 import { UserMessages } from "../types/messages";
 import { UpdateUserVotes, UpdatedUserInfo } from "../types/users";
 import { MESSAGE_PRICE } from "../config/const";
+import { Pagination } from "../types/pagination";
 
 export const userService = {
   getUserById: async (id: UpdateUserVotes["userId"]) => {
@@ -12,6 +13,39 @@ export const userService = {
     } catch (error) {
       console.error("Error getting user by ID:", error);
       throw new Error("User not found");
+    }
+  },
+  getUsersPaginated: async ({
+    page,
+    limit,
+    sortBy,
+    sortOrder,
+  }: Pagination) => {
+    try {
+      const sort: Record<string, 1 | -1> = {};
+      if (sortBy && sortOrder) {
+        sort[sortBy] = sortOrder === "asc" ? 1 : -1;
+      }
+
+      const result = await UsersModel.find()
+      .select('name.firstName name.lastName earnedPoints -_id messageId projectId')
+      .sort(sortBy && sortOrder ? sort : {})
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .exec();
+
+      const count = await UsersModel.countDocuments();
+
+      return {
+        result,
+        currentLimit: limit,
+        totalEntries: count,
+        totalPages: Math.ceil(count / limit),
+        currentPage: page,
+      };
+    } catch (error) {
+      console.error(error);
+      return [];
     }
   },
   updateVoteResults: async ({

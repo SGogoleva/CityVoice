@@ -23,10 +23,10 @@ const imageSchema = z.object({
 });
 
 const messageSchema = z.object({
-  // messageTitle: z
-  //   .string()
-  //   .min(5, { message: "Title is required" })
-  //   .max(50, { message: "Exceeded maximum characters allowed" }),
+  isVisible: z.boolean({
+    required_error: "isVisible is required",
+    invalid_type_error: "isVisible must be a boolean",
+  }),
   messageBody: z
     .string()
     .min(5, { message: "Message is required" })
@@ -35,9 +35,6 @@ const messageSchema = z.object({
   authority: z.object({
     authorityName: z.string(),
   }),
-  // status: z
-  //   .enum([MessageStatus.sent, MessageStatus.read, MessageStatus.replied])
-  //   .default(MessageStatus.sent),
   images: z
     .array(imageSchema)
     .max(3, { message: "You can upload a maximum of 3 images" })
