@@ -2,6 +2,7 @@ import { Db } from "mongodb";
 import { UsersModel } from "../models/models";
 import { UserMessages } from "../types/messages";
 import { UpdateUserVotes, UpdatedUserInfo } from "../types/users";
+import { MESSAGE_PRICE } from "../config/const";
 
 export const userService = {
   getUserById: async (id: UpdateUserVotes["userId"]) => {
@@ -44,7 +45,10 @@ export const userService = {
       }
       const updatedUserMessage = await UsersModel.updateOne(
         { _id: userId },
-        { $addToSet: { messageId: messageId } }
+        {
+          $addToSet: { messageId: messageId },
+          $inc: { earnedPoints: MESSAGE_PRICE },
+        }
       );
       return updatedUserMessage;
     } catch (error) {
@@ -52,5 +56,5 @@ export const userService = {
       throw error;
     }
   },
-  updateUser: async ({userId, updatedFields}: UpdatedUserInfo) => {}
+  updateUser: async ({ userId, updatedFields }: UpdatedUserInfo) => {},
 };

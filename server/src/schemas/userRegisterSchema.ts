@@ -1,6 +1,6 @@
 import moment from "moment";
 import { z } from "zod";
-import SCHEMAS_CONSTANTS from "./const";
+import {SCHEMAS_CONSTANTS} from "../config/const";
 
 const userRegisterSchema = z.object({
   firstName: z.string().min(3, { message: "First name is required" }),
