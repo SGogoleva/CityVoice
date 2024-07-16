@@ -6,6 +6,7 @@ import {
   questionSchema,
   serviceSchema,
 } from "./supportSchemas";
+import { boolean } from "zod";
 
 /**
  * Users model schema
@@ -102,6 +103,7 @@ const projectsSchema = new mongoose.Schema(
 const messagesSchema = new mongoose.Schema(
   {
     dateCreated: { type: Date, default: Date.now },
+    isVisible: { type: Boolean, required: true },
     messageBody: {
       type: String,
       required: [true, "Message is required"],

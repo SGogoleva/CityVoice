@@ -44,9 +44,10 @@ export const getMessageById = async (req: Request, res: Response) => {
 
 
 export const sendMessage = async (req: AuthRequest, res: Response) => {
-  const { messageBody, authority, messageTheme, images, userId } = req.body;
+  const { isVisible, messageBody, authority, messageTheme, images, userId } = req.body;
   try {
     const newMessage = new MessagesModel({
+      isVisible,
       messageBody,
       authority: {
         authorityName: authority.authorityName,
