@@ -1,9 +1,10 @@
-import { Db } from "mongodb";
 import { UsersModel } from "../models/models";
 import { UserMessages } from "../types/messages";
 import { UpdateUserVotes, UpdatedUserInfo } from "../types/users";
 import { MESSAGE_PRICE } from "../config/const";
 import { Pagination } from "../types/pagination";
+import { reqFile } from "../types/files";
+import uploadImage from "../media/media.service";
 
 export const userService = {
   getUserById: async (id: UpdateUserVotes["userId"]) => {
@@ -15,12 +16,7 @@ export const userService = {
       throw new Error("User not found");
     }
   },
-  getUsersPaginated: async ({
-    page,
-    limit,
-    sortBy,
-    sortOrder,
-  }: Pagination) => {
+  getUsersPaginated: async ({ page, limit, sortBy, sortOrder }: Pagination) => {
     try {
       const sort: Record<string, 1 | -1> = {};
       if (sortBy && sortOrder) {
@@ -28,11 +24,13 @@ export const userService = {
       }
 
       const result = await UsersModel.find()
-      .select('name.firstName name.lastName earnedPoints -_id messageId projectId')
-      .sort(sortBy && sortOrder ? sort : {})
-      .skip((page - 1) * limit)
-      .limit(limit)
-      .exec();
+        .select(
+          "name.firstName name.lastName earnedPoints -_id messageId projectId"
+        )
+        .sort(sortBy && sortOrder ? sort : {})
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .exec();
 
       const count = await UsersModel.countDocuments();
 
@@ -91,4 +89,22 @@ export const userService = {
     }
   },
   updateUser: async ({ userId, updatedFields }: UpdatedUserInfo) => {},
+  updateUserAvatar: async (
+    userId: UpdateUserVotes["userId"],
+    file: Express.Multer.File
+  ) => {
+    try {
+      const user = await userService.getUserById(userId);
+      if (!user) {
+        throw new Error("User not found");
+      }
+
+      const { buffer, originalname } = file;
+      const result = await uploadImage({ buffer, originalname });
+      return result;
+    } catch (error) {
+      console.error("Error updating avatar:", error);
+      throw error;
+    }
+  },
 };
