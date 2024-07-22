@@ -38,6 +38,7 @@ const usersSchema = new mongoose.Schema(
     projectId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Projects" }],
     messageId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Messages" }],
     earnedPoints: { type: Number, default: 0 },
+    avatarUrl: { type: String, default: "https://res.cloudinary.com/dizvpvkdj/image/upload/v1721651871/empty_avatar_n0sxxp.png" } 
   },
   {
     toObject: {

@@ -11,7 +11,10 @@ const env = cleanEnv(process.env, {
   NODE_ENV: str({ choices: ['development', 'test', 'production', 'staging'] }),
   JWT_SECRET: str(),
   RUN_DB_LOGS: bool({ default: false }),
-  CLIENT_URL: str()
+  CLIENT_URL: str(),
+  CLOUDINARY_CLOUD_NAME: str(),
+  CLOUDINARY_API_KEY: str(),
+  CLOUDINARY_API_SECRET: str()
 })
 
 export default env
