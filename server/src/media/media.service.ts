@@ -1,16 +1,28 @@
 import cloudinary from "../config/cloudinaryConfig";
-import { UploadFile } from "../types/files";
+import {
+  CloudinaryUploadError,
+  CloudinaryUploadResult,
+  UploadFile,
+} from "../types/files";
 
-const uploadImage = ({ buffer, originalname }: UploadFile) => {
+const uploadImage = ({
+  buffer,
+  originalname,
+}: UploadFile): Promise<CloudinaryUploadResult> => {
   return new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream(
         { use_filename: true, public_id: originalname.split(".")[0] },
-        (error, result) => {
+        (
+          error: CloudinaryUploadError | undefined,
+          result: CloudinaryUploadResult | undefined
+        ) => {
           if (error) {
             reject(error);
-          } else {
+          } else if (result) {
             resolve(result);
+          } else {
+            reject(new Error("Upload failed with an unknown error"));
           }
         }
       )
@@ -18,4 +30,4 @@ const uploadImage = ({ buffer, originalname }: UploadFile) => {
   });
 };
 
-export default uploadImage
+export default uploadImage;
