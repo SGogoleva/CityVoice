@@ -1,6 +1,6 @@
 import moment from "moment";
 import { z } from "zod";
-import {SCHEMAS_CONSTANTS} from "../config/const";
+import { SCHEMAS_CONSTANTS } from "../config/const";
 
 const userRegisterSchema = z.object({
   firstName: z.string().min(3, { message: "First name is required" }),
@@ -25,14 +25,13 @@ const userRegisterSchema = z.object({
       message: "Phone number must start with 05 and contain only digits",
     }),
   numberID: z
-    .number()
-    .int()
-    .gte(100000000, { message: "ID number must be 9 digits" })
-    .lte(999990000, { message: "ID number must be 9 digits" }),
+    .string()
+    .regex(/^\d+$/, "Must contain only digits")
+    .length(9, "Must be 9 digits long"),
   email: z.string().email({ message: "Invalid email address" }),
   password: z
     .string()
-    .min(5, { message: "Password must be at least 5 characters long" })
+    .min(8, { message: "Password must be at least 8 characters long" })
     .regex(SCHEMAS_CONSTANTS.PASSORD_REGEX, {
       message:
         "Password must include at least one digit and one special character",

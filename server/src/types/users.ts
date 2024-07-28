@@ -7,21 +7,18 @@ export interface UpdateUserVotes {
 }
 
 interface Name {
-  firstName: string;
-  lastname: string;
+  firstName?: string;
+  lastName?: string;
 }
-
-interface City {
-  cityId: string;
-  cityName: string;
-}
-
-interface UpdatedFields {
-  name: Name;
-  phone: string;
-  email: string;
-  password: string;
-  city: City;
+export interface UpdatedFields {
+  name?: Name;
+  phone?: string;
+  email?: string;
+  password?: string;
+  city?: string;
+  passwordHash?: string;
+  "name.firstName": string;
+  "name.lastName": string;
 }
 
 export interface UpdatedUserInfo {
@@ -30,17 +27,17 @@ export interface UpdatedUserInfo {
 }
 
 export interface UserLogin {
-  numberID: string,
-  password: string
+  numberID: string;
+  password: string;
 }
 
 export interface UserRegister {
-  firstName: string,
-  lastName: string,
-  DOB: string,
-  phone: string,
-  numberID: number,
-  email: string,
-  password: string,
-  city: string,
+  firstName: string;
+  lastName: string;
+  DOB: string;
+  phone: string;
+  numberID: number;
+  email: string;
+  password: string;
+  city: string;
 }
