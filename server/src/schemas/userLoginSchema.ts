@@ -1,12 +1,10 @@
 import { z } from "zod";
 
 const userLoginSchema = z.object({
-  // username: z
-  //   .number()
-  //   .int()
-  //   .gte(100000000, { message: "Username must be 9 digits" })
-  //   .lte(999990000, { message: "Username must be 9 digits" }),
-  numberID: z.string(),
+  numberID: z
+    .string()
+    .regex(/^\d+$/, "Must contain only digits")
+    .length(9, "Must be 9 digits long"),
   password: z.string().min(5, { message: "Password is required" }),
 });
 

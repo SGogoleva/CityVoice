@@ -3,8 +3,8 @@ import { UserMessages } from "../types/messages";
 import { UpdateUserVotes, UpdatedUserInfo } from "../types/users";
 import { MESSAGE_PRICE } from "../config/const";
 import { Pagination } from "../types/pagination";
-import { reqFile } from "../types/files";
 import uploadImage from "../media/media.service";
+import { hashPassword } from "../utils/bcrypt";
 
 export const userService = {
   getUserById: async (id: UpdateUserVotes["userId"]) => {
@@ -88,7 +88,34 @@ export const userService = {
       throw error;
     }
   },
-  updateUser: async ({ userId, updatedFields }: UpdatedUserInfo) => {},
+  updateUser: async ({ userId, updatedFields }: UpdatedUserInfo) => {
+    try {
+      if (updatedFields.password) {
+        const passwordHash = await hashPassword(updatedFields.password);
+        updatedFields.passwordHash = passwordHash;
+        delete updatedFields.password;
+      }
+      if (updatedFields.name) {
+        if (updatedFields.name.firstName){
+          updatedFields["name.firstName"] = updatedFields.name.firstName
+          delete updatedFields.name.firstName;
+        }
+        if (updatedFields.name.lastName){
+          updatedFields["name.lastName"] = updatedFields.name.lastName
+          delete updatedFields.name.lastName;
+        }
+        delete updatedFields.name
+      }
+      const updatedUser = await UsersModel.findByIdAndUpdate(
+        userId,
+        { $set: updatedFields },
+        { new: true }
+      );
+      return updatedUser;
+    } catch (error) {
+      throw new Error("Failed to update user");
+    }
+  },
   updateUserAvatar: async (
     userId: UpdateUserVotes["userId"],
     file: Express.Multer.File
