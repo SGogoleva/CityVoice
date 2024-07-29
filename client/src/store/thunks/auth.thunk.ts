@@ -8,9 +8,9 @@ export const loginThunk = createAsyncThunk<
   loggedUser,
   loginUser,
   { rejectValue: Error }
->("authentication/attemptLogin", async ({ email, password }: loginUser, { rejectWithValue }) => {
+>("authentication/attemptLogin", async ({ numberID, password }: loginUser, { rejectWithValue }) => {
   try {
-    const response = await attemptLogin({ email, password });
+    const response = await attemptLogin({ numberID, password });
     return response
   } catch (error: unknown) {
     const typedError = error as CustomError;

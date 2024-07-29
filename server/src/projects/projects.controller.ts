@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 export const getProjectsPaginated = async (req: Request, res: Response) => {
   try {
-    const { page, limit, sortBy, sortOrder, cityId } = req.query;
+    const { page, limit, sortBy, sortOrder } = req.query;
     if (!page || !limit) {
       return res.status(400).json({ message: "Invalid projects page or limit" });
     }
@@ -13,7 +13,6 @@ export const getProjectsPaginated = async (req: Request, res: Response) => {
       limit: +limit,
       sortBy: sortBy as string,
       sortOrder: sortOrder as "asc" | "desc",
-      cityId: cityId as string,
     });
     return res.status(201).json(projects);
   } catch (error) {

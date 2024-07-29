@@ -9,6 +9,7 @@ import Personal from "./pages/Personal";
 import ProtectedRoute from "./components/login-register/protectedRoute";
 import SendMessage from "./pages/SendMessage";
 import NoPage from "./pages/NoPage";
+import MessagesPage from "./pages/Messages";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="/send-message" element={<SendMessage />} />
+          <Route path="/messages" element={<MessagesPage />} />
           <Route path="*" element={<NoPage />} />
           <Route
             path="personal"

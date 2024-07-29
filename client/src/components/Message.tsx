@@ -7,14 +7,18 @@ import { useEffect, useState } from "react";
 import { getAuthorities } from "../http";
 import LoginDialog from "../components/single/LoginDialog";
 import Button from "./single/button";
+import { RootState } from "../store/store";
 
 interface formMessage {
   // messageTitle: string;
+  isVisible: boolean;
   messageBody: string;
   messageTheme: string;
   authorityId: string;
   authorityName: string;
   images?: { filename: string; mimetype: string; size: number }[];
+  status: string;
+  dateCreated: string;
 }
 
 const Message = () => {
@@ -31,6 +35,7 @@ const Message = () => {
   const isAuthenticated = useAppSelector(
     (state) => state.isAuth.isAuthenticated
   );
+  const userId = useAppSelector((state: RootState) => state.isAuth.user?.id);
 
   useEffect(() => {
     const fetchAuthorities = async () => {
@@ -69,8 +74,10 @@ const Message = () => {
       openDialog();
       return;
     }
-    const messageData: message = {
+    const messageData: Omit<message, 'userId'> & { userId: string }  = {
       // messageTitle: data.messageTitle,
+      userId: userId as string,
+      isVisible: data.isVisible,
       messageBody: data.messageBody,
       messageTheme: data.messageTheme,
       authority: {
@@ -83,7 +90,12 @@ const Message = () => {
           mimetype: image.mimetype as "image/png" | "image/jpeg" | "image/jpg",
           size: image.size,
         })) || [],
+        status: data.status,
+        dateCreated: data.dateCreated,
+    
     };
+
+    console.log('Sending message data:', JSON.stringify(messageData, null, 2));
 
     try {
       await dispatch(sendMessageThunk(messageData)).unwrap();
@@ -91,6 +103,7 @@ const Message = () => {
       reset();
     } catch (error) {
       console.error("Failed to send message", error);
+      
     }
   };
 
@@ -118,7 +131,7 @@ const Message = () => {
           />
           {errors.messageTitle && <p>{errors.messageTitle.message}</p>}
           </div> */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label
               htmlFor="authority"
               className="mb-1 text-sm font-semibold text-gray-700"
@@ -145,7 +158,7 @@ const Message = () => {
               </p>
             )}
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label
               htmlFor="messageTheme"
               className="mb-1 text-sm font-semibold text-gray-700"
@@ -171,7 +184,7 @@ const Message = () => {
               </p>
             )}
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label
               htmlFor="messageBody"
               className="mb-1 text-sm font-semibold text-gray-700"
@@ -199,11 +212,22 @@ const Message = () => {
               </p>
             )}
           </div>
-          <Button
-            type="submit"
-            variant="primary"
-            className="mt-4"
-          >
+          <div className="flex items-center space-x-2">
+            <label
+              htmlFor="isVisible"
+              className="text-sm font-semibold text-gray-700"
+            >
+              Make message visible on public map
+            </label>
+            <input
+              type="checkbox"
+              defaultChecked={true}
+              {...register("isVisible")}
+              className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+            />
+          </div>
+
+          <Button type="submit" variant="primary" className="mt-4">
             Send Message
           </Button>
         </form>

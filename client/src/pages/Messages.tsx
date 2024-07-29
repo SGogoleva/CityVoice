@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Projects from "../components/Projects";
-import SortProjects from "../components/single/ProjectsSort";
+import Messages from "../components/Messages";
 import { Squares2X2Icon } from "@heroicons/react/24/outline";
 import Button from "../components/single/button";
+import SortMessages from "../components/single/MessagesSort";
 
-const ProjectsPage = () => {
+const MessagesPage = () => {
   const [viewMode, setViewMode] = useState<"grid">("grid");
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const ProjectsPage = () => {
   return (
     <>
       <div className="container mt-4 text-sm min-h-screen">
-        <h1 className="sr-only">Projects</h1>
+        <h1 className="sr-only">Messages</h1>
 
         <div className="flex justify-between items-center">
           <div className="view-toggle-buttons flex space-x-4">
@@ -27,13 +27,13 @@ const ProjectsPage = () => {
               Grid
             </Button>
           </div>
-          <SortProjects />
+          <SortMessages />
         </div>
 
-        <Projects limit={9} showPagination={true} />
+        <Messages limit={9} showPagination={true} />
       </div>
     </>
   );
 };
 
-export default ProjectsPage;
+export default MessagesPage;

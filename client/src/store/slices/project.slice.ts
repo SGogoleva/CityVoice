@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { previewProjectThunk } from "../thunks/project.thunk";
 import { ProjectPreview } from "../../types/project";
-import { City } from "../../types/cities";
 
 interface ProjectsState {
   projects: ProjectPreview[];
@@ -11,8 +10,6 @@ interface ProjectsState {
   totalPages: number;
   sortBy: string;
   sortOrder: "asc" | "desc" | '';
-  cities: City[];
-  selectedCityId: string | null;
 }
 
 const initialState: ProjectsState = {
@@ -23,8 +20,6 @@ const initialState: ProjectsState = {
   totalPages: 1,
   sortBy: '',
   sortOrder: '',
-  cities: [],
-  selectedCityId: '',
 };
 
 const projectsSlice = createSlice({
@@ -44,11 +39,6 @@ const projectsSlice = createSlice({
       state.currentPage = 1;
       state.projects = [];
     },
-    setSelectedCityId(state, action: PayloadAction<string | null>) {
-      state.selectedCityId = action.payload;
-      state.currentPage = 1;
-      state.projects = [];
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -56,28 +46,11 @@ const projectsSlice = createSlice({
         state.loading = true;
       })
       .addCase(previewProjectThunk.fulfilled, (state, action) => {
-        console.log({ P: action.payload });
-        console.log({ L: state.projects.length });
-        // const seen = new Set();
-        // const arr = [...state.projects, ...action.payload.projects];
-        // console.log({ arr });
-        // const uniques = arr.filter((p) => {
-        //   const duplicate = seen.has(p._id);
-        //   seen.add(p._id);
-        //   return !duplicate;
-        // });
-        // console.log({ uniques });
-        // state.projects = [...state.projects, ...action.payload.projects];
-        // state.projects = /*uniques;*/ [...state.projects, ...action.payload.projects]
-
         if (state.currentPage === 1) {
           state.projects = action.payload.projects;
         } else {
           state.projects = [...state.projects, ...action.payload.projects];
         }
-
-        console.log(state.projects)
-        state.cities = action.payload.cities;
         state.totalPages = action.payload.totalPages;
         state.loading = false;
       })
@@ -89,4 +62,4 @@ const projectsSlice = createSlice({
 });
 
 export default projectsSlice.reducer;
-export const { setPage, setSortBy, setSortOrder, setSelectedCityId } = projectsSlice.actions;
+export const { setPage, setSortBy, setSortOrder } = projectsSlice.actions;
