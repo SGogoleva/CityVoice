@@ -119,6 +119,7 @@ const messagesSchema = new mongoose.Schema(
     },
     messageTheme: String,
     location: { type: locationSchema, default: {} },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "Users" },
     status: {
       type: String,
       required: true,

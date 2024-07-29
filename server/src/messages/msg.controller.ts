@@ -60,7 +60,7 @@ export const sendMessage = async (req: AuthRequest, res: Response) => {
       const imageUploadPromises = images.map(async (img) => {
         const { buffer, originalname } = img;
         const uploadResult = await uploadImage({ buffer, originalname });
-        return uploadResult.secure_url; // Collect the secure_url from the result
+        return uploadResult.secure_url;
       });
 
       imageUrls = await Promise.all(imageUploadPromises);
@@ -74,6 +74,7 @@ export const sendMessage = async (req: AuthRequest, res: Response) => {
         authorityId: authority.authorityId,
       },
       messageTheme,
+      userId,
       images: imageUrls,
     });
     const saveMessage = await newMessage.save();
