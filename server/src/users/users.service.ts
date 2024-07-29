@@ -134,4 +134,15 @@ export const userService = {
       throw error;
     }
   },
+  deleteUser: async (userId: UpdateUserVotes["userId"]) => {
+    try {
+      const user = await UsersModel.findByIdAndDelete(userId)
+      if (!user) {
+        throw new Error("User not found");
+      }
+      return `User with id ${user.id} has been sucessfully deleted`
+    } catch (error) {
+      throw new Error("Failed to delete user");
+    }
+  }
 };

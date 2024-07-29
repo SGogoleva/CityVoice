@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  deleteUser,
   getUserById,
   getUsersPaginated,
   updateUserInfo,
@@ -14,6 +15,7 @@ usersouter
   .get("/", getUsersPaginated)
   .get("/singleUser/:id", getUserById)
   .put("/update-avatar/:id", checkAuth, upload.single("avatar"), updateUsersAvatar)
-  .put("/update-userInfo/:id", checkAuth, checkUpdateUserInfoInput, updateUserInfo);
+  .put("/update-userInfo/:id", checkAuth, checkUpdateUserInfoInput, updateUserInfo)
+  .delete("/delete-user/:id", checkAuth, deleteUser)
 
 export default usersouter;
