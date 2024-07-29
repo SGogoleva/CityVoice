@@ -22,6 +22,7 @@ const messageSchema = z.object({
   authority: z.object({
     authorityName: z.string(),
   }),
+  userId: z.string(),
   images: z
     .array(imageSchema)
     .max(3, { message: "You can upload a maximum of 3 images" })
