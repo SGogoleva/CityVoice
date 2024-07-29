@@ -6,6 +6,9 @@ interface Image {
   
 export type message = {
     // messageTitle: string;
+    _id: string;
+    userId: string;
+    isVisible: boolean;
     messageBody: string;
     messageTheme: string;
     authority: {
@@ -13,4 +16,6 @@ export type message = {
       authorityName: string;
     }
     images?: Image[];
+    status: string;
+    dateCreated: string;
 }

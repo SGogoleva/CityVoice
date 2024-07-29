@@ -3,11 +3,9 @@ import { ProjectPreview } from "../../types/project";
 import { Pagination } from "../../types/pagination";
 import { get3LastProjects, getProjectsPaginated, postVote } from "../../http";
 import { getProjectData } from "../../http";
-import { City } from "../../types/cities";
 
 export const previewProjectThunk = createAsyncThunk<
   {
-    cities: City[];
     projects: ProjectPreview[];
     totalPages: number;
   },
@@ -15,13 +13,12 @@ export const previewProjectThunk = createAsyncThunk<
   { rejectValue: Error }
 >(
   "projects/fetchProjectsPaginated",
-  async ({ limit, page, sortBy, sortOrder, cityId }: Pagination) => {
+  async ({ limit, page, sortBy, sortOrder }: Pagination) => {
     return await getProjectsPaginated({
       limit,
       page,
       sortBy,
       sortOrder,
-      cityId,
     });
   }
 );

@@ -20,27 +20,24 @@ export const getProjectsPaginated = async ({
   limit,
   sortBy,
   sortOrder,
-  cityId,
 }: Pagination): Promise<{
   projects: ProjectPreview[];
   totalPages: number;
-  cities: City[];
 }> => {
   const response = await axiosInstance.get(
-    `main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}&cityId=${cityId}`
+    `main/?page=${page}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`
   );
   return {
     projects: response.data.result,
-    cities: response.data.city,
     totalPages: response.data.totalPages,
   };
 };
 
 export const attemptLogin = async ({
-  email,
+  numberID,
   password,
 }: loginUser): Promise<loggedUser> => {
-  const response = await axiosInstance.post("/auth/login", { email, password });
+  const response = await axiosInstance.post("/auth/login", { numberID, password });
   return response.data;
 };
 
@@ -67,13 +64,17 @@ export const postVote = async ({ projectId, votes, userId }: ProjectVotes) => {
 
 export const sendMessage = async ({
   // messageTitle,
+  isVisible,
   messageBody,
   messageTheme,
   authority,
   images,
+  userId,
 }: message) => {
   const response = await axiosInstance.post("messages/sent", {
     // messageTitle,
+    userId,
+    isVisible,
     messageBody,
     messageTheme,
     authority,
@@ -81,6 +82,20 @@ export const sendMessage = async ({
   });
   return response.data;
 };
+
+export const getMessagesPaginated = async ({ limit, page, sortBy, sortOrder }: Pagination) => {
+  const response = await axiosInstance.get('/messages', {
+    params: {
+      limit,
+      page,
+      sortBy,
+      sortOrder,
+    },
+  });
+  console.log("API response data:", response.data);
+  return response.data;
+};
+
 
 export const getCities = async (): Promise<City[]> => {
   const cities = await axiosInstance.get("/cities");

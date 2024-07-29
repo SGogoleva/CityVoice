@@ -3,5 +3,4 @@ export type Pagination = {
   page: number;
   sortBy?: string;
   sortOrder?: "asc" | "desc" | '';
-  cityId: string | null
 };

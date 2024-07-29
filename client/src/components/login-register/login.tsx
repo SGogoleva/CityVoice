@@ -81,24 +81,24 @@ const LoginForm = () => {
     // </button>
     <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-white shadow-md rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-4">
           <label
-            htmlFor="email"
+            htmlFor="numberID"
             className="mb-1 text-sm font-semibold text-gray-700"
           >
-            Email
+            Teudat Zehut
           </label>
           <input
-            type="email"
-            placeholder="Email"
+            type="text"
+            placeholder="Teudat Zehut"
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
-            {...register("email", {
-              required: "Email is required",
-              pattern: /^\S+@\S+$/i,
+            {...register("numberID", {
+              required: "Teudat Zehut is required",
+              pattern: /^\d+$/,
             })}
           />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+          {errors.numberID && (
+            <p className="mt-1 text-sm text-red-600">{errors.numberID.message}</p>
           )}
         </div>
         <div className="flex flex-col">
@@ -135,7 +135,7 @@ const LoginForm = () => {
         </Button>
       </form>
       {loginError && (
-        <p className="mt-1 text-sm text-red-600">Invalid E-mail or Password</p>
+        <p className="mt-1 text-sm text-red-600">Invalid ID or Password</p>
       )}
       <h1 className="mt-4 text-center text-sm text-gray-600">
         Doesn't have an account yet?

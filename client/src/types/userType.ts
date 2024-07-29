@@ -1,5 +1,6 @@
 export type Users = {
   id: string;
+  numberID: string;
   name: {
     firstName: string;
     lastName: string;
@@ -22,7 +23,7 @@ export interface UserName {
   firstName: string | null;
 }
 
-export type loginUser = Pick<Users, "email" | "password">
+export type loginUser = Pick<Users, "numberID" | "password">
 
 export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id" | "dateCreated">
 
@@ -30,4 +31,4 @@ export type registeredUser = Omit<registerUser, "password">;
 
 export type loggedUser = Omit<Users, 'password'>
 
-export type authenticatedUser = Pick<Users, 'id' | "email">
+export type authenticatedUser = Pick<Users, 'id' | "numberID">
