@@ -91,4 +91,16 @@ export const updateUserInfo = async (req: Request, res: Response) => {
       .json({ message: "Internal server error", error: error.message });
   }
 };
-
+export const deleteUser = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid user ID format" });
+    }
+    const userId = new mongoose.Types.ObjectId(id);
+    const result = await userService.deleteUser(userId);
+    return res.status(200).json({ result });
+  } catch (error) {
+    return res.status(500).json({ message: "Failed to delete user" });
+  }
+};
