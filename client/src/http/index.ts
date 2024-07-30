@@ -92,8 +92,10 @@ export const getMessagesPaginated = async ({ limit, page, sortBy, sortOrder }: P
       sortOrder,
     },
   });
-  console.log("API response data:", response.data);
-  return response.data;
+  return {
+  messages: response.data.result,
+  totalPages: response.data.totalPages,
+  };
 };
 
 

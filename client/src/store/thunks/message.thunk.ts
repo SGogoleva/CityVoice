@@ -23,7 +23,6 @@ export const fetchMessagesThunk = createAsyncThunk<
       sortBy,
       sortOrder,
     });
-    console.log("Fetched messages response:", response);
     return response;
   }
 );

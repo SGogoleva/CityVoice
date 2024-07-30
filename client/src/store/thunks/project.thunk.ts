@@ -5,10 +5,7 @@ import { get3LastProjects, getProjectsPaginated, postVote } from "../../http";
 import { getProjectData } from "../../http";
 
 export const previewProjectThunk = createAsyncThunk<
-  {
-    projects: ProjectPreview[];
-    totalPages: number;
-  },
+  { projects: ProjectPreview[]; totalPages: number },
   Pagination,
   { rejectValue: Error }
 >(
