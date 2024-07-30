@@ -38,6 +38,11 @@ const usersSchema = new mongoose.Schema(
     projectId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Projects" }],
     messageId: [{ type: mongoose.Schema.Types.ObjectId, ref: "Messages" }],
     earnedPoints: { type: Number, default: 0 },
+    avatarUrl: {
+      type: String,
+      default:
+        "https://res.cloudinary.com/dizvpvkdj/image/upload/v1721651871/empty_avatar_n0sxxp.png",
+    },
   },
   {
     toObject: {
@@ -114,22 +119,14 @@ const messagesSchema = new mongoose.Schema(
     },
     messageTheme: String,
     location: { type: locationSchema, default: {} },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "Users" },
     status: {
       type: String,
       required: true,
       enum: [MessageStatus.sent, MessageStatus.read, MessageStatus.replied],
       default: MessageStatus.sent,
     },
-    images: {
-      type: [imageSchema],
-      default: [],
-      validate: {
-        validator: function (val: string) {
-          return val.length <= 3;
-        },
-        message: "You can upload a maximum of 3 images",
-      },
-    },
+    images: { type: [String], default: [] },
   },
   {
     toObject: {
