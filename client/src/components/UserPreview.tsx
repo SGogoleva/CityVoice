@@ -37,14 +37,15 @@ const UserPreview = () => {
               alt="User Avatar"
               className="h-20 w-20 rounded-full"
             />
-            <h1 className="text-2xl font-bold text-left text-gray-800">
+            <div><h1 className="text-2xl font-bold text-gray-800">
               {user.name.firstName}, welcome to your personal space!
             </h1>
-          </div>
-          <h3 className="text-m text-center text-gray-600">
+            <h3 className="text-m text-gray-600">
             Here you can review your account details and see your messages or
             how many points you've earned!
           </h3>
+          </div>
+          </div>
           <div className="bg-gray-100 p-4 rounded-lg shadow-sm space-y-2 pl-10">
             <table className="min-w-full text-m">
               <tbody>

@@ -1,8 +1,10 @@
 export type Users = {
   id: string;
   numberID: string;
-  firstName: string;
-  lastName: string;
+  name: {
+    firstName: string;
+    lastName: string;  
+  }
   DOB: string;
   phone: string;
   email: string;
@@ -19,9 +21,19 @@ export interface UserName {
   firstName: string | null;
 }
 
+export type registerUser = {
+  numberID: string;
+  firstName: string;
+  lastName: string;  
+  DOB: string;
+  phone: string;
+  email: string;
+  password: string;
+  city: string;
+};
+
 export type loginUser = Pick<Users, "numberID" | "password">
 
-export type registerUser = Omit<Users, "projectId" | "messageId" | "earnedPoints" | "id" | "dateCreated">
 
 export type registeredUser = Omit<registerUser, "password">;
 
