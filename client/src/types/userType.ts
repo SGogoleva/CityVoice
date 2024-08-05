@@ -12,6 +12,7 @@ export type Users = {
   projectId: string[];
   messageId: string[];
   earnedPoints: number;
+  avatarUrl: string;
 };
 
 export interface UserName {

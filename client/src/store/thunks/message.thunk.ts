@@ -9,6 +9,7 @@ export const sendMessageThunk = createAsyncThunk(
     return await sendMessage(messageData);
   }
 );
+
 export const fetchMessagesThunk = createAsyncThunk<
   { messages: message[]; totalPages: number },
   Pagination,
