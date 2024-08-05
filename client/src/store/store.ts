@@ -3,6 +3,7 @@ import authReducer from "./slices/auth.slice";
 import regReducer from "./slices/reg.slice"
 import projectsReducer from "./slices/project.slice"
 import singleProjectReducer from "./slices/singleproject.slice"
+import singleMessageReducer from "./slices/singlemessage.slice"
 import voteReducer from "./slices/vote.slice"
 import messageReduser from "./slices/message.slice"
 import checkTokenReduser from "./slices/token.slice"
@@ -17,6 +18,7 @@ const store = configureStore({
     singleProject: singleProjectReducer,
     vote: voteReducer,
     message: messageReduser,
+    singleMessage: singleMessageReducer,
     isAuth: checkTokenReduser,
     user: userReducer
   },

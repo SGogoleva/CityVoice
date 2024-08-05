@@ -47,7 +47,7 @@ const messageSlice = createSlice({
       })
       .addCase(sendMessageThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.messages.push = action.payload;
+        state.messages.push(action.payload);
       })
       .addCase(sendMessageThunk.rejected, (state, action) => {
         state.error = action.error.message || "An error occurred";

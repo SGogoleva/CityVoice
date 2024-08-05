@@ -30,12 +30,6 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
   );
 
   useEffect(() => {
-    console.log("Dispatching fetchMessagesThunk with params:", {
-      limit,
-      page: currentPage,
-      sortBy,
-      sortOrder,
-    });
     dispatch(
       fetchMessagesThunk({ limit, page: currentPage, sortBy, sortOrder })
     );
@@ -46,11 +40,12 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
     dispatch(setMessagesPage(nextPage));
   };
 
-  const handleMessageClick = (messageTheme: string, messageId: string) => {
-    const formattedName = messageTheme.toLowerCase().replace(/\s+/g, "-");
-    navigate(`/messages/${formattedName}`, {
-      state: { messageId },
-    });
+  const handleMessageClick = (messageId: string) => {
+    if (messageId) {
+      navigate(`/messages/${messageId}`);
+    } else {
+      console.error("Message ID is undefined");
+    }
   };
 
   const formatDate = (dateString: string) => {
@@ -58,28 +53,35 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
   };
 
   const displayedMessages = limit === 3 ? messages.slice(0, 3) : messages;
-  console.log("Displayed messages:", displayedMessages);
 
   return (
     <>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 message-list">
         {displayedMessages?.map((message) => {
-          console.log("Rendering message:", message);
+          const firstImage =
+            message.images && message.images.length > 0
+              ? message.images[0]
+              : null;
           return (
             <div
               key={message._id}
               className="message-card cursor-pointer p-4 bg-white shadow-md rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg group relative"
-              onClick={() =>
-                handleMessageClick(message.messageTheme, message._id)
-              }
+              onClick={() => handleMessageClick(message._id)}
             >
               <div className="relative h-64 mb-4 bg-gray-200">
                 <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">
                   {message.status}
                 </div>
-                {message.images && message.images.length > 0 ? (
+                <div className="absolute top-2 left-2 flex space-x-1 px-2 py-1">
+                  <p>{formatDate(message.dateCreated)}</p>
+                </div>
+                {firstImage ? (
                   <div className="image-placeholder flex items-end justify-center text-gray-500 h-full">
-                    <span>No Image Available</span>{" "}
+                    <img
+                      src={firstImage}
+                      alt={message.status}
+                      className="h-5/6 w-full object-cover"
+                    />
                   </div>
                 ) : (
                   <div className="image-placeholder flex items-center justify-center text-gray-500 h-full">
@@ -91,9 +93,6 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
               <div className="description text-gray-700 truncate-multiline">
                 {message.messageBody}
               </div>
-              <p className="text-gray-500 text-sm">
-                {formatDate(message.dateCreated)}
-              </p>
             </div>
           );
         })}

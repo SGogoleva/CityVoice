@@ -1,15 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { sendMessage, getMessagesPaginated } from "../../http";
+import { sendMessage, getMessagesPaginated, getMessageData } from "../../http";
 import { message } from "../../types/messages";
 import { Pagination } from "../../types/pagination";
 
 export const sendMessageThunk = createAsyncThunk(
   "message/sendMessage",
-  async (messageData: message) => {
+  async (messageData: FormData) => {
     return await sendMessage(messageData);
   }
 );
-
 export const fetchMessagesThunk = createAsyncThunk<
   { messages: message[]; totalPages: number },
   Pagination,
@@ -24,5 +23,12 @@ export const fetchMessagesThunk = createAsyncThunk<
       sortOrder,
     });
     return response;
+  }
+);
+
+export const singleMessageThunk = createAsyncThunk(
+  "messages/fetchMessageById",
+  async (messageId: string) => {
+    return await getMessageData(messageId);
   }
 );

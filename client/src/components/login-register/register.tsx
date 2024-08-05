@@ -15,8 +15,8 @@ type FormData = {
   phone: string;
   email: string;
   password: string;
-  cityId: string;
-  cityName: string;
+  numberID: string;
+  city: string;
 };
 
 const RegisterForm = () => {
@@ -31,18 +31,18 @@ const RegisterForm = () => {
   } = useForm<FormData>();
   const [cities, setCities] = useState<City[]>([]);
 
-  const fetchCities = async () => {
-    try {
-      const citiesData: City[] = await getCities();
-      setCities(citiesData);
-    } catch (error) {
-      console.error("There was an error fetching the cities!", error);
-    }
-  };
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const citiesData: City[] = await getCities();
+        setCities(citiesData);
+      } catch (error) {
+        console.error("There was an error fetching the cities!", error);
+      }
+    };
 
-  if (cities.length === 0) {
     fetchCities();
-  }
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -51,31 +51,25 @@ const RegisterForm = () => {
   }, [navigate, user]);
 
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedCityId = event.target.value;
-    const selectedCityName =
-      event.target.options[event.target.selectedIndex].text;
-    setValue("cityId", selectedCityId);
-    setValue("cityName", selectedCityName);
+    const selectedCity = event.target.value;
+    setValue("city", selectedCity);
   };
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
     const userData: registerUser = {
-      name: {
-        firstName: data.firstName,
-        lastName: data.lastName,
-      },
+      firstName: data.firstName,
+      lastName: data.lastName,
       DOB: data.DOB,
       phone: data.phone,
       email: data.email,
       password: data.password,
-      city: {
-        cityId: data.cityId,
-        cityName: data.cityName,
-      },
+      numberID: data.numberID,
+      city: data.city,
     };
+    console.log("Submitted Data:", JSON.stringify(userData));
+
     dispatch(registerUserThunk(userData));
   };
-
-  console.log(errors);
 
   return (
     <div className="max-w-md mx-auto mt-10 mb-10 p-6 bg-white shadow-md rounded-lg">
@@ -218,25 +212,49 @@ const RegisterForm = () => {
 
         <div className="flex flex-col">
           <label
-            htmlFor="cityId"
+            htmlFor="numberID"
+            className="mb-1 text-sm font-semibold text-gray-700"
+          >
+            Number ID
+          </label>
+          <input
+            type="text"
+            {...register("numberID", {
+              required: "Number ID is required",
+              minLength: { value: 9, message: "Number ID must be 9 digits" },
+              maxLength: { value: 9, message: "Number ID must be 9 digits" },
+            })}
+            className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
+            placeholder="Number ID"
+          />
+          {errors.numberID && (
+            <p className="mt-1 text-sm text-red-600">
+              {errors.numberID.message}
+            </p>
+          )}
+        </div>
+
+        <div className="flex flex-col">
+          <label
+            htmlFor="city"
             className="mb-1 text-sm font-semibold text-gray-700"
           >
             City
           </label>
           <select
-            {...register("cityId", { required: true })}
+            {...register("city", { required: true })}
             onChange={handleCityChange}
             className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
           >
             <option value="">Select a city</option>
             {cities.map((city) => (
-              <option key={city.cityId} value={city.cityId}>
+              <option key={city.cityId} value={city.cityName}>
                 {city.cityName}
               </option>
             ))}
           </select>
-          {errors.cityId && (
-            <p className="mt-1 text-sm text-red-600">{errors.cityId.message}</p>
+          {errors.city && (
+            <p className="mt-1 text-sm text-red-600">{errors.city.message}</p>
           )}
         </div>
 

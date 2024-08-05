@@ -2,7 +2,7 @@ export type message = {
     // messageTitle: string;
     _id: string;
     userId: string;
-    isVisible: boolean;
+    isVisible: string;
     messageBody: string;
     messageTheme: string;
     authority: {

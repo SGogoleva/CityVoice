@@ -62,23 +62,11 @@ export const postVote = async ({ projectId, votes, userId }: ProjectVotes) => {
   return response.data;
 };
 
-export const sendMessage = async ({
-  // messageTitle,
-  isVisible,
-  messageBody,
-  messageTheme,
-  authority,
-  images,
-  userId,
-}: message) => {
-  const response = await axiosInstance.post("messages/sent", {
-    // messageTitle,
-    userId,
-    isVisible,
-    messageBody,
-    messageTheme,
-    authority,
-    images,
+export const sendMessage = async (messageData: FormData) => {
+  const response = await axiosInstance.post("messages/sent", messageData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
   });
   return response.data;
 };
@@ -98,6 +86,11 @@ export const getMessagesPaginated = async ({ limit, page, sortBy, sortOrder }: P
   };
 };
 
+export const getMessageData = async (messageId: string): Promise<message> => {
+  const response = await axiosInstance.get(`/messages/single/${messageId}`);
+  return response.data;
+};
+
 
 export const getCities = async (): Promise<City[]> => {
   const cities = await axiosInstance.get("/cities");
@@ -106,7 +99,6 @@ export const getCities = async (): Promise<City[]> => {
 
 export const getAuthorities = async (): Promise<Authority[]> => {
   const authorities = await axiosInstance.get("/authorities");
-  console.log(authorities.data)
   return authorities.data;
 };
 
