@@ -27,6 +27,10 @@ const NavLinks = ({ mobile }: { mobile: boolean }) => {
       <NavLink className={mobile ? mobileLinkClass : linkClass} to="/projects">
         Projects
       </NavLink>
+      <NavLink className={mobile ? mobileLinkClass : linkClass} to="/messages">
+        Messages
+      </NavLink>
+
       <NavLink
         className={mobile ? mobileLinkClass : linkClass}
         to="/send-message"

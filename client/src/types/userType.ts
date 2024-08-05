@@ -1,22 +1,18 @@
 export type Users = {
   id: string;
   numberID: string;
-  name: {
-    firstName: string;
-    lastName: string;
-  };
+  firstName: string;
+  lastName: string;
   DOB: string;
   phone: string;
   email: string;
   password: string;
-  city: {
-    cityId: string;
-    cityName: string;
-  };
+  city: string;
   dateCreated: string;
   projectId: string[];
   messageId: string[];
   earnedPoints: number;
+  avatarUrl: string;
 };
 
 export interface UserName {

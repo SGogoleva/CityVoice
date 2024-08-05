@@ -32,7 +32,7 @@ const messageSlice = createSlice({
     setSortBy(state, action: PayloadAction<string>) {
       state.sortBy = action.payload;
       state.currentPage = 1;
-      state.messages = [];
+      state.messages= [];
     },
     setSortOrder(state, action: PayloadAction<"asc" | "desc">) {
       state.sortOrder = action.payload;
@@ -47,18 +47,16 @@ const messageSlice = createSlice({
       })
       .addCase(sendMessageThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.messages.push = action.payload;
+        state.messages.push(action.payload);
       })
       .addCase(sendMessageThunk.rejected, (state, action) => {
         state.error = action.error.message || "An error occurred";
         state.loading = false;
       })
       .addCase(fetchMessagesThunk.pending, (state) => {
-        console.log("Thunk pending");
         state.loading = true;
       })
       .addCase(fetchMessagesThunk.fulfilled, (state, action) => {
-        console.log("Thunk fulfilled, payload:", action.payload);
         if (state.currentPage === 1) {
           state.messages = action.payload.messages;
         } else {
