@@ -95,7 +95,7 @@ const MainPage = () => {
         <h2 className="text-2xl font-bold text-center mb-6">
           Review Latest Projects
         </h2>
-      <Projects limit={3} showPagination={false} />
+        <Projects limit={3} showPagination={false} />
         <div className="text-center mt-6">
           <Link
             to="/projects"
@@ -121,11 +121,7 @@ const MainPage = () => {
             various city activities, such as free entry to cultural events or
             discounts on services.
           </p>
-          <Button
-            type="button"
-            variant="bright"
-            onClick={handleLearnMoreClick}
-          >
+          <Button type="button" variant="bright" onClick={handleLearnMoreClick}>
             Learn More
           </Button>
         </div>

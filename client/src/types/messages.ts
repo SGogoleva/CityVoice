@@ -1,6 +1,6 @@
 export type message = {
     // messageTitle: string;
-    _id: string;
+    id: string;
     userId: string;
     isVisible: string;
     messageBody: string;
