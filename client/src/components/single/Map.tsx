@@ -6,7 +6,6 @@ import "leaflet/dist/leaflet.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ProjectPreview } from "../../types/project";
-import { City } from "../../types/cities";
 import { useNavigate } from "react-router-dom";
 
 
@@ -25,10 +24,9 @@ import { useNavigate } from "react-router-dom";
 
 interface ProjectMapProps {
   projects: ProjectPreview[];
-  cities: City[];
 }
 
-const ProjectMap: React.FC<ProjectMapProps> = ({ projects, cities }) => {
+const ProjectMap: React.FC<ProjectMapProps> = ({ projects }) => {
   const navigate = useNavigate();
   const formatDate = (dateString: string) => {
     return format(new Date(dateString), "dd.MM.yy");
@@ -58,18 +56,18 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ projects, cities }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {cities.map((city) => (
-        <Marker key={city.cityId} position={[city.latitude, city.longitude]}>
+      {projects.map((project) => (
+        <Marker key={project.id} position={[project.location.latitude, project.location.longitude]}>
           <Popup>
-            <b>{city.cityName}</b>
+            <b>{`${project.location.address.street}, ${project.location.address.houseNumber}`}</b>
             <br />
 
-            <Slider {...sliderSettings}>
-              {projects.map((project) => (
+            {/* <Slider {...sliderSettings}>
+              {projects.map((project) => ( */}
                 <div
-                  key={project._id}
+                  key={project.id}
                   className="project-card cursor-pointer p-4 bg-white shadow-md rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg group relative"
-                  onClick={() => handleProjectClick(project.name, project._id)}
+                  onClick={() => handleProjectClick(project.name, project.id)}
                 >
                   <div className="relative h-64 mb-4 bg-gray-200">
                     <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">
@@ -92,8 +90,8 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ projects, cities }) => {
                     {project.description}
                   </div>
                 </div>
-              ))}
-            </Slider>
+              {/* ))}
+            </Slider> */}
           </Popup>
         </Marker>
       ))}
