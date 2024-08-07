@@ -7,7 +7,11 @@ import { getAuthorities } from "../http";
 import LoginDialog from "../components/single/LoginDialog";
 import Button from "./single/button";
 import { RootState } from "../store/store";
-import { CloudArrowUpIcon, DocumentCheckIcon } from "@heroicons/react/24/outline";
+import {
+  CloudArrowUpIcon,
+  DocumentCheckIcon,
+} from "@heroicons/react/24/outline";
+import MapWithAddress from "./single/GetCoordinates";
 
 interface formMessage {
   isVisible: boolean;
@@ -37,12 +41,23 @@ const Message = () => {
   const isAuthenticated = useAppSelector(
     (state) => state.isAuth.isAuthenticated
   );
-  const userId = useAppSelector((state: RootState) => state.isAuth.user?.id) as string;
+  const userId = useAppSelector(
+    (state: RootState) => state.isAuth.user?.id
+  ) as string;
 
   const [fileNames, setFileNames] = useState<string[]>(["", "", ""]);
   const [fileErrors, setFileErrors] = useState<string[]>(["", "", ""]);
   const [isSending, setIsSending] = useState(false);
   const [imageError, setImageError] = useState<string>("");
+  const [location, setLocation] = useState();
+
+  const handleLocationSelected = (locationResponse: any) => {
+    setLocation(locationResponse);
+  };
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   useEffect(() => {
     const fetchAuthorities = async () => {
@@ -82,7 +97,9 @@ const Message = () => {
       return;
     }
 
-    const images = [data.image1, data.image2, data.image3].filter(Boolean) as File[];
+    const images = [data.image1, data.image2, data.image3].filter(
+      Boolean
+    ) as File[];
     if (images.length === 0) {
       setImageError("At least one image is required");
       return;
@@ -93,18 +110,18 @@ const Message = () => {
     setIsSending(true);
 
     const messageData = new FormData();
-    
+
     messageData.append("userId", userId);
     messageData.append("isVisible", data.isVisible ? "true" : "false");
     messageData.append("messageBody", data.messageBody);
     messageData.append("messageTheme", data.messageTheme);
     messageData.append("authority[authorityId]", data.authorityId);
     messageData.append("authority[authorityName]", data.authorityName);
-  
+
     images.forEach((file) => {
       messageData.append("images", file, file.name);
     });
-  
+
     try {
       await dispatch(sendMessageThunk(messageData)).unwrap();
       setIsMessageSent(true);
@@ -116,8 +133,11 @@ const Message = () => {
       setIsSending(false);
     }
   };
-    
-  const handleFileChange = (index: 0 | 1 | 2, event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleFileChange = (
+    index: 0 | 1 | 2,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = event.target.files?.[0];
     if (file) {
       const fileError = validateFile(file);
@@ -127,7 +147,10 @@ const Message = () => {
           newErrors[index] = fileError;
           return newErrors;
         });
-        setValue(`image${index + 1}` as "image1" | "image2" | "image3", undefined);
+        setValue(
+          `image${index + 1}` as "image1" | "image2" | "image3",
+          undefined
+        );
       } else {
         setFileNames((prevFileNames) => {
           const newFileNames = [...prevFileNames];
@@ -256,8 +279,11 @@ const Message = () => {
           </div>
           <div className="flex flex-col mb-4">
             <div className="flex flex-row justify-between space-x-2">
-              {[0, 1, 2].map(index => (
-                <div key={index} className="flex flex-col items-center justify-center w-1/3 p-2 border rounded-md">
+              {[0, 1, 2].map((index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center w-1/3 p-2 border rounded-md"
+                >
                   <button
                     type="button"
                     className="flex flex-col items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1F3E52]"
@@ -268,7 +294,9 @@ const Message = () => {
                     ) : (
                       <CloudArrowUpIcon className="h-10 w-10 text-[#1F3E52]" />
                     )}
-                    <span className="mt-2 text-xs">{fileNames[index] || `Upload Image ${index + 1}`}</span>
+                    <span className="mt-2 text-xs">
+                      {fileNames[index] || `Upload Image ${index + 1}`}
+                    </span>
                   </button>
                   {fileErrors[index] && (
                     <p className="mt-1 text-xs text-red-600">
@@ -279,12 +307,10 @@ const Message = () => {
               ))}
             </div>
             {imageError && (
-              <p className="mt-1 text-xs text-red-600">
-                {imageError}
-              </p>
+              <p className="mt-1 text-xs text-red-600">{imageError}</p>
             )}
           </div>
-          {[0, 1, 2].map(index => (
+          {[0, 1, 2].map((index) => (
             <input
               key={index}
               type="file"
@@ -309,12 +335,17 @@ const Message = () => {
             />
           </div>
 
-          <Button type="submit" variant="primary" className="mt-4" disabled={isSending}>
+          <Button
+            type="submit"
+            variant="primary"
+            className="mt-4"
+            disabled={isSending}
+          >
             {isSending ? "Sending..." : "Send Message"}
           </Button>
         </form>
       )}
-
+      <MapWithAddress onLocationSelected={handleLocationSelected} />
       <LoginDialog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );

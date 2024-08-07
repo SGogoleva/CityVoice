@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import Projects from "../components/Projects";
 import SortProjects from "../components/single/ProjectsSort";
 import { Squares2X2Icon } from "@heroicons/react/24/outline";
 import Button from "../components/single/button";
+import ProjectMap from "../components/single/Map";
+import { RootState } from "../store/store";
 
 const ProjectsPage = () => {
   const [viewMode, setViewMode] = useState<"grid">("grid");
+  const projects = useAppSelector(
+    (state: RootState) => state.projects.projects
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +35,7 @@ const ProjectsPage = () => {
           </div>
           <SortProjects />
         </div>
-
+        <ProjectMap projects={projects}/>
         <Projects limit={9} showPagination={true} />
       </div>
     </>
