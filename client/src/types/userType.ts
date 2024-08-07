@@ -34,7 +34,6 @@ export type registerUser = {
 
 export type loginUser = Pick<Users, "numberID" | "password">
 
-
 export type registeredUser = Omit<registerUser, "password">;
 
 export type loggedUser = Omit<Users, 'password'>

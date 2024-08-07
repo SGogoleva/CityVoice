@@ -41,11 +41,9 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
   };
 
   const handleMessageClick = (messageId: string) => {
-    if (messageId) {
-      navigate(`/messages/${messageId}`);
-    } else {
-      console.error("Message ID is undefined");
-    }
+    navigate(`/messages/${messageId}`, {
+      state: { messageId },
+    });
   };
 
   const formatDate = (dateString: string) => {
@@ -64,9 +62,9 @@ const Messages = ({ limit = 9, showPagination = true }: MessagesProps) => {
               : null;
           return (
             <div
-              key={message._id}
+              key={message.id}
               className="message-card cursor-pointer p-4 bg-white shadow-md rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg group relative"
-              onClick={() => handleMessageClick(message._id)}
+              onClick={() => handleMessageClick(message.id)}
             >
               <div className="relative h-64 mb-4 bg-gray-200">
                 <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">

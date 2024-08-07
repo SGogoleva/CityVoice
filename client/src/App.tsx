@@ -20,10 +20,10 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:id" element={<SingleProject />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="/send-message" element={<SendMessage />} />
-          <Route path="/messages" element={<MessagesPage />} />
+          <Route path="send-message" element={<SendMessage />} />
+          <Route path="messages" element={<MessagesPage />} />
           <Route path="messages/:id" element={<SingleMessage />} />
           <Route path="*" element={<NoPage />} />
           <Route

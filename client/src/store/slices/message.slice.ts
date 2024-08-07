@@ -1,5 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchMessagesThunk, sendMessageThunk } from "../thunks/message.thunk";
+import {
+  fetchMessagesThunk,
+  sendMessageThunk,
+} from "../thunks/message.thunk";
 import { message } from "../../types/messages";
 
 interface MessagesState {
@@ -32,7 +35,7 @@ const messageSlice = createSlice({
     setSortBy(state, action: PayloadAction<string>) {
       state.sortBy = action.payload;
       state.currentPage = 1;
-      state.messages= [];
+      state.messages = [];
     },
     setSortOrder(state, action: PayloadAction<"asc" | "desc">) {
       state.sortOrder = action.payload;

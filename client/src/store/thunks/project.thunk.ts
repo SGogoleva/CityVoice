@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ProjectPreview } from "../../types/project";
+import { ProjectPreview, ProjectVotes } from "../../types/project";
 import { Pagination } from "../../types/pagination";
 import { get3LastProjects, getProjectsPaginated, postVote } from "../../http";
 import { getProjectData } from "../../http";
@@ -31,14 +31,10 @@ export const postVoteThunk = createAsyncThunk(
   "voting/postVote",
   async ({
     projectId,
-    questionText,
-    optionText,
-  }: {
-    projectId: string;
-    questionText: string;
-    optionText: string;
-  }) => {
-    return await postVote({ projectId, questionText, optionText });
+    votes,
+    userId,
+  }: ProjectVotes) => {
+    return await postVote({ projectId, votes, userId });
   }
 );
 

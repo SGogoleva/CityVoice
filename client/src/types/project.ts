@@ -12,7 +12,7 @@ export interface Question {
 }
 
 export type Project = {
-  _id: string;
+  id: string;
   authority: {
     authorityId: string;
     authorityName: string;
@@ -26,7 +26,7 @@ export type Project = {
   imageUrl: string
 };
 
-export type ProjectPreview = Pick<Project, "_id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl">;
+export type ProjectPreview = Pick<Project, "id" | "name" | "description" | "dateCreated" | "pollPrice" | "dueDate" | "imageUrl">;
 
 interface Vote {
   questionText: string;

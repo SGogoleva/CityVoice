@@ -1,17 +1,22 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { RootState } from '../store/store';
-import { singleMessageThunk } from '../store/thunks/message.thunk';
+import { useLocation, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { RootState } from "../store/store";
+import { singleMessageThunk } from "../store/thunks/message.thunk";
+import ImageGalleryWithModal from "./single/ImageGalleryWithModal";
 
 const SingleMessage = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const { messageId } = location.state as { messageId: string };
-  
-  const loading = useAppSelector((state: RootState) => state.singleMessage.loading);
-  const message = useAppSelector((state: RootState) => state.singleMessage.message);
+
+  const loading = useAppSelector(
+    (state: RootState) => state.singleMessage.loading
+  );
   const error = useAppSelector((state: RootState) => state.singleMessage.error);
+  const message = useAppSelector(
+    (state: RootState) => state.singleMessage.message
+  );
 
   useEffect(() => {
     if (messageId) {
@@ -21,34 +26,43 @@ const SingleMessage = () => {
 
   if (loading) return <p>Loading message...</p>;
   if (error) return <p>Error loading message: {error}</p>;
+  if (!message) return <p>Message not found</p>;
 
   return (
-    <div className="message-card cursor-pointer p-4 bg-white shadow-md rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg group relative">
-      <div className="relative h-64 mb-4 bg-gray-200">
-        <div className="absolute top-2 right-2 text-sm px-2 py-1 rounded transition-colors duration-300 group-hover:bg-[#50B04C] group-hover:text-white">
-          {message?.status}
-        </div>
-        {message?.images && message.images.length > 0 ? (
-          <div className="image-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-            {message.images.map((imgSrc, index) => (
-              <div key={index} className="image-placeholder flex items-center justify-center text-gray-500 h-full">
-                <img
-                  src={imgSrc}
-                  alt={`Message image ${index + 1}`}
-                  className="h-32 w-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="image-placeholder flex items-center justify-center text-white h-full bg-black">
-            <span>No Image Available</span>
-          </div>
-        )}
+    <div className="mx-auto mt-4 p-6 rounded-lg flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+     
+      {/* Message Info */}
+      <div className="w-full md:w-2/5 flex flex-col items-center md:items-start">
+        <h1 className="text-xl font-bold text-gray-800 mb-1 text-center md:text-left">
+          {message.messageTheme}
+        </h1>
+        <p className="text-gray-600 text-center md:text-left mb-4">
+          {message.messageBody}
+        </p>
+        <ImageGalleryWithModal images={message.images} />
+        <Link
+          to="/messages"
+          className="bg-orange-500 text-white mt-8 py-2 px-4 rounded hover:bg-opacity-90"
+        >
+          Back to all Messages
+        </Link>
       </div>
-      <h2 className="text-xl font-bold mb-2">{message?.messageTheme}</h2>
-      <p>{message?.messageBody}</p>
-      <p className="text-gray-500 text-sm">{new Date(message?.dateCreated).toLocaleDateString()}</p>
+
+      {/* Map */}
+      <div className="w-full min-h-80 md:w-1/5 rounded-lg flex items-center justify-center bg-gray-200">
+        <p>The map will be here</p>
+      </div>
+      
+      {/* Message Status */}
+      <div className="w-full md:w-2/5 mb-4 flex flex-col items-center md:items-start">
+        <div className="bg-white p-6 rounded-lg shadow-md w-full">
+          <h2 className="text-lg font-bold text-gray-800 mb-4">Status</h2>
+          <p className="text-gray-600">{message.status}</p>
+          <p className="text-gray-600 mt-4">
+            Date Created: {message.dateCreated}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
